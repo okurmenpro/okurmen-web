@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container{
+	@apply w-full max-w-[1400px] my-0 mx-auto px-6
+}
+
+.is-scroll {
+	@apply fixed z-50 py-6 transition-all ease-in duration-500
+  
+}
+.no-scroll{
+	@apply py-6 transition-all ease-in-out duration-500
+}
+
+.slider {
+  margin:0 10px;
+  overflow:"hidden";
+  padding:2rem 0;
+}
+
+.slider img {
+  width: 100%;
+  border-radius:10px;
+}
+
+.react-multi-carousel-list {
+padding: 0rem 0 10px 0;
+}
+
+.custom-dot-list-style button{
+border: none;
+@apply bg-yellow-500
+}
+.react-multi-carousel-dot.react-multi-carousel-dot--active button{
+background: rgb(68, 155, 255) !important;
+}
+
+
+.slick-slide > div{
+  @apply mx-4
+}
+.slick-slide{
+  @apply flex justify-center
+}
+
+
+.slick-prev:before, .slick-next:before{
+  color: black;
+
+}
+
+.react-multiple-carousel__arrow{
+  @apply absolute z-10
+} 
