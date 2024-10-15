@@ -1,12 +1,19 @@
+import { useNavigate } from "react-router-dom";
 import ButtonOrange from "../../ui/ButtonOrange";
 import Input from "../../ui/Input";
 
 const Register = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex justify-between items-start">
       <div className="bg-[#ff8a00] lg:max-w-[40vw] md:max-w-[30vw] w-full lg:min-h-[100vw] md:min-h-[120vh] sm:min-h-[100vh] sm:max-w-[25vw] sm:block none:hidden duration-200">
         <div className="flex flex-col justify-between mt-[32px] lg:min-h-[423px] md:min-h-[350px] sm:min-h-[300px] duration-200">
-          <div className="w-full flex justify-around">
+          <div
+            onClick={() => {
+              navigate("/");
+            }}
+            className="w-full flex justify-around"
+          > 
             <img
               className="lg:w-[70px] md:w-[60px] sm:w-[50px] duration-200"
               src={"/public/icons/logo.svg"}
@@ -27,7 +34,12 @@ const Register = () => {
       <div className="bg-white w-full  lg:max-w-[60vw] md:max-w-[70vw] flex justify-center pt-[55px] relative  duration-200">
         <div className=" s:w-full sm:max-w-[85%] w-full flex flex-col pt-[44px] gap-y-[86px] items-center">
           <div className="flex justify-end  cursor-pointer w-full pr-[50px]">
-            <button className="sm:hidden s:block absolute top-5 left-5 cursor-pointer">
+            <button
+              onClick={() => {
+                navigate("/");
+              }}
+              className="sm:hidden s:block absolute top-5 left-5 cursor-pointer"
+            >
               <img className="" src="/public/images/logo.png" alt="" />
             </button>
           </div>
