@@ -11,6 +11,7 @@ import Management from "./pages/management/Management";
 import { CourseListingPage } from "./pages/courseListingPage/CourseListingPage";
 import { WorkListingPage } from "./pages/workListingPage/WorkListingPage";
 import Register from "./pages/registrationPage/Register";
+import LoginPage from "./pages/loginPage/LoginPage";
 
 function App() {
   const router = createBrowserRouter(
@@ -24,6 +25,7 @@ function App() {
           <Route path="/work/:id" element={<WorkListingPage />} />
         </Route>
         <Route path="/registration" element={<Register />} />
+        <Route path="/registration/password" element={<LoginPage />} />
       </>
     )
   );
