@@ -2,14 +2,32 @@ import { useNavigate } from "react-router-dom";
 import ButtonOrange from "../../ui/ButtonOrange";
 import { useForm } from "react-hook-form";
 import Input from "../../ui/Input";
+import { useDispatch, useSelector } from "react-redux";
+import { registrationSlice } from "../../redux/auth/UserSlice";
 
 const Register = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const status = useSelector((state) => state.userDataReducer.status);
 
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+
+  console.log(status);
 
   const onSubmit = (data) => {
-    console.log(data);
+    if (errors.name || errors.number || errors.email) return;
+    else {
+      dispatch(registrationSlice(data));
+      if (status === "succeeded") {
+        reset();
+        navigate("/confirm");
+      }
+    }
   };
 
   return (
@@ -67,17 +85,23 @@ const Register = () => {
               <Input
                 placeholder={"Введите имя "}
                 type={"text"}
-                {...register("name", { required: true, minLength: 4 })}
+                register={register}
+                title={"name"}
+                errors={errors}
               />
               <Input
                 placeholder={"Введите номер"}
                 type={"number"}
-                {...register("name", { required: true, minLength: 4 })}
+                register={register}
+                title={"number"}
+                errors={errors}
               />
               <Input
                 placeholder={"Введите свой email  "}
                 type={"email"}
-                {...register("name")}
+                register={register}
+                title={"email"}
+                errors={errors}
               />
               <div className="flex justify-center">
                 <div className="max-w-[185px] mt-[21px] cursor-pointer">
