@@ -1,6 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const BACK_URL = "https://api.elchocrud.pro/api/v1";
+
 export const registrationSlice = createAsyncThunk(
   "auth/registration",
   async (data, { rejectWithValue }) => {
@@ -8,13 +10,28 @@ export const registrationSlice = createAsyncThunk(
 
     try {
       const response = await axios.post(
-        "https://api.elchocrud.pro/api/v1/68d1c772f464b48b0399a4c987705058/auth",
+        `${BACK_URL}/68d1c772f464b48b0399a4c987705058/auth`,
         data
       );
       return response.data;
     } catch (e) {
       console.error(e);
       return rejectWithValue(e.response?.data || e.message);
+    }
+  }
+);
+
+export const confirmUserSlice = createAsyncThunk(
+  "auth/confirmUser",
+  async (data) => {
+    try {
+      const response = await axios.post(
+        `${BACK_URL}/a58743c73d728f7cbf0526acb8d9aff3/confirmUser`,
+        data
+      );
+      return response.data;
+    } catch (e) {
+      console.error(e);
     }
   }
 );
@@ -30,9 +47,20 @@ const UserSlice = createSlice({
       state.status = "loading";
     });
     builder.addCase(registrationSlice.fulfilled, (state) => {
-      state.status = "succeeded";
+      state.status = "success";
     });
     builder.addCase(registrationSlice.rejected, (state, action) => {
+      state.status = "failed";
+      state.error = action.payload;
+    });
+
+    builder.addCase(confirmUserSlice.pending, (state) => {
+      state.status = "loading";
+    });
+    builder.addCase(confirmUserSlice.fulfilled, (state) => {
+      state.status = "success";
+    });
+    builder.addCase(confirmUserSlice.rejected, (state, action) => {
       state.status = "failed";
       state.error = action.payload;
     });

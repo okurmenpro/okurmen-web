@@ -23,7 +23,7 @@ const Register = () => {
     if (errors.name || errors.number || errors.email) return;
     else {
       dispatch(registrationSlice(data));
-      if (status === "succeeded") {
+      if (status === "success") {
         reset();
         navigate("/confirm");
       }

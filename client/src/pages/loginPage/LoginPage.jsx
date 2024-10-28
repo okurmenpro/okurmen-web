@@ -1,8 +1,15 @@
 import { useForm } from "react-hook-form";
 import ButtonOrange from "../../ui/ButtonOrange";
 import Input from "../../ui/Input";
+import { useDispatch, useSelector } from "react-redux";
+import { confirmUserSlice } from "../../redux/auth/UserSlice";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
+  const dispatch = useDispatch();
+  const status = useSelector((state) => state.userDataReducer.status);
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -16,9 +23,17 @@ const LoginPage = () => {
       confirmPassword: "",
     },
   });
+  console.log(status);
 
   const onSubmit = (data) => {
-    console.log(data);
+    if (errors.password || errors.code || errors.confirmPassword) return;
+    else {
+      dispatch(confirmUserSlice(data));
+      if (status === "success") {
+        reset();
+        navigate("/");
+      }
+    }
   };
 
   return (
