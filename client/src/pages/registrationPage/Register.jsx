@@ -1,7 +1,14 @@
 import ButtonOrange from "../../ui/ButtonOrange";
+import { useForm } from "react-hook-form";
 import Input from "../../ui/Input";
 
 const Register = () => {
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);  
+  };
+
   return (
     <div className="flex justify-between items-start">
       <div className="bg-[#ff8a00] lg:max-w-[40vw] md:max-w-[30vw] w-full lg:min-h-[100vw] md:min-h-[120vh] sm:min-h-[100vh] sm:max-w-[25vw] sm:block none:hidden duration-200">
@@ -39,16 +46,29 @@ const Register = () => {
               <span className=" border-solid border-[#ff8a00]  lg:border-b-[3px] w-full lg:max-w-[150px] md:max-w-[120px]  sm:border-b-2 sm:max-w-[100px]  s:max-w-[120px] s:border-b-[2px]   duration-200 "></span>
             </div>
             <form
+              onSubmit={handleSubmit(onSubmit)}
               className="flex flex-col justify-start gap-[38.5px] items-center w-full  lg:max-w-[350px] md:max-w-[300px] sm:max-w-[300px] xs:max-w-[300px] 
             s:max-w-[250px]
             duration-200"
             >
-              <Input placeholder={"Введите имя "} type={"text"} />
-              <Input placeholder={"Введите номер  "} type={"number"} />
-              <Input placeholder={"Введите свой email  "} type={"email"} />
+              <Input
+                placeholder={"Введите имя "}
+                type={"text"}
+                {...register("name", { required: true, minLength: 4 })}
+              />
+              <Input
+                placeholder={"Введите номер" }
+                type={"number"}
+                {...register("name", { required: true, minLength: 4 })}
+              />
+              <Input
+                placeholder={"Введите свой email  "}
+                type={"email"}
+                {...register("name")}
+              />
               <div className="flex justify-center">
                 <div className="max-w-[185px] mt-[21px] cursor-pointer">
-                  <ButtonOrange handleFunction={() => {}}>Далее</ButtonOrange>
+                  <ButtonOrange handleFunction={() => {onSubmit()}}>Далее</ButtonOrange>
                 </div>
               </div>
             </form>
