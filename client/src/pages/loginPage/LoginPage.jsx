@@ -1,27 +1,12 @@
-import { useNavigate } from "react-router-dom";
 import ButtonOrange from "../../ui/ButtonOrange";
-import { useForm } from "react-hook-form";
 import Input from "../../ui/Input";
 
-const Register = () => {
-  const navigate = useNavigate();
-
-  const { register, handleSubmit } = useForm();
-
-  const onSubmit = (data) => {
-    console.log(data);
-  };
-
+const LoginPage = () => {
   return (
     <div className="flex justify-between items-start">
       <div className="bg-[#ff8a00] lg:max-w-[40vw] md:max-w-[30vw] w-full lg:min-h-[100vw] md:min-h-[120vh] sm:min-h-[100vh] sm:max-w-[25vw] sm:block none:hidden duration-200">
         <div className="flex flex-col justify-between mt-[32px] lg:min-h-[423px] md:min-h-[350px] sm:min-h-[300px] duration-200">
-          <div
-            onClick={() => {
-              navigate("/");
-            }}
-            className="w-full flex justify-around"
-          >
+          <div className="w-full flex justify-around">
             <img
               className="lg:w-[70px] md:w-[60px] sm:w-[50px] duration-200"
               src={"/public/icons/logo.svg"}
@@ -42,12 +27,7 @@ const Register = () => {
       <div className="bg-white w-full  lg:max-w-[60vw] md:max-w-[70vw] flex justify-center pt-[55px] relative  duration-200">
         <div className=" s:w-full sm:max-w-[85%] w-full flex flex-col pt-[44px] gap-y-[86px] items-center">
           <div className="flex justify-end  cursor-pointer w-full pr-[50px]">
-            <button
-              onClick={() => {
-                navigate("/");
-              }}
-              className="sm:hidden s:block absolute top-5 left-5 cursor-pointer"
-            >
+            <button className="sm:hidden s:block absolute top-5 left-5 cursor-pointer">
               <img className="" src="/public/images/logo.png" alt="" />
             </button>
           </div>
@@ -59,35 +39,15 @@ const Register = () => {
               <span className=" border-solid border-[#ff8a00]  lg:border-b-[3px] w-full lg:max-w-[150px] md:max-w-[120px]  sm:border-b-2 sm:max-w-[100px]  s:max-w-[120px] s:border-b-[2px]   duration-200 "></span>
             </div>
             <form
-              onSubmit={handleSubmit(onSubmit)}
               className="flex flex-col justify-start gap-[38.5px] items-center w-full  lg:max-w-[350px] md:max-w-[300px] sm:max-w-[300px] xs:max-w-[300px] 
             s:max-w-[250px]
             duration-200"
             >
-              <Input
-                placeholder={"Введите имя "}
-                type={"text"}
-                {...register("name", { required: true, minLength: 4 })}
-              />
-              <Input
-                placeholder={"Введите номер"}
-                type={"number"}
-                {...register("name", { required: true, minLength: 4 })}
-              />
-              <Input
-                placeholder={"Введите свой email  "}
-                type={"email"}
-                {...register("name")}
-              />
+              <Input placeholder={"Создайте пароль "} type={"password"} />
+              <Input placeholder={"Введите пароль  "} type={"password"} />
               <div className="flex justify-center">
                 <div className="max-w-[185px] mt-[21px] cursor-pointer">
-                  <ButtonOrange
-                    handleFunction={() => {
-                      onSubmit();
-                    }}
-                  >
-                    Далее
-                  </ButtonOrange>
+                  <ButtonOrange handleFunction={() => {}}>Далее</ButtonOrange>
                 </div>
               </div>
             </form>
@@ -98,4 +58,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default LoginPage;
