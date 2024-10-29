@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import ButtonOrange from "../../ui/ButtonOrange";
 import { useForm } from "react-hook-form";
-import Input from "../../ui/Input";
 import { useDispatch, useSelector } from "react-redux";
 import { registrationSlice } from "../../redux/auth/UserSlice";
+import AuthInput from "../../ui/inputs/AuthInput";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ const Register = () => {
       dispatch(registrationSlice(data));
       if (status === "success") {
         reset();
-        navigate("/confirm");
+        navigate("/register-confirm");
       }
     }
   };
@@ -82,21 +82,21 @@ const Register = () => {
             s:max-w-[250px]
             duration-200"
             >
-              <Input
+              <AuthInput
                 placeholder={"Введите имя "}
                 type={"text"}
                 register={register}
                 title={"name"}
                 errors={errors}
               />
-              <Input
+              <AuthInput
                 placeholder={"Введите номер"}
                 type={"number"}
                 register={register}
                 title={"number"}
                 errors={errors}
               />
-              <Input
+              <AuthInput
                 placeholder={"Введите свой email  "}
                 type={"email"}
                 register={register}

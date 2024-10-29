@@ -1,11 +1,11 @@
 import { useForm } from "react-hook-form";
 import ButtonOrange from "../../ui/ButtonOrange";
-import Input from "../../ui/Input";
 import { useDispatch, useSelector } from "react-redux";
 import { confirmUserSlice } from "../../redux/auth/UserSlice";
 import { useNavigate } from "react-router-dom";
+import AuthInput from "../../ui/inputs/AuthInput";
 
-const LoginPage = () => {
+const ConfirmRegisterPage = () => {
   const dispatch = useDispatch();
   const status = useSelector((state) => state.userDataReducer.status);
   const navigate = useNavigate();
@@ -78,7 +78,7 @@ const LoginPage = () => {
             s:max-w-[250px]
             duration-200"
             >
-              <Input
+              <AuthInput
                 placeholder={"Подтверждение"}
                 errors={errors}
                 type={"text"}
@@ -86,7 +86,7 @@ const LoginPage = () => {
                 title={"code"}
                 getValues={getValues}
               />
-              <Input
+              <AuthInput
                 placeholder={"Создайте пароль "}
                 errors={errors}
                 type={"password"}
@@ -94,7 +94,7 @@ const LoginPage = () => {
                 title={"password"}
                 getValues={getValues}
               />
-              <Input
+              <AuthInput
                 placeholder={"Введите пароль  "}
                 type={"password"}
                 register={register}
@@ -115,4 +115,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default ConfirmRegisterPage;
