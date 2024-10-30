@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const BACK_URL = import.meta.env.BACK_URL
+const BACK_URL = import.meta.env.VITE_BACKEND_URL;
 
 
 export const registrationSlice = createAsyncThunk(
