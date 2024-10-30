@@ -8,7 +8,6 @@ const ProfileInput = ({ type, placeholder, title }) => {
     setIsInput(true);
     setTimeout(() => {
       if (inputRef.current) {
-        console.log(inputRef.current);
         inputRef.current.focus();
       }
     }, 0);
