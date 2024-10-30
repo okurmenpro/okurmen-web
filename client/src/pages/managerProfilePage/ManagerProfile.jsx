@@ -1,8 +1,14 @@
+import HeaderAdmin from "../../components/headerAdmin/HeaderAdmin";
+import ProfileInput from "../../ui/inputs/ProfileInput";
+import {  useSelector } from "react-redux";
+
 const ManagerProfile = () => {
-  const data = useSelector((state) => state.profileReducer.data);
+  // const data = useSelector((state)=> state.profile.data)
+  // console.log(data);
+  
   return (
     <div>
-      {/* <HeaderAdmin /> */}
+      <HeaderAdmin />
       <div className=" flex justify-around gap-[30px] h-[100vh] pt-[100px] px-[20px] max-lg:flex-wrap">
         <div
           className="flex flex-col justify-start
