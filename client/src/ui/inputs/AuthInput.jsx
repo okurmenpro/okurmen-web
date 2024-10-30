@@ -1,5 +1,12 @@
 /* eslint-disable react/prop-types */
-const Input = ({ placeholder, type, register, title, errors, getValues }) => {
+const AuthInput = ({
+  placeholder,
+  type,
+  register,
+  title,
+  errors,
+  getValues,
+}) => {
   const getBorderColor = (field) =>
     errors[field] ? "border-red-500" : "border-[#ff8a00]";
 
@@ -75,4 +82,4 @@ const Input = ({ placeholder, type, register, title, errors, getValues }) => {
   );
 };
 
-export default Input;
+export default AuthInput;

@@ -10,7 +10,8 @@ import Management from "../pages/management/Management";
 import { CourseListingPage } from "../pages/courseListingPage/CourseListingPage";
 import { WorkListingPage } from "../pages/workListingPage/WorkListingPage";
 import Register from "../pages/registrationPage/Register";
-import LoginPage from "../pages/loginPage/LoginPage";
+import ProfilePage from "../pages/profilePage/ProfilePage";
+import ConfirmRegisterPage from "../pages/ConfirmRegisterPage/ConfirmRegisterPage";
 
 const AppRoutes = () => {
   return createBrowserRouter(
@@ -24,7 +25,8 @@ const AppRoutes = () => {
           <Route path="/work/:id" element={<WorkListingPage />} />
         </Route>
         <Route path="/registration" element={<Register />} />
-        <Route path="/confirm" element={<LoginPage />} />
+        <Route path="/register-confirm" element={<ConfirmRegisterPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </>
     )
   );
