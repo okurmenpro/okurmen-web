@@ -1,10 +1,8 @@
-import HeaderAdmin from "../../components/headerAdmin/HeaderAdmin";
 import ProfileInput from "../../ui/inputs/ProfileInput";
 
 const ProfilePage = () => {
   return (
     <div>
-      <HeaderAdmin />
       <div className=" flex justify-around gap-[30px] h-[100vh] pt-[100px] px-[20px] max-lg:flex-wrap">
         <div
           className="flex flex-col justify-start
