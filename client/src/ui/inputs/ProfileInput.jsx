@@ -22,7 +22,7 @@ const ProfileInput = ({ type, placeholder, title }) => {
       <span className="border-solid border-[#FF8A00] broder-b-[1px]"></span>
       <div className="flex flex-col max-w-[390px] w-full">
         <div className="flex items-center">
-          <p className="text-base font-bold pb-[9px] pl-[5px] ">{title}:</p>
+          <p className="text-base font-bold pb-[9px] pl-[5px] whitespace-nowrap">{title}:</p>
           {isInput ? (
             <>
               <input
@@ -34,7 +34,7 @@ const ProfileInput = ({ type, placeholder, title }) => {
                 }}
                 type={type}
                 placeholder={placeholder}
-                className={` outline-none pb-[9px] pl-[10px] text-base font-bold text-[#FF8A00]`}
+                className={` outline-none pb-[9px] pl-[10px] text-base font-bold text-[#FF8A00] w-fit`}
               />
             </>
           ) : (

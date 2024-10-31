@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const BACK_URL = "https://api.elchocrud.pro/api/v1";
+const BACK_URL = import.meta.env.VITE_BACKEND_URL;
+
 
 export const registrationSlice = createAsyncThunk(
   "auth/registration",
