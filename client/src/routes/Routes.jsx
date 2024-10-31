@@ -24,11 +24,11 @@ const AppRoutes = () => {
           <Route path="/management" element={<Management />} />
           <Route path="/course/:id" element={<CourseListingPage />} />
           <Route path="/work/:id" element={<WorkListingPage />} />
+          <Route path="/registration" element={<Register />} />
+          <Route path="/register-confirm" element={<ConfirmRegisterPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/manager-profile" element={<ManagerProfile />} />
         </Route>
-        <Route path="/registration" element={<Register />} />
-        <Route path="/register-confirm" element={<ConfirmRegisterPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/manager-profile" element={<ManagerProfile />} />
       </>
     )
   );

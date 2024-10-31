@@ -1,8 +1,7 @@
-import { useRef, useState } from "react";
-import HeaderAdmin from "../../components/headerAdmin/HeaderAdmin";
 import ProfileInput from "../../ui/inputs/ProfileInput";
 import InputImage from "../../ui/inputs/InputImage";
 import ButtonOrange from "../../ui/ButtonOrange";
+import { useRef, useState } from "react";
 
 const ProfilePage = () => {
   const [isInputs, setIsInputs] = useState(false);
@@ -28,7 +27,6 @@ const ProfilePage = () => {
 
   return (
     <div>
-      <HeaderAdmin />
       <div className=" flex justify-around gap-[30px] h-[100vh] pt-[100px] px-[20px] max-lg:flex-wrap">
         <div
           className="flex flex-col justify-start
