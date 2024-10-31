@@ -4,11 +4,11 @@ import ButtonOrange from "../../ui/ButtonOrange";
 import { useRef, useState } from "react";
 
 const ProfilePage = () => {
-  const [isInputs, setIsInputs] = useState(false);
+  const [isUpdate, setIsUpdate] = useState(false);
   const inputRef = useRef(null);
 
   const handleButtonClick = () => {
-    setIsInputs(true);
+    setIsUpdate(true);
     setTimeout(() => {
       if (inputRef.current) {
         inputRef.current.focus();
@@ -26,8 +26,8 @@ const ProfilePage = () => {
   };
 
   return (
-    <div>
-      <div className=" flex justify-around gap-[30px] h-[100vh] pt-[100px] px-[20px] max-lg:flex-wrap">
+    <div className="container">
+      <div className=" flex justify-between gap-[30px] min-h-[100vh] pt-[100px]  max-lg:flex-wrap">
         <div
           className="flex flex-col justify-start
           items-center max-w-[400px] w-full"
@@ -35,22 +35,16 @@ const ProfilePage = () => {
           <div className="flex flex-col w-full justify-center  mb-[46px]">
             <div className="flex justify-center mb-[10px]">
               <InputImage
+                isUpdate={isUpdate}
                 onChange={(event) => {
                   handleFileChange(event);
                 }}
               />
             </div>
 
-            {isInputs ? (
+            {isUpdate ? (
               <input
                 type="text"
-                ref={inputRef}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === "Return") {
-                    handleSaveChangeValue();
-                    setIsInputs(false);
-                  }
-                }}
                 placeholder="name"
                 className="outline-none  self-center text-center pb-[9px] text-base font-bold text-[#FF8A00] w-fit border-b-[3px] border-solid border-[#FF8A00]  "
               />
@@ -61,64 +55,69 @@ const ProfilePage = () => {
             )}
           </div>
           <div className="flex flex-col max-w-[390px] w-full">
-            <form className="flex flex-col gap-[25px]">
+            <form
+              onClick={(e) => {
+                e.preventDefault();
+              }}
+              className={`flex flex-col ${isUpdate ? "gap-[10px]" : "gap-[20px]"}`}
+            >
               <ProfileInput
                 placeholder={"Гость"}
                 type={"text"}
                 title={"Текущий статус  "}
-                isInputs={isInputs}
-                setIsInputs={setIsInputs}
-                handleSaveChangeValue={handleSaveChangeValue}
+                isUpdate={isUpdate}
               />
               <ProfileInput
                 placeholder={"неизвестно"}
                 type={"text"}
                 title={"Возраст  "}
-                isInputs={isInputs}
-                setIsInputs={setIsInputs}
-                handleSaveChangeValue={handleSaveChangeValue}
+                isUpdate={isUpdate}
               />
               <ProfileInput
                 placeholder={"неизвестно"}
                 type={"text"}
                 title={"Направление  "}
-                isInputs={isInputs}
-                setIsInputs={setIsInputs}
-                handleSaveChangeValue={handleSaveChangeValue}
+                isUpdate={isUpdate}
               />
               <ProfileInput
                 placeholder={"неизвестно"}
                 type={"text"}
                 title={"Срок обучения "}
-                isInputs={isInputs}
-                setIsInputs={setIsInputs}
-                handleSaveChangeValue={handleSaveChangeValue}
+                isUpdate={isUpdate}
               />
               <ProfileInput
                 placeholder={"gost345@gmal.com"}
                 type={"text"}
                 title={"E-mail "}
-                isInputs={isInputs}
-                setIsInputs={setIsInputs}
-                handleSaveChangeValue={handleSaveChangeValue}
+                isUpdate={isUpdate}
               />
-              <div
-                className="mt-[10px] self-end
-            "
-              >
-                <ButtonOrange
-                  handleFunction={() => {
-                    setIsInputs(!isInputs);
-                    if (!isInputs) {
-                      handleButtonClick();
-                    }
-                    handleSaveChangeValue();
-                  }}
-                >
-                  <p className="text-lg">
-                    {isInputs ? "Сохранить" : "Изменить"}
-                  </p>
-                </ButtonOrange>
+              <div className=" flex  flex-wrap justify-between mt-[10px] w-full self-end">
+                <div className="">
+                  <ButtonOrange
+                    handleFunction={() => {
+                      setIsUpdate(true);
+                      if (!isUpdate) {
+                        handleButtonClick();
+                      }
+                      handleSaveChangeValue();
+                    }}
+                  >
+                    <p className="text-lg">
+                      {isUpdate ? "Сохранить" : "Изменить"}
+                    </p>
+                  </ButtonOrange>
+                </div>
+                <div>
+                  {isUpdate && (
+                    <ButtonOrange
+                      handleFunction={() => {
+                        setIsUpdate(false);
+                      }}
+                    >
+                      <p className="text-lg">Отменить</p>
+                    </ButtonOrange>
+                  )}
+                </div>
               </div>
             </form>
           </div>

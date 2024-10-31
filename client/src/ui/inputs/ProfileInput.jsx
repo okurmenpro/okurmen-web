@@ -1,32 +1,23 @@
 /* eslint-disable react/prop-types */
-const ProfileInput = ({
-  type,
-  placeholder,
-  title,
-  isInputs,
-  handleSaveChangeValue,
-  setIsInputs,
-}) => {
+const ProfileInput = ({ type, placeholder, title, isUpdate }) => {
   return (
     <div>
       <span className="border-solid border-[#FF8A00] broder-b-[1px]"></span>
       <div className="flex flex-col max-w-[390px] w-full">
-        <div className="flex items-center">
+        <div
+          className={` ${
+            isUpdate ? "flex-col items-start" : "flex  items-center"
+          }`}
+        >
           <p className="text-base font-bold pb-[9px] pl-[5px] whitespace-nowrap">
             {title}:
           </p>
-          {isInputs ? (
+          {isUpdate ? (
             <>
               <input
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === "Return") {
-                    handleSaveChangeValue();
-                    setIsInputs(false);
-                  }
-                }}
                 type={type}
                 placeholder={placeholder}
-                className={` outline-none pb-[9px] pl-[10px] text-base font-bold text-[#FF8A00] w-fit`}
+                className={` outline-none py-[5px] pl-[10px] text-base font-bold text-[#FF8A00] w-full border-[2px] border-solid border-[#FF8A00] rounded-[5px]`}
               />
             </>
           ) : (
@@ -42,9 +33,13 @@ const ProfileInput = ({
           )}
         </div>
 
-        <span
-          className={`border-solid border-[#FF8A00]  border-b-[3px] w-full max-w-[390px] rounded-xl`}
-        ></span>
+        {isUpdate ? null : (
+          <>
+            <span
+              className={`border-solid border-[#FF8A00]  border-b-[3px] w-full max-w-[390px] rounded-xl`}
+            ></span>
+          </>
+        )}
       </div>
     </div>
   );

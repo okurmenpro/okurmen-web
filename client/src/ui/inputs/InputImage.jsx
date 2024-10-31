@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useRef, useState } from "react";
 
-const InputImage = ({ onChange }) => {
+const InputImage = ({ onChange, isUpdate }) => {
   const [image, setImage] = useState(false);
   const fileInputRef = useRef(null);
 
@@ -36,12 +36,16 @@ const InputImage = ({ onChange }) => {
           handleFileChange(e);
         }}
       />
-      <button
-        onClick={handleButtonClick}
-        className="absolute top-[70%] right-[0%]"
-      >
-        <img src="/public/icons/update.svg" alt="icon" />
-      </button>
+      {isUpdate ? (
+        <>
+          <button
+            onClick={handleButtonClick}
+            className="absolute top-[30%] right-[30%]"
+          >
+            <img src="/public/icons/camera.svg" alt="icon" />
+          </button>
+        </>
+      ) : null}
       <img
         className={`max-w-[124px] w-full  h-[124px] mb-[9px] self-center  rounded-full object-fill   bg-center bg-no-repeat `}
         src={!image ? "/public/images/profileImg.png" : image}
