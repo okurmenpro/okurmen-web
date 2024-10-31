@@ -1,35 +1,27 @@
 /* eslint-disable react/prop-types */
-import { useRef, useState } from "react";
-const ProfileInput = ({ type, placeholder, title }) => {
-  const [isInput, setIsInput] = useState(false);
-  const inputRef = useRef(null);
-
-  const handleButtonClick = () => {
-    setIsInput(true);
-    setTimeout(() => {
-      if (inputRef.current) {
-        inputRef.current.focus();
-      }
-    }, 0);
-  };
-
-  const handleSaveChangeValue = () => {
-    console.log("save");
-  };
-
+const ProfileInput = ({
+  type,
+  placeholder,
+  title,
+  isInputs,
+  handleSaveChangeValue,
+  setIsInputs,
+}) => {
   return (
     <div>
       <span className="border-solid border-[#FF8A00] broder-b-[1px]"></span>
       <div className="flex flex-col max-w-[390px] w-full">
         <div className="flex items-center">
-          <p className="text-base font-bold pb-[9px] pl-[5px] whitespace-nowrap">{title}:</p>
-          {isInput ? (
+          <p className="text-base font-bold pb-[9px] pl-[5px] whitespace-nowrap">
+            {title}:
+          </p>
+          {isInputs ? (
             <>
               <input
-                ref={inputRef}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === "Return") {
                     handleSaveChangeValue();
+                    setIsInputs(false);
                   }
                 }}
                 type={type}
@@ -38,17 +30,15 @@ const ProfileInput = ({ type, placeholder, title }) => {
               />
             </>
           ) : (
-            <button onClick={handleButtonClick}>
-              <p
-                className={`pb-[9px] pl-[10px] text-base font-bold   ${
-                  placeholder === "неизвестно"
-                    ? "text-[#d9d9d9]"
-                    : "text-[#FF8A00]"
-                }`}
-              >
-                {placeholder}
-              </p>
-            </button>
+            <p
+              className={`pb-[9px] pl-[10px] text-base font-bold   ${
+                placeholder === "неизвестно"
+                  ? "text-[#d9d9d9]"
+                  : "text-[#FF8A00]"
+              }`}
+            >
+              {placeholder}
+            </p>
           )}
         </div>
 

@@ -1,17 +1,39 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import HeaderAdmin from "../../components/headerAdmin/HeaderAdmin";
 import ProfileInput from "../../ui/inputs/ProfileInput";
 import { useDispatch, useSelector } from "react-redux";
 import { managerGetProfile } from "../../redux/auth/ProfileSlice";
 import BarChart from "../../ui/BarChart";
+import InputImage from "../../ui/inputs/InputImage";
+import ButtonOrange from "../../ui/ButtonOrange";
 
 const ManagerProfile = () => {
+  const [isInputs, setIsInputs] = useState(false);
+  const inputRef = useRef(null);
   const data = useSelector((state) => state.profileReducer.data);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(managerGetProfile());
   }, [dispatch]);
+
+  const handleButtonClick = () => {
+    setIsInputs(true);
+    setTimeout(() => {
+      if (inputRef.current) {
+        inputRef.current.focus();
+      }
+    }, 0);
+  };
+
+  // save form && info user
+  const handleSaveChangeValue = () => {
+    console.log("save");
+  };
+  // save photo
+  const handleFileChange = (event) => {
+    console.log(event);
+  };
 
   return (
     <div>
@@ -22,12 +44,32 @@ const ManagerProfile = () => {
           items-center max-w-[400px] w-full"
         >
           <div className="flex flex-col justify-center w-max mb-[46px]">
-            <img
-              className="max-w-[124px] mb-[9px]"
-              src="/public/images/profileImg.png"
-              alt="image"
-            />
-            <p className="text-center text-base font-bold">name</p>
+            <div className="flex justify-center mb-[10px]">
+              <InputImage
+                onChange={(event) => {
+                  handleFileChange(event);
+                }}
+              />
+            </div>
+
+            {isInputs ? (
+              <input
+                type="text"
+                ref={inputRef}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === "Return") {
+                    handleSaveChangeValue();
+                    setIsInputs(false);
+                  }
+                }}
+                placeholder="name"
+                className="outline-none  self-center text-center pb-[9px] text-base font-bold text-[#FF8A00] w-fit border-b-[3px] border-solid border-[#FF8A00]  "
+              />
+            ) : (
+              <>
+                <p className="text-center   text-base font-bold">name</p>
+              </>
+            )}
           </div>
           <div className="flex flex-col max-w-[390px] w-full mb-[36px]">
             <form className="flex flex-col gap-[25px]">
@@ -35,17 +77,44 @@ const ManagerProfile = () => {
                 placeholder={"менеджер"}
                 type={"text"}
                 title={"Текущий статус  "}
+                handleSaveChangeValue={handleSaveChangeValue}
+                isInputs={isInputs}
+                setIsInputs={setIsInputs}
               />
               <ProfileInput
                 placeholder={"manager345@gmal.com"}
                 type={"text"}
                 title={"E-mail"}
+                handleSaveChangeValue={handleSaveChangeValue}
+                isInputs={isInputs}
+                setIsInputs={setIsInputs}
               />
               <ProfileInput
                 placeholder={"234"}
                 type={"text"}
                 title={"Количество приглашенных студентов  "}
+                handleSaveChangeValue={handleSaveChangeValue}
+                isInputs={isInputs}
+                setIsInputs={setIsInputs}
               />
+              <div
+                className="mt-[10px] self-end
+            "
+              >
+                <ButtonOrange
+                  handleFunction={() => {
+                    setIsInputs(!isInputs);
+                    if (!isInputs) {
+                      handleButtonClick();
+                    }
+                    handleSaveChangeValue();
+                  }}
+                >
+                  <p className="text-lg">
+                    {isInputs ? "Сохранить" : "Изменить"}
+                  </p>
+                </ButtonOrange>
+              </div>
             </form>
           </div>
           <div className="max-w-[390px] w-full">
