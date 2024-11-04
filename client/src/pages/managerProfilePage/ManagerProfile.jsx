@@ -1,16 +1,18 @@
 import { useEffect, useRef, useState } from "react";
-import ProfileInput from "../../ui/inputs/ProfileInput";
+import ProfileInput from "../../ui/inputs/ProfilePageInput";
 import { useDispatch, useSelector } from "react-redux";
 import { managerGetProfile } from "../../redux/auth/ProfileSlice";
 import BarChart from "../../ui/BarChart";
 import InputImage from "../../ui/inputs/InputImage";
 import ButtonOrange from "../../ui/ButtonOrange";
+import { useNavigate } from "react-router-dom";
 
 const ManagerProfile = () => {
   const [isUpdate, setIsUpdate] = useState(false);
   const inputRef = useRef(null);
   const data = useSelector((state) => state.profileReducer.data);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(managerGetProfile());
@@ -154,7 +156,12 @@ const ManagerProfile = () => {
                   <div className="flex flex-col gap-[10px]">
                     {col?.groups?.map((colItem) => (
                       <>
-                        <div className="flex last:mb-[30px] border border-solid border-[#FF8A00] rounded-full py-[9px] px-[20px]">
+                        <div
+                          onClick={() => {
+                            navigate(`/group/${colItem.NumGroup}`);
+                          }}
+                          className="flex last:mb-[30px] border border-solid cursor-pointer border-[#FF8A00] rounded-full py-[9px] px-[20px]"
+                        >
                           <p className="font-bold text-[20px]">
                             {colItem.NumGroup}-гр.
                           </p>
