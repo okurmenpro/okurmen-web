@@ -142,7 +142,10 @@ const ManagerProfile = () => {
           max-w-[595px] w-full  "
         >
           <div className="flex justify-end">
-            <button className=" font-bold text-[20px] text-[#FF8A00] cursor-pointer  p-[5px]">
+            <button
+              onClick={() => navigate("/students")}
+              className=" font-bold text-[20px] text-[#FF8A00] cursor-pointer  p-[5px]"
+            >
               Все студенты
             </button>
           </div>

@@ -14,6 +14,7 @@ import ProfilePage from "../pages/profilePage/ProfilePage";
 import ConfirmRegisterPage from "../pages/ConfirmRegisterPage/ConfirmRegisterPage";
 import ManagerProfile from "../pages/managerProfilePage/ManagerProfile";
 import GroupPage from "../pages/groupPage/GroupPage";
+import StudentsPage from "../pages/studentsPage/StudetsPage";
 
 const AppRoutes = () => {
   return createBrowserRouter(
@@ -26,6 +27,7 @@ const AppRoutes = () => {
           <Route path="/course/:id" element={<CourseListingPage />} />
           <Route path="/work/:id" element={<WorkListingPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/students" element={<StudentsPage />} />
           <Route path="/manager-profile" element={<ManagerProfile />} />
           <Route path="/group/:id" element={<GroupPage />} />
         </Route>
