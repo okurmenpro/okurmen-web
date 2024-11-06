@@ -17,11 +17,11 @@ const GroupPage = () => {
 
   return (
     <div className="container pb-[50px]">
-      <div className="flex  items-center justify-between flex-wrap mb-[60px]">
+      <div className="flex  items-center justify-between flex-wrap lg:gap-[10px] gap-[20px]  mb-[60px]">
         <div className="max-w-[705px] w-full">
           <SearchInput />
         </div>
-        <div className=" max-w-[157px] ">
+        <div className=" max-w-fit ">
           <ButtonOrange handleFunction={() => {}}>
             <p className="text-base font-bold">Добавить</p>
           </ButtonOrange>
