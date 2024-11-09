@@ -1,4 +1,4 @@
-import ProfileInput from "../../ui/inputs/ProfileInput";
+import ProfileInput from "../../ui/inputs/ProfilePageInput";
 import InputImage from "../../ui/inputs/InputImage";
 import ButtonOrange from "../../ui/ButtonOrange";
 import { useRef, useState } from "react";
