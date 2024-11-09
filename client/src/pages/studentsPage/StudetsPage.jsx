@@ -1,15 +1,17 @@
 import { useDispatch, useSelector } from "react-redux";
 import ContainerStudents from "../../components/containerStudents/ContainerStudents";
-import ButtonOrange from "../../ui/ButtonOrange";
 import SearchInput from "../../ui/inputs/SearchInput";
 import { useEffect, useState } from "react";
 import { groupStudentsSlice } from "../../redux/students/GroupStudents";
 import SideBar from "../../components/sideBar/SideBar";
+import ButtonOrange from "../../ui/buttons/ButtonOrange";
+import ModalAddStudent from "../../components/modalAddStudent/ModalAddStudent";
 
 const StudentsPage = () => {
   const data = useSelector((state) => state.groupStudentsReducer.data);
   const dispatch = useDispatch();
   const [isBarOpen, setIsBarOpen] = useState(false);
+  const [isModal, setIsModal] = useState(false);
 
   useEffect(() => {
     dispatch(groupStudentsSlice());
@@ -22,7 +24,9 @@ const StudentsPage = () => {
           <SearchInput />
         </div>
         <div className=" max-w-fit ">
-          <ButtonOrange handleFunction={() => {}}>
+          <ButtonOrange handleFunction={() => {
+            setIsModal(true)
+          }}>
             <p className="text-base font-bold">Добавить</p>
           </ButtonOrange>
         </div>
@@ -40,6 +44,7 @@ const StudentsPage = () => {
       <div className="mt-[77px]">
         <ContainerStudents data={data} />
       </div>
+      <ModalAddStudent isModal={isModal} setIsModal={setIsModal} />
     </div>
   );
 };

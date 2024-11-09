@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Button from "../../ui/Button";
 import Navbar from "../navbar/Navbar";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Button from "../../ui/buttons/Button";
 
 const navlinks = [
   {

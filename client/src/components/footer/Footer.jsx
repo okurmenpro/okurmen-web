@@ -1,7 +1,7 @@
 import { IoLogoInstagram, IoLogoWhatsapp } from 'react-icons/io';
-import Button from '../../ui/Button';
 import { FaTelegramPlane } from 'react-icons/fa';
 import { FiMail } from 'react-icons/fi';
+import Button from '../../ui/buttons/Button';
 
 const Footer = () => {
 	return (
