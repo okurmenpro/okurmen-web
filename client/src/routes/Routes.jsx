@@ -15,6 +15,7 @@ import ConfirmRegisterPage from "../pages/ConfirmRegisterPage/ConfirmRegisterPag
 import ManagerProfile from "../pages/managerProfilePage/ManagerProfile";
 import GroupPage from "../pages/groupPage/GroupPage";
 import StudentsPage from "../pages/studentsPage/StudetsPage";
+import BackendFrontend from "../pages/backendFrontend/BackendFrontend";
 
 const AppRoutes = () => {
   return createBrowserRouter(
@@ -30,6 +31,7 @@ const AppRoutes = () => {
           <Route path="/students" element={<StudentsPage />} />
           <Route path="/manager-profile" element={<ManagerProfile />} />
           <Route path="/group/:id" element={<GroupPage />} />
+          <Route path="/frontendBackend" element={<BackendFrontend />} />
         </Route>
         <Route path="/registration" element={<Register />} />
         <Route path="/register-confirm" element={<ConfirmRegisterPage />} />
