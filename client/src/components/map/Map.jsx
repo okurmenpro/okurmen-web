@@ -2,7 +2,7 @@ const Map = () => {
 	return (
 		<div className='container'>
 			<div className='w-full'>
-				<div className='block inline-block md:flex justify-between items-center mt-[140px]'>
+				<div className=' inline-block md:flex justify-between items-center mt-[140px]'>
 					<h1 className='text-4xl font-semibold'>
 						Биздин <span className='text-yellow-500'>дарек</span>
 					</h1>
