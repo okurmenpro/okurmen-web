@@ -14,8 +14,10 @@ import ProfilePage from "../pages/profilePage/ProfilePage";
 import ConfirmRegisterPage from "../pages/ConfirmRegisterPage/ConfirmRegisterPage";
 import ManagerProfile from "../pages/managerProfilePage/ManagerProfile";
 import BackendPage1 from "../pages/backendPage/BackendPage";
+import UxUiPage from "../pages/uxuiPage/UxUiPage";
 import GroupPage from "../pages/groupPage/GroupPage";
 import StudentsPage from "../pages/studentsPage/StudetsPage";
+import PythonPage from "../pages/PythonPage/PythonPage";
 
 const AppRoutes = () => {
   return createBrowserRouter(
@@ -32,9 +34,11 @@ const AppRoutes = () => {
           <Route path="/manager-profile" element={<ManagerProfile />} />
           <Route path="/backend" element={<BackendPage1 />} />
           <Route path="/group/:id" element={<GroupPage />} />
+          <Route path="/python" element={<PythonPage />} />
         </Route>
         <Route path="/registration" element={<Register />} />
         <Route path="/register-confirm" element={<ConfirmRegisterPage />} />
+        <Route path="/uxui" element={<UxUiPage />} />
       </>
     )
   );
