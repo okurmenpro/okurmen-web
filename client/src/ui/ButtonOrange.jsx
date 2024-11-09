@@ -2,8 +2,10 @@
 const ButtonOrange = ({ children, handleFunction }) => {
   return (
     <button
-      className="s:px-[40px] s:py-[8px] s:text-[14px] sm:px-[50px] sm:py-[8px] md:px-[50px] md:py-[10px]  w-full rounded-full lg:py-[15px]
+      className="s:text-[14px] w-full rounded-full 
             bg-[#ff8a00] text-white font-bold lg:text-[20px] duration-100
+            px-[30px] py-[10px]
+            sm:px-[45px] sm:py-[20px] xs:px-[35px] xs:py-[15px] s:px-[30px] s:py-[10px]
           "
       type="submit"
       onClick={() => {
