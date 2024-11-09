@@ -13,12 +13,9 @@ import Register from "../pages/registrationPage/Register";
 import ProfilePage from "../pages/profilePage/ProfilePage";
 import ConfirmRegisterPage from "../pages/ConfirmRegisterPage/ConfirmRegisterPage";
 import ManagerProfile from "../pages/managerProfilePage/ManagerProfile";
-<<<<<<< HEAD
 import BackendPage1 from "../pages/backendPage/BackendPage";
-=======
 import GroupPage from "../pages/groupPage/GroupPage";
 import StudentsPage from "../pages/studentsPage/StudetsPage";
->>>>>>> dev
 
 const AppRoutes = () => {
   return createBrowserRouter(
@@ -33,11 +30,8 @@ const AppRoutes = () => {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/students" element={<StudentsPage />} />
           <Route path="/manager-profile" element={<ManagerProfile />} />
-<<<<<<< HEAD
           <Route path="/backend" element={<BackendPage1 />} />
-=======
           <Route path="/group/:id" element={<GroupPage />} />
->>>>>>> dev
         </Route>
         <Route path="/registration" element={<Register />} />
         <Route path="/register-confirm" element={<ConfirmRegisterPage />} />
