@@ -15,6 +15,7 @@ import ConfirmRegisterPage from "../pages/ConfirmRegisterPage/ConfirmRegisterPag
 import ManagerProfile from "../pages/managerProfilePage/ManagerProfile";
 import GroupPage from "../pages/groupPage/GroupPage";
 import StudentsPage from "../pages/studentsPage/StudetsPage";
+import ConsulationPage from "../components/consultationPage/ConsulationPage";
 
 const AppRoutes = () => {
   return createBrowserRouter(
@@ -33,6 +34,7 @@ const AppRoutes = () => {
         </Route>
         <Route path="/registration" element={<Register />} />
         <Route path="/register-confirm" element={<ConfirmRegisterPage />} />
+        <Route path="/consultation" element={<ConsulationPage/>} />
       </>
     )
   );
