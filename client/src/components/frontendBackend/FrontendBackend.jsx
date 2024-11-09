@@ -1,5 +1,3 @@
-//
-
 import React from "react";
 import pylogo from "../../../public/images/py.png";
 import jslogo from "../../../public/images/jsLogo.png";
@@ -7,7 +5,7 @@ import jslogo from "../../../public/images/jsLogo.png";
 const FrontendBackend = () => {
   return (
     <div className="flex justify-center items-center min-h-screen  ">
-      <div className="bg-white  rounded-lg p-8 w-[1000px] flex items-start ">
+      <div className="bg-white  rounded-lg p-8 w-[1440px] flex items-start ">
         <div className="flex-1 mr-8 w-[500px]">
           <h2 className="text-6xl font-bold text-blue-800 mb-4">
             Frontend+Backend
