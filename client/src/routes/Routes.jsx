@@ -13,6 +13,7 @@ import Register from "../pages/registrationPage/Register";
 import ProfilePage from "../pages/profilePage/ProfilePage";
 import ConfirmRegisterPage from "../pages/ConfirmRegisterPage/ConfirmRegisterPage";
 import ManagerProfile from "../pages/managerProfilePage/ManagerProfile";
+import BackendPage1 from "../pages/backendPage/BackendPage";
 import UxUiPage from "../pages/uxuiPage/UxUiPage";
 import GroupPage from "../pages/groupPage/GroupPage";
 import StudentsPage from "../pages/studentsPage/StudetsPage";
@@ -31,12 +32,13 @@ const AppRoutes = () => {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/students" element={<StudentsPage />} />
           <Route path="/manager-profile" element={<ManagerProfile />} />
+          <Route path="/backend" element={<BackendPage1 />} />
           <Route path="/group/:id" element={<GroupPage />} />
           <Route path="/python" element={<PythonPage />} />
         </Route>
         <Route path="/registration" element={<Register />} />
         <Route path="/register-confirm" element={<ConfirmRegisterPage />} />
-        <Route path="/uxui" element={<UxUiPage/>} />
+        <Route path="/uxui" element={<UxUiPage />} />
       </>
     )
   );
