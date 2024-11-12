@@ -17,6 +17,7 @@ import BackendPage1 from "../pages/backendPage/BackendPage";
 import UxUiPage from "../pages/uxuiPage/UxUiPage";
 import GroupPage from "../pages/groupPage/GroupPage";
 import StudentsPage from "../pages/studentsPage/StudetsPage";
+import ConsulationPage from "../components/consultationPage/ConsulationPage";
 import PythonPage from "../pages/PythonPage/PythonPage";
 
 const AppRoutes = () => {
@@ -38,6 +39,7 @@ const AppRoutes = () => {
         </Route>
         <Route path="/registration" element={<Register />} />
         <Route path="/register-confirm" element={<ConfirmRegisterPage />} />
+        <Route path="/consultation" element={<ConsulationPage/>} />
         <Route path="/uxui" element={<UxUiPage />} />
       </>
     )
