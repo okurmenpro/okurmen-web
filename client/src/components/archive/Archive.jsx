@@ -53,24 +53,27 @@ const TrashList = () => {
         </button>
       </div>
 
-      <div className="overflow-auto rounded-lg shadow-lg">
+      <div className="overflow-auto ">
         <table className="min-w-full bg-white">
           <thead>
-            <tr className="bg-gray-100 text-gray-700 text-sm uppercase font-semibold">
-              <th className="p-3 text-left border-b border-gray-300">Название</th>
-              <th className="p-3 text-left border-b border-gray-300">Категория</th>
-              <th className="p-3 text-left border-b border-gray-300">Дата удаления</th>
-              <th className="p-3 text-left border-b border-gray-300">Время</th>
-              <th className="p-3 text-left border-b border-gray-300">Действия</th>
+            <tr className=" text-gray-700 text-sm font-semibold">
+              <th className="p-3 text-left font-medium text-zinc-950">Название</th>
+              <th className="p-3 text-left font-medium text-zinc-950">Категория</th>
+              <th className="p-3 text-left font-medium text-zinc-950">Дата удаления</th>
+              <th className="p-3 text-left font-medium text-zinc-950">Время</th>
+              <th className="p-3 text-left font-medium text-zinc-950">Действия</th>
             </tr>
           </thead>
           <tbody>
+        
             {data.map((item) => (
+        
               <tr
                 key={item.id}
-                className="bg-white border border-gray-200 rounded-lg shadow-sm my-2"
+                className="bg-white rounded-lg shadow-sm my-2"
               >
-                <td className="p-3 rounded-l-lg whitespace-nowrap flex items-center relative">
+               
+                <td className="p-3 font-medium rounded-l-lg whitespace-nowrap flex items-center relative">
                   <div
                     onClick={() => handleStarClick(item.id)}
                     className={`cursor-pointer transition-all duration-300 p-2 rounded-full ${item.isStarred ? 'bg-orange-100' : 'bg-transparent'} ${item.isStarred ? 'text-orange-600' : 'text-gray-300'}`}
@@ -79,16 +82,17 @@ const TrashList = () => {
                   </div>
                   {item.title}
                 </td>
-                <td className="p-3 whitespace-nowrap">{item.category}</td>
-                <td className="p-3 whitespace-nowrap">{item.deleteDate}</td>
-                <td className="p-3 whitespace-nowrap">{item.deleteTime}</td>
+                <td className="p-3 whitespace-nowrap font-medium text-zinc-950">{item.category}</td>
+                
+                <td className="p-3 whitespace-nowrap font-medium text-zinc-950">{item.deleteDate}</td>
+                <td className="p-3 whitespace-nowrap font-medium text-zinc-950">{item.deleteTime}</td>
                 <td className="p-3 rounded-r-lg flex space-x-2 whitespace-nowrap">
-                  <button className="bg-orange-500 text-white py-1 px-3 rounded-full hover:bg-orange-600 transition duration-200">
+                  <button className="bg-orange-500 text-white py-2 px-5 rounded hover:bg-orange-600 transition duration-200 font-medium">
                     Восстановить
                   </button>
                   <button
                     onClick={() => handleDelete(item.id)}
-                    className="bg-red-500 text-white py-1 px-3 rounded-full hover:bg-red-600 transition duration-200"
+                    className="bg-white border-orange-600 text-orange-500 py-2 px-5 rounded font-medium"
                   >
                     Удалить
                   </button>
