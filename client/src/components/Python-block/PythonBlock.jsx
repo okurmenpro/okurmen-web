@@ -3,7 +3,7 @@ import python from "../../../public/images/pyhtonLogo.png";
 
 function PythonBlock() {
   return (
-    <div className="flex justify-center items-center min-h-screen">
+    <div className="flex justify-center items-center min-h-screen mt-[-200px]">
       <div className="bg-white rounded-lg p-6  flex items-start border border-orange-200">
         <img src={python} alt="figma logo" className="w-60 h-60 mr-6" />
         <div className="w-[800px] h-[260px]">
