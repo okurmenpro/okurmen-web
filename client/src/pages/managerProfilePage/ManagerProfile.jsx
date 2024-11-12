@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { managerGetProfile } from "../../redux/auth/ProfileSlice";
 import BarChart from "../../ui/BarChart";
 import InputImage from "../../ui/inputs/InputImage";
-import ButtonOrange from "../../ui/ButtonOrange";
 import { useNavigate } from "react-router-dom";
+import ButtonOrange from "../../ui/buttons/ButtonOrange";
 
 const ManagerProfile = () => {
   const [isUpdate, setIsUpdate] = useState(false);
