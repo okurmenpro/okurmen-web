@@ -92,7 +92,7 @@ const TrashList = () => {
                   </button>
                   <button
                     onClick={() => handleDelete(item.id)}
-                    className="bg-white border-orange-600 text-orange-500 py-2 px-5 rounded font-medium"
+                    className="bg-white border-orange-600 border border-orange-500 text-orange-500 py-2 px-5 rounded font-medium"
                   >
                     Удалить
                   </button>
