@@ -1,5 +1,6 @@
 import React from "react";
 import figmalogo from "../../../public/images/figmalogo.png";
+import { NavLink } from "react-router-dom";
 const UxUi1 = () => {
   return (
     <div>
@@ -16,9 +17,11 @@ const UxUi1 = () => {
             удобные приложения или сайты, <br />
             которыми приятно и легко пользоваться.
           </p>
-          <button className="mt-10 text-amber-500 border-2 border-orange-500 rounded-lg text-center pt-1 pb-1 pl-4 pr-4 font-medium text-xl">
-            Консультация
-          </button>
+          <NavLink to={"/consultation"}>
+            <button className="mt-10 text-amber-500 border-2 border-orange-500 rounded-lg text-center pt-1 pb-1 pl-4 pr-4 font-medium text-xl">
+              Консультация
+            </button>
+          </NavLink>
         </div>
         <div>
           <img
