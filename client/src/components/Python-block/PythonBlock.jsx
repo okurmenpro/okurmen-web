@@ -1,4 +1,3 @@
-import React from "react";
 import python from "../../../public/images/pyhtonLogo.png";
 
 function PythonBlock() {
