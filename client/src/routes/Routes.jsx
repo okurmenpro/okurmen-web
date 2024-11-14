@@ -11,7 +11,7 @@ import { CourseListingPage } from "../pages/courseListingPage/CourseListingPage"
 import { WorkListingPage } from "../pages/workListingPage/WorkListingPage";
 import Register from "../pages/registrationPage/Register";
 import ProfilePage from "../pages/profilePage/ProfilePage";
-import ConfirmRegisterPage from "../pages/ConfirmRegisterPage/ConfirmRegisterPage";
+import ConfirmRegisterPage from "../pages/confirmRegisterPage/ConfirmRegisterPage";
 import ManagerProfile from "../pages/managerProfilePage/ManagerProfile";
 import BackendPage1 from "../pages/backendPage/BackendPage";
 import UxUiPage from "../pages/uxuiPage/UxUiPage";
