@@ -20,6 +20,7 @@ import StudentsPage from "../pages/studentsPage/StudetsPage";
 import ApplicatoinsPage from "../pages/applicationsPage/ApplicationsPage";
 import ConsulationPage from "../components/consultationPage/ConsulationPage";
 import PythonPage from "../pages/PythonPage/PythonPage";
+import Archive from "../components/archive/Archive";
 
 const AppRoutes = () => {
   return createBrowserRouter(
@@ -43,6 +44,7 @@ const AppRoutes = () => {
         <Route path="/register-confirm" element={<ConfirmRegisterPage />} />
         <Route path="/consultation" element={<ConsulationPage />} />
         <Route path="/uxui" element={<UxUiPage />} />
+        <Route path="archive" element={<Archive/>} />
       </>
     )
   );
