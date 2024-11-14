@@ -24,24 +24,22 @@ const GroupPage = () => {
           <SearchInput />
         </div>
         <div className=" max-w-fit ">
-          <ButtonOrange
-            handleFunction={() => {
-              setIsModal(true);
-            }}
-          >
+          <ButtonOrange handleFunction={() => {
+            setIsModal(true)
+          }}>
             <p className="text-base font-bold">Добавить</p>
           </ButtonOrange>
         </div>
       </div>
       <div className="ml-[30px] mb-[65px]">
-        <h1 className="lg:text-[40px] md:text-4xl sm:text-3xl xs:text-2xl s:text-xl  font-bold mb-[51px] ">
+        <h1 className="text-[40px] font-bold mb-[51px] ">
           {id} -группа <span className="text-[#FF8a00]">Frontend</span>
         </h1>
-        <div className="flex flex-col lg:text-xl md:text-lg sm:text-base xs:text-sm s:text-xs font-bold   ">
-          <p className="max-w-[370px] w-full pb-[5px] border-b border-solid border-[#FF8a00] ">
+        <div className="flex flex-col ">
+          <p className="max-w-[370px] w-full text-xl font-bold pb-[5px] border-b border-solid border-[#FF8a00] ">
             Преподаватель :<span className="text-[#FF8a00] ">name</span>
           </p>
-          <p className="max-w-[370px] w-full  pb-[5px] border-b border-solid border-[#FF8a00]">
+          <p className="max-w-[370px] w-full text-xl font-bold  pb-[5px] border-b border-solid border-[#FF8a00]">
             Количество учеников :<span className="text-[#FF8a00] ">num</span>
           </p>
         </div>
@@ -49,7 +47,7 @@ const GroupPage = () => {
       <div className="mt-[70px]">
         <ContainerStudents data={data} />
       </div>
-      <ModalAddStudent isModal={isModal} setIsModal={setIsModal} />
+      <ModalAddStudent isModal={isModal} setIsModal={setIsModal}/>
     </div>
   );
 };

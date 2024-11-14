@@ -9,7 +9,7 @@ const ProfileInput = ({ type, placeholder, title, isUpdate }) => {
             isUpdate ? "flex-col items-start" : "flex  items-center"
           }`}
         >
-          <p className="text-base font-bold pb-[9px] pl-[5px] whitespace-pre-wrap">
+          <p className="text-base font-bold pb-[9px] pl-[5px] whitespace-nowrap">
             {title}:
           </p>
           {isUpdate ? (
