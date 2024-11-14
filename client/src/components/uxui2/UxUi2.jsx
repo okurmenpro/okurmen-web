@@ -5,9 +5,9 @@ import calendar from "../../../public/icons/calendar.svg";
 const UxUi2 = () => {
   return (
     <div>
-      <div className="flex justify-center items-center min-h-screen">
-        <div className="bg-white rounded-lg p-6  flex items-start border border-orange-200">
-          <img src={figma} alt="figma logo" className="w-60 h-60 mr-6" />
+      <div className="flex justify-center items-center min-h-screen mb-40">
+        <div className="bg-white rounded-lg p-6  flex items-start border border-orange-200 ">
+          <img src={figma} alt="figma logo" className="w-60 h-63 mr-6" />
           <div className="w-[800px] h-[260px]">
             <h2 className="text-2xl font-bold mb-2">UX/UI design</h2>
             <p className=" mb-4">
