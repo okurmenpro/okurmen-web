@@ -104,9 +104,7 @@ const ConfirmRegisterPage = () => {
               />
               <div className="flex justify-center">
                 <div className="max-w-fit mt-[21px] cursor-pointer">
-                  <ButtonOrange handleFunction={() => {}}>
-                    Подтвердить
-                  </ButtonOrange>
+                  <ButtonOrange handleFunction={() => {}}>Подтвердить</ButtonOrange>
                 </div>
               </div>
             </form>

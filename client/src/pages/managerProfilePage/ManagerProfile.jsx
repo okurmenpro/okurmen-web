@@ -38,7 +38,7 @@ const ManagerProfile = () => {
 
   return (
     <div className="container pb-[50px]">
-      <div className=" flex lg:justify-between gap-[30px] min-h-[100vh] pt-[100px] justify-center   max-lg:flex-wrap">
+      <div className=" flex justify-between gap-[30px] min-h-[100vh] pt-[100px]  max-lg:flex-wrap">
         <div
           className="flex flex-col justify-start
           items-center max-w-[400px] w-full"

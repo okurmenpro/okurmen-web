@@ -8,8 +8,10 @@ import HomePage from "../pages/homePage/HomePage";
 import ItClubPage from "../pages/itCLubPage/ItClubPage";
 import Management from "../pages/management/Management";
 import { CourseListingPage } from "../pages/courseListingPage/CourseListingPage";
+import { WorkListingPage } from "../pages/workListingPage/WorkListingPage";
 import Register from "../pages/registrationPage/Register";
 import ProfilePage from "../pages/profilePage/ProfilePage";
+import ConfirmRegisterPage from "../pages/confirmRegisterPage/ConfirmRegisterPage";
 import ManagerProfile from "../pages/managerProfilePage/ManagerProfile";
 import BackendPage1 from "../pages/backendPage/BackendPage";
 import UxUiPage from "../pages/uxuiPage/UxUiPage";
@@ -18,8 +20,6 @@ import StudentsPage from "../pages/studentsPage/StudetsPage";
 import ApplicatoinsPage from "../pages/applicationsPage/ApplicationsPage";
 import ConsulationPage from "../components/consultationPage/ConsulationPage";
 import PythonPage from "../pages/PythonPage/PythonPage";
-import { WorkListingPage } from "../pages/workListingPage/WorkListingPage";
-import ConfirmRegisterPage from "../pages/confirmRegisterPage/ConfirmRegisterPage";
 
 const AppRoutes = () => {
   return createBrowserRouter(
