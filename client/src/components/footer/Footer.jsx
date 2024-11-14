@@ -1,11 +1,11 @@
 import { IoLogoInstagram, IoLogoWhatsapp } from 'react-icons/io';
-import Button from '../../ui/Button';
 import { FaTelegramPlane } from 'react-icons/fa';
 import { FiMail } from 'react-icons/fi';
+import Button from '../../ui/buttons/Button';
 
 const Footer = () => {
 	return (
-		<footer className='bg-black'>
+		<footer className='bg-black  relative z-40'>
 			<div className='container'>
 				<div className='py-[20px] border-b-2 md:flex justify-between items-center text-white'>
 					<div className='mt-[40px] flex flex-col items-center md:block'>

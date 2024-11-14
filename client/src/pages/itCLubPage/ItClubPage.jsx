@@ -1,4 +1,4 @@
-import Button from "../../ui/Button"
+import Button from "../../ui/buttons/Button"
 import ItCard from "./itClubCard/ItCard"
 import ItCLubSection from "./itClubSection/ItCLubSection"
 
