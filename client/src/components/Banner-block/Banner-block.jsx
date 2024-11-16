@@ -6,7 +6,7 @@ function Python() {
   return (
     <>
       <section className="banner-block m-0-auto flex justify-between items-center w-[1440px] mx-auto">
-        <div className="python-about w-[700] h-[500]">
+        <div className="python-about w-[700] h-[500] ">
           <h1 className="w-[221px] h-[74px] text-blue-700  font-medium text-6xl ">
             Python
           </h1>
@@ -26,11 +26,7 @@ function Python() {
             </button>
           </NavLink>
         </div>
-        <img
-          className="w-[670px] h-[770px] ml-100 ml-[200px] mt-20"
-          src={python}
-          alt=""
-        />
+        <img className="w-[600px] h-[700px] ml-100 mt-20" src={python} alt="" />
       </section>
     </>
   );
