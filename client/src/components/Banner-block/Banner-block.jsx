@@ -1,5 +1,6 @@
 import React from "react";
 import python from "../../../public/images/python.png";
+import { NavLink } from "react-router-dom";
 
 function Python() {
   return (
@@ -19,9 +20,11 @@ function Python() {
             Python поможет вам освоить ключевые концепции программирования,
             включая работу с данными, автоматизацию и создание приложений.{" "}
           </p>
-          <button className="w-[213px] h-[58px] border border-orange-400 rounded-md mt-10 border-2 text-[14px] px-4 py-2 text-amber-600 font-bold	">
-            Консультация
-          </button>
+          <NavLink to={"/consultation"}>
+            <button className="w-[213px] h-[58px] border border-orange-400 rounded-md mt-10 border-2 text-[14px] px-4 py-2 text-amber-600 font-bold	">
+              Консультация
+            </button>
+          </NavLink>
         </div>
         <img
           className="w-[670px] h-[770px] ml-100 ml-[200px] mt-20"

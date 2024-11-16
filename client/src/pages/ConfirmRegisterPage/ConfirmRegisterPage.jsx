@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
-import ButtonOrange from "../../ui/ButtonOrange";
 import { useDispatch, useSelector } from "react-redux";
 import { confirmUserSlice } from "../../redux/auth/UserSlice";
 import { useNavigate } from "react-router-dom";
 import AuthInput from "../../ui/inputs/AuthInput";
+import ButtonOrange from "../../ui/buttons/ButtonOrange";
 
 const ConfirmRegisterPage = () => {
   const dispatch = useDispatch();
