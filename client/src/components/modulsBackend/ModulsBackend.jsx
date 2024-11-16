@@ -1,12 +1,12 @@
 import React from "react";
-import advantages from "../../data/advantages";
+import advantagesBackend from "../../data/advantagesBackend";
 
-const CourseAdvantages = () => {
+const ModulsBackend = () => {
   return (
-    <div className="w-[700px] h-[600px] mx-auto text-center mb-[300px] mt-[-180px]">
+    <div className="w-[700px] h-[600px] mx-auto text-center mb-[300px] mt-[-140px]">
       <h2 className="text-3xl font-bold mb-8">Преимущества курса</h2>
       <div className="grid grid-cols-3 grid-rows-2 gap-0">
-        {advantages.map((advantage, index) => {
+        {advantagesBackend.map((advantage, index) => {
           const borderClass = index % 3 !== 2 ? "border-r" : "";
           const borderBottomClass = index < 3 ? "border-b" : "";
 
@@ -36,4 +36,4 @@ const CourseAdvantages = () => {
   );
 };
 
-export default CourseAdvantages;
+export default ModulsBackend;
