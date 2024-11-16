@@ -24,9 +24,11 @@ const GroupPage = () => {
           <SearchInput />
         </div>
         <div className=" max-w-fit ">
-          <ButtonOrange handleFunction={() => {
-            setIsModal(true)
-          }}>
+          <ButtonOrange
+            handleFunction={() => {
+              setIsModal(true);
+            }}
+          >
             <p className="text-base font-bold">Добавить</p>
           </ButtonOrange>
         </div>
@@ -47,7 +49,7 @@ const GroupPage = () => {
       <div className="mt-[70px]">
         <ContainerStudents data={data} />
       </div>
-      <ModalAddStudent isModal={isModal} setIsModal={setIsModal}/>
+      <ModalAddStudent isModal={isModal} setIsModal={setIsModal} />
     </div>
   );
 };
