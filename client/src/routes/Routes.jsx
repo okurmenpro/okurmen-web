@@ -18,6 +18,7 @@ import UxUiPage from "../pages/uxuiPage/UxUiPage";
 import GroupPage from "../pages/groupPage/GroupPage";
 import StudentsPage from "../pages/studentsPage/StudetsPage";
 import PythonPage from "../pages/PythonPage/PythonPage";
+import FrontendPage from "../pages/frontendPage/FrontendPage";
 
 const AppRoutes = () => {
   return createBrowserRouter(
@@ -35,6 +36,7 @@ const AppRoutes = () => {
           <Route path="/backend" element={<BackendPage1 />} />
           <Route path="/group/:id" element={<GroupPage />} />
           <Route path="/python" element={<PythonPage />} />
+          <Route path="/frontend" element={<FrontendPage/>}/>
         </Route>
         <Route path="/registration" element={<Register />} />
         <Route path="/register-confirm" element={<ConfirmRegisterPage />} />
