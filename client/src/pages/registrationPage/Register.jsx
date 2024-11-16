@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import ButtonOrange from "../../ui/ButtonOrange";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { registrationSlice } from "../../redux/auth/UserSlice";
 import AuthInput from "../../ui/inputs/AuthInput";
+import ButtonOrange from "../../ui/buttons/ButtonOrange";
 
 const Register = () => {
   const navigate = useNavigate();

@@ -9,7 +9,7 @@ const ButtonOrange = ({ children, handleFunction }) => {
           "
       type="submit"
       onClick={() => {
-        handleFunction();
+        handleFunction()
       }}
     >
       {children}

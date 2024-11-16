@@ -1,11 +1,19 @@
 /* eslint-disable react/prop-types */
 
+import { useNavigate } from "react-router-dom";
+
 const ContainerStudents = ({ data }) => {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-wrap gap-[26px] justify-between">
       {data?.map((student) => (
         <>
-          <div className="max-w-[545px] flex-wrap w-full flex items-center px-3 py-[10px] rounded-3xl border border-solid border-[#FF8A00] ">
+          <div
+            onClick={() => {
+              navigate(`/student-profile/${student._id}`);
+            }}
+            className="max-w-[545px] flex-wrap w-full flex items-center px-3 py-[10px] rounded-3xl border border-solid border-[#FF8A00] "
+          >
             <img
               className="w-[47px] mr-[29px]"
               src="/public/images/profileImg.png"

@@ -1,15 +1,17 @@
 import { useParams } from "react-router-dom";
-import ButtonOrange from "../../ui/ButtonOrange";
 import SearchInput from "../../ui/inputs/SearchInput";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { groupStudentsSlice } from "../../redux/students/GroupStudents";
 import ContainerStudents from "../../components/containerStudents/ContainerStudents";
+import ButtonOrange from "../../ui/buttons/ButtonOrange";
+import ModalAddStudent from "../../components/modalAddStudent/ModalAddStudent";
 
 const GroupPage = () => {
   const id = useParams().id;
   const data = useSelector((state) => state.groupStudentsReducer.data);
   const dispatch = useDispatch();
+  const [isModal, setIsModal] = useState(false);
 
   useEffect(() => {
     dispatch(groupStudentsSlice());
@@ -22,7 +24,11 @@ const GroupPage = () => {
           <SearchInput />
         </div>
         <div className=" max-w-fit ">
-          <ButtonOrange handleFunction={() => {}}>
+          <ButtonOrange
+            handleFunction={() => {
+              setIsModal(true);
+            }}
+          >
             <p className="text-base font-bold">Добавить</p>
           </ButtonOrange>
         </div>
@@ -43,6 +49,7 @@ const GroupPage = () => {
       <div className="mt-[70px]">
         <ContainerStudents data={data} />
       </div>
+      <ModalAddStudent isModal={isModal} setIsModal={setIsModal} />
     </div>
   );
 };
