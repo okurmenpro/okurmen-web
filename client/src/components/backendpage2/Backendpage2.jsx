@@ -134,7 +134,7 @@ const Backendpage2 = () => {
               <img src={TimeIcon} alt="Time Icon" className="w-5 h-5 mr-2" />4
               раза в неделю
             </div>
-            <div className="flex items-center w-[270px]  rounded-lg pl-2  text-gray-600 border border-orange-500">
+            <div className="flex items-center w-[270px]  rounded-full pl-2  text-gray-600 border border-orange-500">
               <img
                 src={CalendarIcon}
                 alt="Calendar Icon"

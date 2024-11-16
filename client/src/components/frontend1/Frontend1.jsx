@@ -19,9 +19,14 @@ function Frontend1() {
                     </button>
                 </div>
                 <div className="order-last md:order-none md:w-1/2 flex justify-center p-4 hidden md:flex">
-                    <img src={HTML} alt="" className="max-w-full h-auto" />
-                    {/* <img src={CSS} alt="" className="max-w-full h-auto" />
-                    <img src={Javascript} alt="" className="max-w-full h-auto" /> */}
+                    <div className='flex gap-6'>
+                        <img src={CSS} alt="" className="w-60 max-w-full h-auto" />
+                        <div className='flex flex-col gap-y-7'>
+                            <img src={Javascript} alt="" className="w-72 max-w-full h-auto" />
+                            <img src={HTML} alt="" className="w-60 max-w-full h-auto" />
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -10,17 +10,17 @@ const UxUi2 = () => {
           <img src={figma} alt="figma logo" className="w-60 h-63 mr-6" />
           <div className="w-[800px] h-[260px]">
             <h2 className="text-2xl font-bold mb-2">UX/UI design</h2>
-            <p className=" mb-4">
-              Срок обучения: 2 месяца •{" "}
+            <p className="flex mb-4">
+            <img src={time} className="w-5 h-5 mr-2" />Срок обучения: 2 месяца •{" "}
               <span className="text-orange-500">английский язык</span>
             </p>
 
             <div className="space-y-2 mb-4">
               <div className="flex items-center text-black-600">
-                <img src={time} className="w-5 h-5 mr-2" />4 раза в неделю
+              <img src={calendar} className="w-5 h-5 mr-2" />4 раза в неделю
               </div>
-              <div className="flex items-center w-[270px]  rounded-lg pl-2  text-black-600 border border-orange-500">
-                <img src={calendar} className="w-5 h-5 mr-2" />
+              <div className="flex items-center w-[270px]  rounded-full pl-2  text-black-600 border border-orange-500">
+                
                 Начнётся:{" "}
                 <span className="text-orange-500 ml-1">
                   12 ноября, 2024 год
