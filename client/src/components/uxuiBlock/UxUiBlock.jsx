@@ -2,10 +2,10 @@ import React from "react";
 import figma from "../../../public/images/figma.png";
 import time from "../../../public/icons/time.svg";
 import calendar from "../../../public/icons/calendar.svg";
-const UxUi2 = () => {
+const UxUiBlock = () => {
   return (
     <div>
-      <div className="flex justify-center items-center min-h-screen mb-40">
+      <div className="flex justify-center items-center container">
         <div className="bg-white rounded-lg p-6  flex items-start border border-orange-200 ">
           <img src={figma} alt="figma logo" className="w-60 h-63 mr-6" />
           <div className="w-[800px] h-[260px]">
@@ -46,4 +46,4 @@ const UxUi2 = () => {
   );
 };
 
-export default UxUi2;
+export default UxUiBlock;

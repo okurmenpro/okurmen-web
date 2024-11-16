@@ -1,16 +1,18 @@
 import React from "react";
 import Header from "../../components/header/Header";
-import UxUi1 from "../../components/uxui1/UxUi1";
-import UxUi2 from "../../components/uxui2/UxUi2";
+import UxUiDescription from "../../components/uxuiDescription/UxUiDescription";
+import UxUiBlock from "../../components/uxuiBlock/UxUiBlock";
 import CourseAdvantages from "../../components/advantagesPython/AdvantagesPython";
+import MainModules from "../../components/mainModules/MainModules";
 
 const UxUiPage = () => {
   return (
     <>
       <Header />
-      <UxUi1 />
-      <UxUi2 />
+      <UxUiDescription />
+      <UxUiBlock />
       <CourseAdvantages/>
+      <MainModules/>
     </>
   );
 };
