@@ -18,9 +18,9 @@ import UxUiPage from "../pages/uxuiPage/UxUiPage";
 import GroupPage from "../pages/groupPage/GroupPage";
 import StudentsPage from "../pages/studentsPage/StudetsPage";
 import BackendFrontend from "../pages/backendFrontend/BackendFrontend";
+import PythonPage from "../pages/pythonPage/PythonPage";
 import ApplicatoinsPage from "../pages/applicationsPage/ApplicationsPage";
 import ConsulationPage from "../components/consultationPage/ConsulationPage";
-import PythonPage from "../pages/pythonPage/PythonPage";
 import Archive from "../components/archive/Archive";
 import StudentProfile from "../pages/studentProfile/StudentProfile";
 
