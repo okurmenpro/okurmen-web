@@ -8,7 +8,6 @@ import MainModules from "../../components/mainModules/MainModules";
 const UxUiPage = () => {
   return (
     <>
-      <Header />
       <UxUiDescription />
       <UxUiBlock />
       <CourseAdvantages/>
