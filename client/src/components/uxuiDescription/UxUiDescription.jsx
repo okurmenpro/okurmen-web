@@ -1,10 +1,10 @@
 import React from "react";
 import figmalogo from "../../../public/images/figmalogo.png";
 import { NavLink } from "react-router-dom";
-const UxUi1 = () => {
+const UxUiDescription = () => {
   return (
-    <div>
-      <div className="flex items-center justify-around container">
+    <div className="mb-20">
+      <div className="flex items-center justify-around container ">
         <div className="mr-10">
           <strong className="font-bold text-6xl text-blue-700 ">
             UX/UI design
@@ -35,4 +35,4 @@ const UxUi1 = () => {
   );
 };
 
-export default UxUi1;
+export default UxUiDescription;
