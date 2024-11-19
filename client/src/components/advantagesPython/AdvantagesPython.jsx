@@ -3,7 +3,7 @@ import advantages from "../../data/advantages";
 
 const CourseAdvantages = () => {
   return (
-    <div className="w-[700px] h-[600px] mx-auto text-center mb-[300px] mt-[150px]">
+    <div className="w-[700px] h-[600px] mx-auto text-center mb-[200px] mt-[90px]">
       <h2 className="text-3xl font-bold mb-8">Преимущества курса</h2>
       <div className="grid grid-cols-3 grid-rows-2 gap-0">
         {advantages.map((advantage, index) => {

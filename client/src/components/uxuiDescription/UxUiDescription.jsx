@@ -3,8 +3,8 @@ import figmalogo from "../../../public/images/figmalogo.png";
 import { NavLink } from "react-router-dom";
 const UxUiDescription = () => {
   return (
-    <div>
-      <div className="flex items-center justify-around container">
+    <div className="mb-20">
+      <div className="flex items-center justify-around container ">
         <div className="mr-10">
           <strong className="font-bold text-6xl text-blue-700 ">
             UX/UI design
