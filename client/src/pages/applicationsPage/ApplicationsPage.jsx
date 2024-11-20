@@ -43,11 +43,11 @@ const ApplicatoinsPage = () => {
         </button>
         <h1 className="text-2xl font-semibold">Заявки</h1>
       </div>
-      <div className="flex flex-col justify-start items-start gap-[26px] mt-[63px] ">
+      <div className="flex flex-col justify-start  items-start gap-[26px] mt-[63px] ">
         {data?.map((student) => (
           <div
             key={student._id}
-            className="flex justify-between items-center flex-wrap max-w-[882px]  w-full "
+            className="flex lg:justify-between s:justify-center lg:gap-0 s:gap-y-3 items-center flex-wrap max-w-[890px] w-full  "
           >
             <div className="max-w-[545px] w-full flex items-center flex-wrap px-3 py-[10px] rounded-3xl border border-solid border-[#FF8A00] ">
               <img
@@ -67,7 +67,7 @@ const ApplicatoinsPage = () => {
                 </div>
               </div>
             </div>
-            <div className="flex jusxtify-between items-center gap-[11px] ml-[16px] flex-wrap">
+            <div className="flex lg:justify-between s:justify-end items-center gap-[11px]   flex-wrap lg:max-w-[321px] s:max-w-[535px] s:w-full lg:w-full  ">
               <button className="py-[15px] px-[35px] text-white rounded-full text-base  font-bold border-solid border-transparent hover:border-[#0acf83] border-[2px] bg-[#0acf83] hover:bg-transparent hover:text-[#0acf83] duration-300">
                 Одобрить
               </button>
