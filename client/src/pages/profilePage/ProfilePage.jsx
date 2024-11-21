@@ -11,19 +11,14 @@ const ProfilePage = () => {
   const dispatch = useDispatch();
   const profileData = useSelector((state) => state.profileReducer.data);
   const [isUpdate, setIsUpdate] = useState(false);
-  const [isData, setIsData] = useState(null);
   const [photo, setPhoto] = useState(null);
   const inputRef = useRef(null);
 
-  const { register, handleSubmit } = useForm();
-
-  console.log(isData);
-
-  useEffect(() => {
-    dispatch(getProfile());
-    const lastData = profileData?.slice(-1);
-    setIsData(lastData[0]);
-  }, [dispatch]);
+  const { register, handleSubmit, setValue } = useForm({
+    defaultValues: {
+      name: profileData?.name,
+    },
+  });
 
   const handleButtonClick = () => {
     setIsUpdate(true);
@@ -34,7 +29,6 @@ const ProfilePage = () => {
     }, 0);
   };
 
-  // save form && info user
   const handleSaveChangeValue = (data) => {
     console.log(data);
 
@@ -63,13 +57,27 @@ const ProfilePage = () => {
     }
 
     dispatch(createProfile(data));
-    dispatch(getProfile());
   };
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     setPhoto(file);
   };
+
+  useEffect(() => {
+    if (profileData) {
+      setValue("name", profileData.name || "");
+      setValue("status", profileData.status || "");
+      setValue("age", profileData.age || "");
+      setValue("direction", profileData.direction || "");
+      setValue("term", profileData.term || "");
+      setValue("email", profileData.email || "");
+    }
+  }, [profileData, setValue]);
+
+  useEffect(() => {
+    dispatch(getProfile());
+  }, [dispatch]);
 
   return (
     <div className="container">
@@ -97,7 +105,9 @@ const ProfilePage = () => {
               />
             ) : (
               <>
-                <p className="text-center   text-base font-bold">name</p>
+                <p className="text-center   text-base font-bold">
+                  {profileData?.name}
+                </p>
               </>
             )}
           </div>
@@ -109,43 +119,43 @@ const ProfilePage = () => {
               }`}
             >
               <ProfileInput
-                placeholder={"Гость"}
+                placeholder={profileData?.status}
                 type={"text"}
                 title={"Текущий статус"}
                 register={register}
-                registerTitle={"status"} // исправлено
+                registerTitle={"status"}
                 isUpdate={isUpdate}
               />
               <ProfileInput
-                placeholder={"неизвестно"}
+                placeholder={profileData?.age}
                 type={"text"}
                 title={"Возраст"}
                 register={register}
-                registerTitle={"age"} // исправлено
+                registerTitle={"age"}
                 isUpdate={isUpdate}
               />
               <ProfileInput
-                placeholder={"неизвестно"}
+                placeholder={profileData?.direction}
                 type={"text"}
                 title={"Направление"}
                 register={register}
-                registerTitle={"direction"} // исправлено
+                registerTitle={"direction"}
                 isUpdate={isUpdate}
               />
               <ProfileInput
-                placeholder={"неизвестно"}
+                placeholder={profileData?.term}
                 type={"text"}
                 title={"Срок обучения"}
                 register={register}
-                registerTitle={"term"} // исправлено
+                registerTitle={"term"}
                 isUpdate={isUpdate}
               />
               <ProfileInput
-                placeholder={"gost345@gmail.com"}
+                placeholder={profileData?.email}
                 type={"text"}
                 title={"E-mail"}
                 register={register}
-                registerTitle={"email"} // исправлено
+                registerTitle={"email"}
                 isUpdate={isUpdate}
               />
               <div className=" flex  flex-wrap justify-between mt-[10px] w-full self-end">
@@ -154,9 +164,10 @@ const ProfilePage = () => {
                     handleFunction={() => {
                       if (!isUpdate) {
                         handleButtonClick();
+                      } else {
+                        setIsUpdate(!isUpdate);
+                        handleSaveChangeValue();
                       }
-                      setIsUpdate(!isUpdate);
-                      handleSaveChangeValue();
                     }}
                   >
                     <p className="text-lg">
@@ -169,7 +180,6 @@ const ProfilePage = () => {
                     <ButtonOrange
                       handleFunction={() => {
                         setIsUpdate(false);
-                        window.location.reload();
                       }}
                     >
                       <p className="text-lg">Отменить</p>

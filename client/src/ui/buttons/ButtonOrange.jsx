@@ -7,9 +7,8 @@ const ButtonOrange = ({ children, handleFunction }) => {
             px-[30px] py-[10px]
             sm:px-[45px] sm:py-[20px] xs:px-[35px] xs:py-[15px] s:px-[30px] s:py-[10px]
           "
-      type="submit"
       onClick={() => {
-        handleFunction()
+        handleFunction();
       }}
     >
       {children}

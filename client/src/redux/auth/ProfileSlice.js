@@ -20,7 +20,7 @@ export const managerGetProfile = createAsyncThunk(
 export const getProfile = createAsyncThunk("profile/getProfile", async () => {
   try {
     const response = await axios.get(
-      `${BACK_URL}/9682478393bcc8b02658a359da2c5424/create-profile`
+      `${BACK_URL}/9682478393bcc8b02658a359da2c5424/create-profile/1`
     );
     return response.data;
   } catch (error) {
@@ -32,11 +32,15 @@ export const createProfile = createAsyncThunk(
   "profile/createProfile",
   async (newData) => {
     try {
-      const response = await axios.post(
-        `${BACK_URL}/9682478393bcc8b02658a359da2c5424/create-profile`,
+      const response = await axios.patch(
+        `${BACK_URL}/9682478393bcc8b02658a359da2c5424/create-profile/1`,
         newData
       );
-      return response.data;
+      if (response.status === 200) {
+        getProfile();
+      }
+
+      return getProfile();
     } catch (error) {
       console.error(error);
     }
