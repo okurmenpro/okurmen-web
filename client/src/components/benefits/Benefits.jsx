@@ -10,6 +10,8 @@ const Benefits = () => {
           const borderClass = index % 3 !== 1 ? "border-r" : "";
           const borderBottomClass = index < 3 ? "border-b" : "";
 
+          const isTargetTitle = benefit.title === "Анализ информации";
+
           return (
             <div
               key={index}
@@ -17,11 +19,13 @@ const Benefits = () => {
             >
               <div
                 className="mb-4 flex justify-center items-center flex-grow"
-                style={{ width: benefit.width, height: benefit.height }}
               >
                 <img src={benefit.img} alt={benefit.title} />
               </div>
-              <p className="text-xl text-black-950 font-medium mt-auto">
+              <p
+                className="text-xl text-black-950 font-medium mt-auto text-center "
+                style={isTargetTitle ? { fontWeight: "bold", paddingLeft: "300px",  whiteSpace: "nowrap"  } : {}}
+              >
                 {benefit.title}
               </p>
             </div>
