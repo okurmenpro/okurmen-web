@@ -142,6 +142,7 @@ const ProfilePage = () => {
                 registerTitle={"direction"}
                 isUpdate={isUpdate}
               />
+              
               <ProfileInput
                 placeholder={profileData?.term}
                 type={"text"}
