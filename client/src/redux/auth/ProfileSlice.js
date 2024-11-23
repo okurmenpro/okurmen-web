@@ -30,19 +30,21 @@ export const getProfile = createAsyncThunk("profile/getProfile", async () => {
 
 export const createProfile = createAsyncThunk(
   "profile/createProfile",
-  async (newData) => {
+  async (newData, { dispatch }) => {
     try {
       const response = await axios.patch(
         `${BACK_URL}/9682478393bcc8b02658a359da2c5424/create-profile/1`,
         newData
       );
+
       if (response.status === 200) {
-        getProfile();
+        await dispatch(getProfile());
       }
 
-      return getProfile();
+      return response.data;
     } catch (error) {
       console.error(error);
+      throw error;
     }
   }
 );
