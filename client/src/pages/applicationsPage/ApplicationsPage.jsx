@@ -5,6 +5,7 @@ import { groupStudentsSlice } from "../../redux/students/GroupStudents";
 import SideBar from "../../components/sideBar/SideBar";
 import ButtonOrange from "../../ui/buttons/ButtonOrange";
 import ModalAddStudent from "../../components/modalAddStudent/ModalAddStudent";
+import { FaPlus } from "react-icons/fa";
 
 const ApplicatoinsPage = () => {
   const data = useSelector((state) => state.groupStudentsReducer.data);
@@ -18,8 +19,9 @@ const ApplicatoinsPage = () => {
 
   return (
     <div className="container pb-14">
+          <h1 className="text-5xl font-semibold flex align-center justify-center mb-[50px] font-medium">Заявки</h1>
       <SideBar isOpen={isBarOpen} setIsOpen={setIsBarOpen} />
-      <div className="flex  items-center justify-between flex-wrap mb-[45px]">
+      <div className="flex justify-between items-center gap-5 flex-wrap mb-[45px]">
         <div className="max-w-[705px] w-full">
           <SearchInput />
         </div>
@@ -29,7 +31,7 @@ const ApplicatoinsPage = () => {
               setIsModal(true);
             }}
           >
-            <p className="text-base font-bold">Добавить</p>
+            <FaPlus fill="white" className="bold" />
           </ButtonOrange>
         </div>
       </div>
@@ -41,7 +43,6 @@ const ApplicatoinsPage = () => {
             alt="filterIcon"
           />
         </button>
-        <h1 className="text-2xl font-semibold">Заявки</h1>
       </div>
       <div className="flex flex-col justify-start  items-start gap-[26px] mt-[63px] ">
         {data?.map((student) => (
