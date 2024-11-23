@@ -47,7 +47,6 @@ const ApplicationsPage = () => {
               <th className="p-6 text-center rounded-tr-xl">Действия</th>
             </tr>
           </thead>
-          {/* Table Body */}
           <tbody className="divide-y divide-gray-200">
             {data?.map((student, index) => (
               <tr
@@ -56,7 +55,6 @@ const ApplicationsPage = () => {
                   index % 2 === 0 ? "bg-gray-50" : "bg-white"
                 }`}
               >
-                {/* Name and Avatar */}
                 <td className="p-6 flex items-center gap-4 rounded-l-xl">
                   <img
                     className="w-[47px] h-[47px] rounded-full"
@@ -67,9 +65,7 @@ const ApplicationsPage = () => {
                     {student.name} {student.lastName}
                   </p>
                 </td>
-                {/* Group */}
                 <td className="p-6 text-[#FF8A00] font-medium">{student.studentGroup}</td>
-                {/* Actions */}
                 <td className="p-6 text-center rounded-r-xl">
                   <div className="flex justify-center gap-4">
                     <button className="py-[12px] px-[24px] text-white rounded-full text-sm font-bold border-solid border-transparent hover:border-[#0acf83] border-[2px] bg-[#0acf83] hover:bg-transparent hover:text-[#0acf83] duration-300">
