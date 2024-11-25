@@ -10,16 +10,33 @@ import { FaPlus } from "react-icons/fa";
 const ApplicationsPage = () => {
   const data = useSelector((state) => state.groupStudentsReducer.data);
   const dispatch = useDispatch();
+
   const [isBarOpen, setIsBarOpen] = useState(false);
   const [isModal, setIsModal] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const rowsPerPage = 5; 
 
   useEffect(() => {
     dispatch(groupStudentsSlice());
   }, [dispatch]);
 
+  const totalPages = Math.ceil(data?.length / rowsPerPage) || 1;
+  const currentData = data?.slice(
+    (currentPage - 1) * rowsPerPage,
+    currentPage * rowsPerPage
+  );
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) setCurrentPage(currentPage - 1);
+  };
+
   return (
-    <div className="container pb-14">
-      <h1 className="text-5xl font-semibold flex justify-center mb-[80px] mt-[80px] font-medium">
+    <div className="container pb-8">
+      <h1 className="text-5xl font-semibold flex justify-center mb-[80px] pt-[50px]  font-medium">
         Заявки
       </h1>
       <SideBar isOpen={isBarOpen} setIsOpen={setIsBarOpen} />
@@ -37,22 +54,21 @@ const ApplicationsPage = () => {
           </ButtonOrange>
         </div>
       </div>
-      <div className="w-full mt-[45px] overflow-x-auto mt-[50px]">
+      <div className="w-full overflow-x-auto mt-[50px]">
         <table className="w-full text-left border-collapse rounded-xl shadow-lg">
-       
-          <thead className="bg-[white] border text-lg font-bold text-black rounded-xl">
+          <thead className="bg-white border text-lg font-bold text-black rounded-xl">
             <tr>
               <th className="p-6 rounded-tl-xl">Имя Фамилия</th>
               <th className="p-6">Группа</th>
               <th className="p-6 text-center rounded-tr-xl">Действия</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-200">
-            {data?.map((student, index) => (
+          <tbody className="divide-y divide-gray-300">
+            {currentData?.map((student, index) => (
               <tr
                 key={student._id}
                 className={`hover:shadow-md hover:shadow-orange-400 duration-200 rounded-xl ${
-                  index % 2 === 0 ? "bg-gray-50" : "bg-white"
+                  index % 2 === 0 ? "bg-gray-200" : "bg-white"
                 }`}
               >
                 <td className="p-6 flex items-center gap-4 rounded-l-xl">
@@ -65,7 +81,11 @@ const ApplicationsPage = () => {
                     {student.name} {student.lastName}
                   </p>
                 </td>
-                <td className="p-6 text-[#FF8A00] font-medium">{student.studentGroup}</td>
+              
+                <td className="p-6 text-[#FF8A00] font-medium">
+                  {student.studentGroup}
+                </td>
+             
                 <td className="p-6 text-center rounded-r-xl">
                   <div className="flex justify-center gap-4">
                     <button className="py-[12px] px-[24px] text-white rounded-full text-sm font-bold border-solid border-transparent hover:border-[#0acf83] border-[2px] bg-[#0acf83] hover:bg-transparent hover:text-[#0acf83] duration-300">
@@ -81,6 +101,27 @@ const ApplicationsPage = () => {
           </tbody>
         </table>
       </div>
+
+      <div className="flex justify-center items-center mt-4 gap-4">
+        <button
+          className="py-2 px-4 bg-gray-300 rounded-lg text-black font-semibold hover:bg-gray-400 duration-200"
+          disabled={currentPage === 1}
+          onClick={handlePrevPage}
+        >
+          previous
+        </button>
+        <p className="text-lg font-medium">
+          Страница {currentPage} из {totalPages}
+        </p>
+        <button
+          className="py-2 px-4 bg-gray-300 rounded-lg text-black font-semibold hover:bg-gray-400 duration-200"
+          disabled={currentPage === totalPages}
+          onClick={handleNextPage}
+        >
+          next
+        </button>
+      </div>
+
       <ModalAddStudent isModal={isModal} setIsModal={setIsModal} />
     </div>
   );
