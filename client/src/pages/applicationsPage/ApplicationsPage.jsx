@@ -34,7 +34,7 @@ const ApplicationsPage = () => {
     if (currentPage > 1) setCurrentPage(currentPage - 1);
   };
 
-  const truncateName = (name, maxLength = 20) => {
+  const truncateName = (name, maxLength = 15) => {
     if (name.length > maxLength) {
       return `${name.substring(0, maxLength)}...`;
     }
