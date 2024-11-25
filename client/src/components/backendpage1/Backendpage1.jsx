@@ -1,6 +1,7 @@
 import React from "react";
 import Java from "../../../public/images/java.png";
 import { NavLink } from "react-router-dom";
+import ButtonConsultation from "../../ui/buttons/ButtonConsultation";
 
 const Backendpage1 = () => {
   return (
@@ -16,11 +17,7 @@ const Backendpage1 = () => {
           готовят еду, а интерфейс, который видит пользователь (фронтенд) — это
           обеденный зал, где подают блюда.
         </p>
-        <NavLink to={"/consultation"}>
-          <button className="text-orange-500 border border-orange-500 font-semibold py-2 px-4 rounded">
-            Консультация
-          </button>
-        </NavLink>
+        <ButtonConsultation/>
       </div>
       <div className="order-last md:order-none md:w-1/2 flex justify-center p-4 hidden md:flex">
         <img

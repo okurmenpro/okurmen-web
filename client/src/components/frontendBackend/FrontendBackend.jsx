@@ -1,6 +1,7 @@
 import React from "react";
 import pylogo from "../../../public/images/py.png";
 import jslogo from "../../../public/images/jsLogo.png";
+import ButtonConsultation from "../../ui/buttons/ButtonConsultation";
 
 const FrontendBackend = () => {
   return (
@@ -19,9 +20,7 @@ const FrontendBackend = () => {
             серверной. Курс рассчитан на детей и подростков 9-14 лет, кто
             интересуется IT и мечтает создать что-то свое в мире веб-технологий.
           </p>
-          <button className="border border-orange-600 text-orange-600 py-2 px-4 rounded mt-8 ">
-            Консультация
-          </button>
+          <ButtonConsultation/>
         </div>
 
         <div className="flex-shrink-0 relative">
