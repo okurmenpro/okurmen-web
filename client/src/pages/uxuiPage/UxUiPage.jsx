@@ -5,6 +5,7 @@ import figmalogo from "../../../public/images/figmalogo.png";
 import CourseAdvantages from "../../components/advantagesPython/AdvantagesPython";
 import MainModules from "../../components/mainModules/MainModules";
 import AboutCourse from "../../components/aboutCourse/aboutCourse";
+import PriseCourse from "../../components/priceCourse/PriceCourse";
 
 const UxUiPage = () => {
   const UxUiDescription = `
@@ -22,7 +23,16 @@ const UxUiPage = () => {
         imageAlt="Python logo"
 
       />
-      <UxUiBlock />
+      <PriseCourse
+        title="UX/UI design"
+        // image={figmaLogo}
+        duration="2 месяца"
+        englishIncluded={true}
+        frequency="4 раза в неделю"
+        startDate="12 ноября, 2024 год"
+        additional={["IT клуб", "Английский язык"]}
+        price="15 000 сом"
+      />
       <CourseAdvantages />
       <MainModules />
     </>

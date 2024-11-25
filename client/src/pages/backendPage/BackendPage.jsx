@@ -4,6 +4,7 @@ import Java from "../../../public/images/java.png";
 import AboutCourse from "../../components/aboutCourse/aboutCourse";
 import Backendpage2 from "../../components/backendpage2/Backendpage2";
 import ModulsBackend from "../../components/modulsBackend/ModulsBackend";
+import PriseCourse from "../../components/priceCourse/PriceCourse";
 
 const BackendPage = () => {
   const backendDescription = `
@@ -15,12 +16,21 @@ const BackendPage = () => {
   return (
     <div>
       <AboutCourse
-      title="Backend"
-      description={backendDescription}
-      image={Java}
-      imageAlt="Backend logo"
-       />
-      <Backendpage2 />
+        title="Backend"
+        description={backendDescription}
+        image={Java}
+        imageAlt="Backend logo"
+      />
+      <PriseCourse
+        title="Backend"
+        // image={javaLogo}
+        duration="2 месяца"
+        englishIncluded={true}
+        frequency="4 раза в неделю"
+        startDate="12 ноября, 2024 год"
+        additional={["IT клуб", "Английский язык"]}
+        price="15 000 сом"
+      />
       <ModulsBackend />
     </div>
   );

@@ -4,6 +4,7 @@ import AboutCourse from "../../components/aboutCourse/aboutCourse";
 import python from "../../../public/images/python.png";
 import PythonBlock from "../../components/python-block/PythonBlock";
 import AdvantagesPython from "../../components/advantagesPython/AdvantagesPython";
+import PriseCourse from "../../components/priceCourse/PriceCourse";
 
 function PythonPage() {
   const pythonDescription = `
@@ -18,7 +19,16 @@ function PythonPage() {
         image={python}
         imageAlt="Python logo"
       />
-      <PythonBlock />
+      <PriseCourse
+        title="Python"
+        // image={pythonLogo}
+        duration="2 месяца"
+        englishIncluded={true}
+        frequency="4 раза в неделю"
+        startDate="12 ноября, 2024 год"
+        additional={["IT клуб", "Английский язык"]}
+        price="15 000 сом"
+      />
       <AdvantagesPython />
     </div>
   );
