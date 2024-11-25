@@ -14,7 +14,7 @@ const ApplicationsPage = () => {
   const [isBarOpen, setIsBarOpen] = useState(false);
   const [isModal, setIsModal] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const rowsPerPage = 5; 
+  const rowsPerPage = 12;
 
   useEffect(() => {
     dispatch(groupStudentsSlice());
@@ -34,9 +34,16 @@ const ApplicationsPage = () => {
     if (currentPage > 1) setCurrentPage(currentPage - 1);
   };
 
+  const truncateName = (name, maxLength = 20) => {
+    if (name.length > maxLength) {
+      return `${name.substring(0, maxLength)}...`;
+    }
+    return name;
+  };
+
   return (
     <div className="container pb-8">
-      <h1 className="text-5xl font-semibold flex justify-center mb-[80px] pt-[50px]  font-medium">
+      <h1 className="text-5xl font-semibold flex justify-center mb-[80px] pt-[50px] font-medium">
         Заявки
       </h1>
       <SideBar isOpen={isBarOpen} setIsOpen={setIsBarOpen} />
@@ -55,38 +62,39 @@ const ApplicationsPage = () => {
         </div>
       </div>
       <div className="w-full overflow-x-auto mt-[50px]">
-        <table className="w-full text-left border-collapse rounded-xl shadow-lg">
-          <thead className="bg-white border text-lg font-bold text-black rounded-xl">
+        <table className="w-full text-left border-collapse shadow-lg">
+          <thead className="bg-white border text-lg font-bold text-black">
             <tr>
-              <th className="p-6 rounded-tl-xl">Имя Фамилия</th>
-              <th className="p-6">Группа</th>
-              <th className="p-6 text-center rounded-tr-xl">Действия</th>
+              <th className="p-6 w-[40%]">Имя Фамилия</th>
+              <th className="p-6 w-[30%]">Группа</th>
+              <th className="p-6 w-[30%] text-center">Действия</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-300">
+          <tbody>
             {currentData?.map((student, index) => (
               <tr
                 key={student._id}
-                className={`hover:shadow-md hover:shadow-orange-400 duration-200 rounded-xl ${
-                  index % 2 === 0 ? "bg-gray-200" : "bg-white"
+                className={`${
+                  index % 2 === 0 ? "bg-gray-100" : "bg-white"
                 }`}
               >
-                <td className="p-6 flex items-center gap-4 rounded-l-xl">
+                <td className="p-6 flex items-center gap-4">
                   <img
                     className="w-[47px] h-[47px] rounded-full"
                     src="/public/images/profileImg.png"
                     alt="profile"
                   />
-                  <p className="text-lg font-semibold">
-                    {student.name} {student.lastName}
+                  <p
+                    className="text-lg font-semibold truncate max-w-[200px]"
+                    title={`${student.name} ${student.lastName}`}
+                  >
+                    {truncateName(`${student.name} ${student.lastName}`)}
                   </p>
                 </td>
-              
                 <td className="p-6 text-[#FF8A00] font-medium">
                   {student.studentGroup}
                 </td>
-             
-                <td className="p-6 text-center rounded-r-xl">
+                <td className="p-6 text-center">
                   <div className="flex justify-center gap-4">
                     <button className="py-[12px] px-[24px] text-white rounded-full text-sm font-bold border-solid border-transparent hover:border-[#0acf83] border-[2px] bg-[#0acf83] hover:bg-transparent hover:text-[#0acf83] duration-300">
                       Одобрить
@@ -101,7 +109,6 @@ const ApplicationsPage = () => {
           </tbody>
         </table>
       </div>
-
       <div className="flex justify-center items-center mt-4 gap-4">
         <button
           className="py-2 px-4 bg-gray-300 rounded-lg text-black font-semibold hover:bg-gray-400 duration-200"
