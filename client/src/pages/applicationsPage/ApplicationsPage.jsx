@@ -5,126 +5,82 @@ import { groupStudentsSlice } from "../../redux/students/GroupStudents";
 import SideBar from "../../components/sideBar/SideBar";
 import ButtonOrange from "../../ui/buttons/ButtonOrange";
 import ModalAddStudent from "../../components/modalAddStudent/ModalAddStudent";
-import { FaPlus } from "react-icons/fa";
 
-const ApplicationsPage = () => {
+const ApplicatoinsPage = () => {
   const data = useSelector((state) => state.groupStudentsReducer.data);
   const dispatch = useDispatch();
-
   const [isBarOpen, setIsBarOpen] = useState(false);
   const [isModal, setIsModal] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const rowsPerPage = 5; 
 
   useEffect(() => {
     dispatch(groupStudentsSlice());
   }, [dispatch]);
 
-  const totalPages = Math.ceil(data?.length / rowsPerPage) || 1;
-  const currentData = data?.slice(
-    (currentPage - 1) * rowsPerPage,
-    currentPage * rowsPerPage
-  );
-
-  const handleNextPage = () => {
-    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
-  };
-
-  const handlePrevPage = () => {
-    if (currentPage > 1) setCurrentPage(currentPage - 1);
-  };
-
   return (
-    <div className="container pb-8">
-      <h1 className="text-5xl font-semibold flex justify-center mb-[80px] pt-[50px]  font-medium">
-        Заявки
-      </h1>
+    <div className="container pb-14">
       <SideBar isOpen={isBarOpen} setIsOpen={setIsBarOpen} />
-      <div className="flex justify-between items-center gap-5 flex-wrap mb-[45px]">
+      <div className="flex  items-center justify-between flex-wrap mb-[45px]">
         <div className="max-w-[705px] w-full">
           <SearchInput />
         </div>
-        <div className="max-w-fit">
+        <div className=" max-w-fit">
           <ButtonOrange
             handleFunction={() => {
               setIsModal(true);
             }}
           >
-            <FaPlus fill="white" className="bold" />
+            <p className="text-base font-bold">Добавить</p>
           </ButtonOrange>
         </div>
       </div>
-      <div className="w-full overflow-x-auto mt-[50px]">
-        <table className="w-full text-left border-collapse rounded-xl shadow-lg">
-          <thead className="bg-white border text-lg font-bold text-black rounded-xl">
-            <tr>
-              <th className="p-6 rounded-tl-xl">Имя Фамилия</th>
-              <th className="p-6">Группа</th>
-              <th className="p-6 text-center rounded-tr-xl">Действия</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-gray-300">
-            {currentData?.map((student, index) => (
-              <tr
-                key={student._id}
-                className={`hover:shadow-md hover:shadow-orange-400 duration-200 rounded-xl ${
-                  index % 2 === 0 ? "bg-gray-200" : "bg-white"
-                }`}
-              >
-                <td className="p-6 flex items-center gap-4 rounded-l-xl">
-                  <img
-                    className="w-[47px] h-[47px] rounded-full"
-                    src="/public/images/profileImg.png"
-                    alt="profile"
-                  />
-                  <p className="text-lg font-semibold">
-                    {student.name} {student.lastName}
+      <div className="flex flex-col justify-between items-start mb-[45.5px h-[163px]">
+        <button onClick={() => setIsBarOpen(true)}>
+          <img
+            className="max-w-[37px] w-full"
+            src="/public/icons/filter.svg"
+            alt="filterIcon"
+          />
+        </button>
+        <h1 className="text-2xl font-semibold">Заявки</h1>
+      </div>
+      <div className="flex flex-col justify-start  items-start gap-[26px] mt-[63px] ">
+        {data?.map((student) => (
+          <div
+            key={student._id}
+            className="flex lg:justify-between s:justify-center lg:gap-0 s:gap-y-3 items-center flex-wrap max-w-[890px] w-full  "
+          >
+            <div className="max-w-[545px] w-full flex items-center flex-wrap px-3 py-[10px] rounded-3xl border border-solid border-[#FF8A00] ">
+              <img
+                className="w-[47px] mr-[29px]"
+                src="/public/images/profileImg.png"
+                alt="profile"
+              />
+              <div className="flex justify-between flex-wrap max-w-[210px] w-full  items-center ">
+                <div className="flex gap-[18px] items-center">
+                  <p className="flex gap-[5px] text-xl font-semibold">
+                    <span>{student.name}</span>
+                    <span>{student.lastName}</span>
                   </p>
-                </td>
-              
-                <td className="p-6 text-[#FF8A00] font-medium">
-                  {student.studentGroup}
-                </td>
-             
-                <td className="p-6 text-center rounded-r-xl">
-                  <div className="flex justify-center gap-4">
-                    <button className="py-[12px] px-[24px] text-white rounded-full text-sm font-bold border-solid border-transparent hover:border-[#0acf83] border-[2px] bg-[#0acf83] hover:bg-transparent hover:text-[#0acf83] duration-300">
-                      Одобрить
-                    </button>
-                    <button className="py-[12px] px-[24px] text-white rounded-full text-sm font-bold border-solid border-transparent hover:border-[#ff0000] border-[2px] bg-[#ff0000] hover:bg-transparent hover:text-[#ff0000] duration-300">
-                      Отклонить
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                  <p className="text-[#FF8A00] text-base font-medium text-end pt-[3px]">
+                    {student.studentGroup}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="flex lg:justify-between s:justify-end items-center gap-[11px]   flex-wrap lg:max-w-[321px] s:max-w-[535px] s:w-full lg:w-full  ">
+              <button className="py-[15px] px-[35px] text-white rounded-full text-base  font-bold border-solid border-transparent hover:border-[#0acf83] border-[2px] bg-[#0acf83] hover:bg-transparent hover:text-[#0acf83] duration-300">
+                Одобрить
+              </button>
+              <button className="py-[15px] px-[35px] text-white rounded-full text-base  font-bold border-solid border-transparent hover:border-[#ff0000] border-[2px]   bg-[#ff0000] hover:bg-transparent hover:text-[#ff0000] duration-300">
+                Отклонить
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
-
-      <div className="flex justify-center items-center mt-4 gap-4">
-        <button
-          className="py-2 px-4 bg-gray-300 rounded-lg text-black font-semibold hover:bg-gray-400 duration-200"
-          disabled={currentPage === 1}
-          onClick={handlePrevPage}
-        >
-          Предыдущая
-        </button>
-        <p className="text-lg font-medium">
-          Страница {currentPage} из {totalPages}
-        </p>
-        <button
-          className="py-2 px-4 bg-gray-300 rounded-lg text-black font-semibold hover:bg-gray-400 duration-200"
-          disabled={currentPage === totalPages}
-          onClick={handleNextPage}
-        >
-          Следующая
-        </button>
-      </div>
-
       <ModalAddStudent isModal={isModal} setIsModal={setIsModal} />
     </div>
   );
 };
 
-export default ApplicationsPage;
+export default ApplicatoinsPage;

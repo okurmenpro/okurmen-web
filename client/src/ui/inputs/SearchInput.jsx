@@ -16,7 +16,7 @@ const SearchInput = () => {
       <div className="relative ml-[20px]">
         <button className=" p-[28.5px] ] bg-[#FF8A00] rounded-full">
           <img
-            className="absolute top-[17px] left-[15px]"
+            className="absolute top-[14px] left-[15px]"
             src="/public/icons/searchButton.svg"
             alt=""
           />
