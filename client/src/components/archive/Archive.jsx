@@ -55,7 +55,7 @@ const TrashList = () => {
       </div>
 
       {data.length === 0 ? (
-        <div className="flex flex-col items-center justify-center mt-10">
+        <div className="flex flex-col items-center justify-center mt-[200px]">
           <img src={EmptyImage} alt="Empty" className=" sm:h-40 sm:w-40" />
           <p className="text-gray-500 text-lg sm:text-xl mt-4">Пусто</p>
         </div>

@@ -30,6 +30,7 @@ function PythonPage() {
         price="15 000 сом"
       />
       <AdvantagesPython />
+      <Benefits/>
     </div>
   );
 }

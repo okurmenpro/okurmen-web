@@ -1,11 +1,24 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import ProfileInput from "../../ui/inputs/ProfilePageInput";
 import InputImage from "../../ui/inputs/InputImage";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ButtonOrange from "../../ui/buttons/ButtonOrange";
+import { useDispatch, useSelector } from "react-redux";
+import { createProfile, getProfile } from "../../redux/auth/ProfileSlice";
+import { useForm } from "react-hook-form";
 
 const ProfilePage = () => {
+  const dispatch = useDispatch();
+  const profileData = useSelector((state) => state.profileReducer.data);
   const [isUpdate, setIsUpdate] = useState(false);
+  const [photo, setPhoto] = useState(null);
   const inputRef = useRef(null);
+
+  const { register, handleSubmit, setValue } = useForm({
+    defaultValues: {
+      name: profileData?.name,
+    },
+  });
 
   const handleButtonClick = () => {
     setIsUpdate(true);
@@ -16,14 +29,55 @@ const ProfilePage = () => {
     }, 0);
   };
 
-  // save form && info user
-  const handleSaveChangeValue = () => {
-    console.log("save");
+  const handleSaveChangeValue = (data) => {
+    console.log(data);
+
+    if (
+      !data.status ||
+      !data.age ||
+      !data.direction ||
+      !data.term ||
+      !data.email
+    ) {
+      alert("Заполните все поля");
+      setIsUpdate(true);
+      return;
+    }
+    if (photo !== null) {
+      if (photo) {
+        const reader = new FileReader();
+
+        reader.onload = () => {
+          const base64Image = reader.result;
+          localStorage.setItem("photo", base64Image);
+        };
+
+        reader.readAsDataURL(photo);
+      }
+    }
+
+    dispatch(createProfile(data));
   };
-  // save photo
+
   const handleFileChange = (event) => {
-    console.log(event);
+    const file = event.target.files[0];
+    setPhoto(file);
   };
+
+  useEffect(() => {
+    if (profileData) {
+      setValue("name", profileData.name || "");
+      setValue("status", profileData.status || "");
+      setValue("age", profileData.age || "");
+      setValue("direction", profileData.direction || "");
+      setValue("term", profileData.term || "");
+      setValue("email", profileData.email || "");
+    }
+  }, [profileData, setValue]);
+
+  useEffect(() => {
+    dispatch(getProfile());
+  }, [dispatch]);
 
   return (
     <div className="container">
@@ -46,60 +100,75 @@ const ProfilePage = () => {
               <input
                 type="text"
                 placeholder="name"
+                {...register("name", { required: true })}
                 className="outline-none  self-center text-center pb-[9px] text-base font-bold text-[#FF8A00] w-fit border-b-[3px] border-solid border-[#FF8A00]  "
               />
             ) : (
               <>
-                <p className="text-center   text-base font-bold">name</p>
+                <p className="text-center   text-base font-bold">
+                  {profileData?.name}
+                </p>
               </>
             )}
           </div>
           <div className="flex flex-col max-w-[390px] w-full">
             <form
-              onClick={(e) => {
-                e.preventDefault();
-              }}
-              className={`flex flex-col ${isUpdate ? "gap-[10px]" : "gap-[20px]"}`}
+              onSubmit={handleSubmit(handleSaveChangeValue)}
+              className={`flex flex-col ${
+                isUpdate ? "gap-[10px]" : "gap-[20px]"
+              }`}
             >
               <ProfileInput
-                placeholder={"Гость"}
+                placeholder={profileData?.status}
                 type={"text"}
-                title={"Текущий статус  "}
+                title={"Текущий статус"}
+                register={register}
+                registerTitle={"status"}
                 isUpdate={isUpdate}
               />
               <ProfileInput
-                placeholder={"неизвестно"}
+                placeholder={profileData?.age}
                 type={"text"}
-                title={"Возраст  "}
+                title={"Возраст"}
+                register={register}
+                registerTitle={"age"}
                 isUpdate={isUpdate}
               />
               <ProfileInput
-                placeholder={"неизвестно"}
+                placeholder={profileData?.direction}
                 type={"text"}
-                title={"Направление  "}
+                title={"Направление"}
+                register={register}
+                registerTitle={"direction"}
+                isUpdate={isUpdate}
+              />
+
+              <ProfileInput
+                placeholder={profileData?.term}
+                type={"text"}
+                title={"Срок обучения"}
+                register={register}
+                registerTitle={"term"}
                 isUpdate={isUpdate}
               />
               <ProfileInput
-                placeholder={"неизвестно"}
+                placeholder={profileData?.email}
                 type={"text"}
-                title={"Срок обучения "}
-                isUpdate={isUpdate}
-              />
-              <ProfileInput
-                placeholder={"gost345@gmal.com"}
-                type={"text"}
-                title={"E-mail "}
+                title={"E-mail"}
+                register={register}
+                registerTitle={"email"}
                 isUpdate={isUpdate}
               />
               <div className=" flex  flex-wrap justify-between mt-[10px] w-full self-end">
                 <div className="">
                   <ButtonOrange
                     handleFunction={() => {
-                      setIsUpdate(true);
                       if (!isUpdate) {
                         handleButtonClick();
+                      } else {
+                        setIsUpdate(!isUpdate);
+                        handleSaveChangeValue();
                       }
-                      handleSaveChangeValue();
                     }}
                   >
                     <p className="text-lg">

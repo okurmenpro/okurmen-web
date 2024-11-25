@@ -32,6 +32,7 @@ const BackendPage = () => {
         price="15 000 сом"
       />
       <ModulsBackend />
+      <Benefits/>
     </div>
   );
 };

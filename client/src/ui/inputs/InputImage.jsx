@@ -2,7 +2,7 @@
 import { useRef, useState } from "react";
 
 const InputImage = ({ onChange, isUpdate }) => {
-  const [image, setImage] = useState(false);
+  const [image, setImage] = useState(localStorage.getItem("photo"));
   const fileInputRef = useRef(null);
 
   const handleButtonClick = () => {
@@ -48,7 +48,11 @@ const InputImage = ({ onChange, isUpdate }) => {
       ) : null}
       <img
         className={`max-w-[124px] w-full  h-[124px] mb-[9px] self-center  rounded-full object-fill   bg-center bg-no-repeat `}
-        src={!image ? "/public/images/profileImg.png" : image}
+        src={
+          !image
+            ? "/public/images/profileImg.png"
+            : image
+        }
       />
     </div>
   );
