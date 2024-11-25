@@ -37,7 +37,7 @@ const ApplicationsPage = () => {
           </ButtonOrange>
         </div>
       </div>
-      <div className="w-full mt-[45px] overflow-x-auto">
+      <div className="w-full mt-[45px] overflow-x-auto mt-[50px]">
         <table className="w-full text-left border-collapse rounded-xl shadow-lg">
        
           <thead className="bg-[white] border text-lg font-bold text-black rounded-xl">
