@@ -3,7 +3,7 @@ import advantagesFront from "../../data/advantagesFront";
 
 const AdvantagesFrontend = () => {
     return (
-      <div className="w-[700px] h-[600px] mx-auto text-center mb-[200px]">
+      <div className="w-[700px] h-[600px] mx-auto text-center mb-[200px] mt-[70px]">
       <h2 className="text-3xl font-bold mb-8">Преимущества курса</h2>
       <div className="grid grid-cols-3 grid-rows-2 gap-0">
         {advantagesFront.map((advantage, index) => {

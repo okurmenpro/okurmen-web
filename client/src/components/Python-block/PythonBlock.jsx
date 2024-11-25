@@ -14,10 +14,8 @@ function PythonBlock() {
           </p>
           <div className="space-y-2 mb-4">
             <div className="flex items-center text-gray-600">
-              {/* <IoTime className="w-5 h-5 mr-2" />4 раза в неделю */}
             </div>
             <div className="flex items-center w-[270px]  rounded-lg pl-2  text-gray-600 border border-orange-500">
-              {/* <RxCalendar className="w-5 h-5 mr-2" /> */}
               Начнётся:{" "}
               <span className="text-orange-500 ml-1">12 ноября, 2024 год</span>
             </div>
