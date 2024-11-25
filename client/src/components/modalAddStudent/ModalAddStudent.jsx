@@ -9,11 +9,15 @@ const ModalAddStudent = ({ isModal, setIsModal }) => {
   return (
     <Modal isOpen={isModal}>
       <div className="max-w-[935px] w-full p-8 bg-white rounded-[5px] m-[20px]">
+        <div  className="flex align-center justify-start gap-16">
+
         <button onClick={() => setIsModal(false)}>
           <span >
-            <MdClose />
+            <MdClose size={35} />
           </span>
         </button>
+        <p className="text-bold text-3xl font-medium">добавиться</p>
+        </div>
         <form className="flex flex-col justify-start mt-[57px] ">
           <div className="flex flex-wrap  justify-between w-full items-center gap-[10px]">
             <ModalInput placeholder={"Имя"} type={"text"} />
