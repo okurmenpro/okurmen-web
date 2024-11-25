@@ -108,7 +108,7 @@ const ApplicationsPage = () => {
           disabled={currentPage === 1}
           onClick={handlePrevPage}
         >
-          previous
+          Предыдущая
         </button>
         <p className="text-lg font-medium">
           Страница {currentPage} из {totalPages}
@@ -118,7 +118,7 @@ const ApplicationsPage = () => {
           disabled={currentPage === totalPages}
           onClick={handleNextPage}
         >
-          next
+          Следующая
         </button>
       </div>
 
