@@ -42,13 +42,13 @@ const ApplicationsPage = () => {
   };
 
   return (
-    <div className="container pb-8">
-      <h1 className="text-5xl font-semibold flex justify-center mb-[80px] pt-[50px] font-medium">
+    <div className="container pb-8 px-4 md:px-8">
+      <h1 className="text-4xl md:text-5xl font-semibold flex justify-center mb-[60px] pt-[40px] font-medium">
         Заявки
       </h1>
       <SideBar isOpen={isBarOpen} setIsOpen={setIsBarOpen} />
-      <div className="flex justify-between items-center gap-5 flex-wrap mb-[45px]">
-        <div className="max-w-[705px] w-full">
+      <div className="flex flex-wrap justify-between items-center gap-5 mb-[30px]">
+        <div className="flex-1 min-w-[250px] max-w-[705px] w-full">
           <SearchInput />
         </div>
         <div className="max-w-fit">
@@ -61,13 +61,15 @@ const ApplicationsPage = () => {
           </ButtonOrange>
         </div>
       </div>
-      <div className="w-full overflow-x-auto mt-[50px]">
+      <div className="w-full overflow-x-auto mt-[30px]">
         <table className="w-full text-left border-collapse shadow-lg">
-          <thead className="bg-white border text-lg font-bold text-black">
+          <thead className="bg-white border text-md md:text-lg font-bold text-black">
             <tr>
-              <th className="p-6 w-[40%]">Имя Фамилия</th>
-              <th className="p-6 w-[30%]">Группа</th>
-              <th className="p-6 w-[30%] text-center">Действия</th>
+              <th className="p-4 md:p-6 w-[40%] min-w-[150px]">Имя Фамилия</th>
+              <th className="p-4 md:p-6 w-[30%] min-w-[100px]">Группа</th>
+              <th className="p-4 md:p-6 w-[30%] text-center min-w-[150px]">
+                Действия
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -78,28 +80,28 @@ const ApplicationsPage = () => {
                   index % 2 === 0 ? "bg-gray-100" : "bg-white"
                 }`}
               >
-                <td className="p-6 flex items-center gap-4">
+                <td className="p-4 md:p-6 flex items-center gap-4">
                   <img
-                    className="w-[47px] h-[47px] rounded-full"
+                    className="w-[40px] md:w-[47px] h-[40px] md:h-[47px] rounded-full"
                     src="/public/images/profileImg.png"
                     alt="profile"
                   />
                   <p
-                    className="text-lg font-semibold truncate max-w-[200px]"
+                    className="text-sm md:text-lg font-semibold truncate max-w-[150px] md:max-w-[200px]"
                     title={`${student.name} ${student.lastName}`}
                   >
                     {truncateName(`${student.name} ${student.lastName}`)}
                   </p>
                 </td>
-                <td className="p-6 text-[#FF8A00] font-medium">
+                <td className="p-4 md:p-6 text-[#FF8A00] font-medium">
                   {student.studentGroup}
                 </td>
-                <td className="p-6 text-center">
-                  <div className="flex justify-center gap-4">
-                    <button className="py-[12px] px-[24px] text-white rounded-full text-sm font-bold border-solid border-transparent hover:border-[#0acf83] border-[2px] bg-[#0acf83] hover:bg-transparent hover:text-[#0acf83] duration-300">
+                <td className="p-4 md:p-6 text-center">
+                  <div className="flex justify-center gap-2 md:gap-4">
+                    <button className="py-2 px-4 text-sm md:py-[12px] md:px-[24px] text-white rounded-full text-sm font-bold border-solid border-transparent hover:border-[#0acf83] border-[2px] bg-[#0acf83] hover:bg-transparent hover:text-[#0acf83] duration-300">
                       Одобрить
                     </button>
-                    <button className="py-[12px] px-[24px] text-white rounded-full text-sm font-bold border-solid border-transparent hover:border-[#ff0000] border-[2px] bg-[#ff0000] hover:bg-transparent hover:text-[#ff0000] duration-300">
+                    <button className="py-2 px-4 text-sm md:py-[12px] md:px-[24px] text-white rounded-full text-sm font-bold border-solid border-transparent hover:border-[#ff0000] border-[2px] bg-[#ff0000] hover:bg-transparent hover:text-[#ff0000] duration-300">
                       Отклонить
                     </button>
                   </div>
@@ -117,7 +119,7 @@ const ApplicationsPage = () => {
         >
           Предыдущая
         </button>
-        <p className="text-lg font-medium">
+        <p className="text-sm md:text-lg font-medium">
           Страница {currentPage} из {totalPages}
         </p>
         <button
