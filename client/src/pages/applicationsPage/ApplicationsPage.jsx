@@ -19,7 +19,7 @@ const ApplicationsPage = () => {
 
   return (
     <div className="container pb-14">
-      <h1 className="text-5xl font-semibold flex justify-center mb-[50px] font-medium">
+      <h1 className="text-5xl font-semibold flex justify-center mb-[80px] mt-[80px] font-medium">
         Заявки
       </h1>
       <SideBar isOpen={isBarOpen} setIsOpen={setIsBarOpen} />
@@ -39,7 +39,7 @@ const ApplicationsPage = () => {
       </div>
       <div className="w-full mt-[45px] overflow-x-auto">
         <table className="w-full text-left border-collapse rounded-xl shadow-lg">
-          {/* Table Header */}
+       
           <thead className="bg-[white] border text-lg font-bold text-black rounded-xl">
             <tr>
               <th className="p-6 rounded-tl-xl">Имя Фамилия</th>
