@@ -5,6 +5,7 @@ import python from "../../../public/icons/python.svg";
 import javascript from "../../../public/icons/javascript.svg";
 import java from "../../../public/icons/java.svg";
 import figma from "../../../public/icons/figma.svg";
+import { Link } from "react-router-dom";
 
 const icons = [
   { src: cSharp, alt: "C#", top: "0%", left: "20%", translateY: "-80%" },
@@ -29,9 +30,11 @@ const HeroSection = () => {
         <p className="text-orange-400 text-lg mt-2">
           Пошаговое обучение IT-навыкам с нуля до уверенного пользователя
         </p>
-        <button className="mt-4 px-6 py-2 border border-orange-400 text-orange-400 rounded hover:bg-orange-500 hover:text-white transition">
-          Консультация
-        </button>
+        <Link to="/consultation">
+          <button className="mt-4 px-6 py-2 border border-orange-400 text-orange-400 rounded hover:bg-orange-500 hover:text-white transition">
+            Консультация
+          </button>
+        </Link>
         <div className="relative mt-16 h-64 flex justify-center items-center">
           <div className="relative w-[80%] h-full flex justify-between items-center">
             {icons.map((icon, index) => (
