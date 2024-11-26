@@ -1,78 +1,59 @@
-// HeroSection.jsx
+import React from "react";
+import cSharp from "../../../public/icons/cSharp.svg";
+import cPlus from "../../../public/icons/cPlus.svg";
+import python from "../../../public/icons/python.svg";
+import javascript from "../../../public/icons/javascript.svg";
+import java from "../../../public/icons/java.svg";
+import figma from "../../../public/icons/figma.svg";
 
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { setProduct, submitProduct } from '../../redux/PostProduct/PostProduct';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-const HeroSection = () => {
-	const dispatch = useDispatch();
-	const data = useSelector((state) => state.post_product.data);
-	const status = useSelector((state) => state.post_product.status);
-	const error = useSelector((state) => state.post_product.error);
-	const [localData, setLocalData] = useState({ name: '', number: '' });
-
-	useEffect(() => {
-		setLocalData(data);
-	}, [data]);
-
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-		dispatch(submitProduct(localData));
-	};
-
-	const handleChange = (event) => {
-		const { name, value } = event.target;
-		setLocalData(prevState => ({
-			...prevState,
-			[name]: value
-		}));
-	};
-
-	return (
-		<section className='w-full h-full bg-[url("/public/images/heroImage.jpg")] bg-center bg-cover bg-blend-multiply bg-[#0000008a] '>
-			<div className='container'>
-				<div className='flex items-center justify-center'>
-					<div className='text-center flex flex-col justify-center items-center gap-3 mt-48 mb-52'>
-						<h1 className='font-medium text-2xl md:text-5xl text-white '>
-							<span className='font-bold text-blue-500'>ОКУРМЭН</span> менен IT'ге кадам таштаңыз
-						</h1>
-						<p className='mt-3 text-lg md:text-xl font-medium px-5 text-white'>
-							Биз менен код жазганды гана эмес, IT ааламында жашаганда үйрөнөсүз
-						</p>
-						<form onSubmit={handleSubmit}>
-							<div className='w-[300px] py-3 md:h-[152px] md:w-full  md:flex justify-center items-center gap-4 mt-5 border border-[#fff] rounded-3xl'>
-								<input
-									className='bg-[#EFEFEF] py-2 px-2 md:px-4 md:py-4 rounded-full outline-none mt-3 placeholder:text-gray-500'
-									type='text'
-									placeholder='Аты жонунуз...'
-									name='name'
-									onChange={handleChange}
-									value={localData.name}
-								/>
-								<br />
-								<input
-									className='bg-[#EFEFEF] py-2 px-2 md:px-4 md:py-4 rounded-full outline-none mt-3 placeholder:text-gray-500'
-									type='number'
-									placeholder='+996'
-									name='number'
-									onChange={handleChange}
-									value={localData.number}
-								/>
-								<br />
-								<button type='submit' className=' mt-3 py-2 px-7 md:py-4 md:px-9 bg-yellow-500 rounded-full text-white font-semibold'>
-									Жөнөтүү
-								</button>
-							</div>
-						</form>
-						{status === 'loading' && <p>Загрузка...</p>}
-						{status === 'failed' && <p>Error: {error}</p>}
-					</div>
-				</div>
-			</div>
-		</section>
-	);
+const OkurmenPage = () => {
+  return (
+    <div className="w-full h-auto bg-white">
+      <div className="text-center py-8 relative">
+        <h1 className="text-blue-700 text-4xl font-bold">ОКУРМЭН</h1>
+        <p className="text-orange-400 text-lg mt-2">
+          Пошаговое обучение IT-навыкам с нуля до уверенного пользователя
+        </p>
+        <button className="mt-4 px-6 py-2 border border-orange-400 text-orange-400 rounded hover:bg-orange-500 hover:text-white transition">
+          Консультация
+        </button>
+        <div className="relative mt-16 h-64 flex justify-center items-center">
+          <div className="relative w-[80%] h-full flex justify-between items-center">
+            <img
+              src={cSharp}
+              alt=""
+              className="absolute h-16 w-16 top-0 left-[20%] transform translate-y-[-80%]"
+            />
+            <img
+              src={javascript}
+              alt="JavaScript"
+              className="absolute h-16 w-16 top-[10%] left-[30%] transform translate-y-[-10%]"
+            />
+            <img
+              src={cPlus}
+              alt="Python"
+              className="absolute h-16 w-16 top-[30%] left-[42%]"
+            />
+            <img
+              src={python}
+              alt="Figma"
+              className="absolute h-16 w-16 top-[31%] left-[57%]"
+            />
+            <img
+              src={figma}
+              alt="Java"
+              className="absolute h-16 w-16 top-[12%] left-[68%] transform translate-y-[-19.5%]"
+            />
+            <img
+              src={java}
+              alt="New Icon"
+              className="absolute h-16 w-16 top-0 left-[77%] transform translate-y-[-86%]"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
-export default HeroSection;
+export default OkurmenPage;
