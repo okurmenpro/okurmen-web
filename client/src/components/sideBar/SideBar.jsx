@@ -1,12 +1,34 @@
-import Checkbox from "../../ui/inputs/Checkox";
 import { useNavigate } from "react-router-dom";
-import { MdOutlineBackspace as Back } from "react-icons/md";
-import { useEffect } from "react";
+import { RxCross1 as Back } from "react-icons/rx";
+import { useEffect, useState } from "react";
 
 const SideBar = ({ isOpen, setIsOpen }) => {
   const navigate = useNavigate();
 
-  // Prevent scrolling when the sidebar is open
+  const [checkboxState, setCheckboxState] = useState({
+    Backend: false,
+    "UX/UI": false,
+    Frontend: false,
+    Гость: false,
+    Студент: false,
+    Выпускник: false,
+    Internship: false,
+    Bootcamp: false,
+  });
+
+  const Checkbox = ({ selected, label, onChange }) => (
+    <label className="flex items-center gap-2 cursor-pointer ">
+      <input
+        type="checkbox"
+        checked={selected}
+        onChange={onChange}
+        className="w-4 h-4 border rounded-md bg-orange-500"
+      />
+      <span className="text-lg">{label}</span>
+    </label>
+  );
+  
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -14,73 +36,98 @@ const SideBar = ({ isOpen, setIsOpen }) => {
       document.body.style.overflow = "auto";
     }
     return () => {
-      document.body.style.overflow = "auto"; // Cleanup on unmount
+      document.body.style.overflow = "auto"; 
     };
   }, [isOpen]);
 
+  const handleCheckboxChange = (label) => {
+    setCheckboxState((prevState) => ({
+      ...prevState,
+      [label]: !prevState[label],
+    }));
+  };
+
+  const handleClear = () => {
+    console.log("Clearing checkboxes");
+    setCheckboxState({
+      Backend: false,
+      "UX/UI": false,
+      Frontend: false,
+      Гость: false,
+      Студент: false,
+      Выпускник: false,
+      Internship: false,
+      Bootcamp: false,
+    });
+  };
+
   return (
     <>
-      {/* Backdrop */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-20"
           onClick={() => setIsOpen(false)}
         ></div>
       )}
-
-      {/* Sidebar */}
       <div
         className={`fixed top-0 z-30 h-full bg-white duration-300 ${
           isOpen ? "left-0" : "-left-full"
         } w-3/4 sm:w-2/3 md:w-1/2 lg:w-[381px]`}
       >
-        <div className="pt-[30px] px-[30px] h-full overflow-y-auto">
-          {/* Back button */}
-          <div className="flex justify-between items-center mb-5">
-            <h2 className="text-xl font-medium">Меню</h2>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="flex items-center justify-center"
-            >
-              <Back size={25} />
-            </button>
+      
+        <button
+          onClick={() => setIsOpen(false)}
+          className="absolute top-[120px] -right-[100px] flex items-center justify-center bg-white p-2 rounded-full shadow-md"
+        >
+          <Back size={25} />
+        </button>
+
+        <div className="pt-[30px] px-[30px] h-full overflow-y-auto flex flex-col justify-between">
+         
+          <div>
+            <div className="mb-5">
+              <h2 className="text-xl font-medium">Меню</h2>
+            </div>
+
+          
+            <ul className="flex flex-col gap-[25px] mb-5">
+              <li>
+                <button
+                  onClick={() => {
+                    navigate("/students");
+                    setIsOpen(false);
+                  }}
+                  className="flex items-center font-medium text-base"
+                >
+                  Заявки
+                  <img className="mt-[2px] ml-3" src="/icons/arrowRight.svg" alt="arrow" />
+                </button>
+              </li>
+            </ul>
+
+            {/* Filters */}
+            <div className="flex flex-col gap-5 text-xl font-medium">
+              <p>Направление</p>
+              <Checkbox selected={checkboxState["Backend"]} label={"Backend"} onChange={() => handleCheckboxChange("Backend")} />
+              <Checkbox selected={checkboxState["UX/UI"]} label={"UX/UI"} onChange={() => handleCheckboxChange("UX/UI")} />
+              <Checkbox selected={checkboxState["Frontend"]} label={"Frontend"} onChange={() => handleCheckboxChange("Frontend")} />
+              <p>Статус</p>
+              <Checkbox selected={checkboxState["Гость"]} label={"Гость"} onChange={() => handleCheckboxChange("Гость")} />
+              <Checkbox selected={checkboxState["Студент"]} label={"Студент"} onChange={() => handleCheckboxChange("Студент")} />
+              <Checkbox selected={checkboxState["Выпускник"]} label={"Выпускник"} onChange={() => handleCheckboxChange("Выпускник")} />
+              <p>Уровень</p>
+              <Checkbox selected={checkboxState["Internship"]} label={"Internship"} onChange={() => handleCheckboxChange("Internship")} />
+              <Checkbox selected={checkboxState["Bootcamp"]} label={"Bootcamp"} onChange={() => handleCheckboxChange("Bootcamp")} />
+            </div>
           </div>
 
-          {/* Navigation Links */}
-          <ul className="flex flex-col gap-[25px] mb-5">
-            <li>
-              <button
-                onClick={() => {
-                  setTimeout(() => {
-                    navigate("/students");
-                  }, 300);
-                  setIsOpen(false);
-                }}
-                className="flex items-center font-medium text-base"
-              >
-                Заявки
-                <img
-                  className="mt-[2px] ml-3"
-                  src="/icons/arrowRight.svg"
-                  alt="arrow"
-                />
-              </button>
-            </li>
-          </ul>
-
-          {/* Filters */}
-          <div className="flex flex-col gap-5 text-xl font-medium">
-            <p>Направление</p>
-            <Checkbox seleted={false} label={"Backend"} />
-            <Checkbox seleted={false} label={"UX/UI"} />
-            <Checkbox seleted={false} label={"Frontend"} />
-            <p>Статус</p>
-            <Checkbox seleted={false} label={"Гость"} />
-            <Checkbox seleted={false} label={"Студент"} />
-            <Checkbox seleted={false} label={"Выпускник"} />
-            <p>Уровень</p>
-            <Checkbox seleted={false} label={"Internship"} />
-            <Checkbox seleted={false} label={"Bootcamp"} />
+          <div className="mb-6">
+            <button
+              onClick={handleClear}
+              className="w-full py-2 text-center bg-orange-500 text-white font-medium rounded-lg"
+            >
+              Очистить
+            </button>
           </div>
         </div>
       </div>
