@@ -1,11 +1,9 @@
-
 import React from "react";
-import UxUiBlock from "../../components/uxuiBlock/UxUiBlock";
 import figmalogo from "../../../public/images/figmalogo.png";
-import CourseAdvantages from "../../components/advantagesPython/AdvantagesPython";
-import MainModules from "../../components/mainModules/MainModules";
 import AboutCourse from "../../components/aboutCourse/aboutCourse";
 import PriseCourse from "../../components/priceCourse/PriceCourse";
+import AdvantagesCourse from '../../components/advantagesCourse/AdvantagesCourse';
+import advantages from '../../data/advantages';
 
 const UxUiPage = () => {
   const UxUiDescription = `
@@ -33,8 +31,9 @@ const UxUiPage = () => {
         additional={["IT клуб", "Английский язык"]}
         price="15 000 сом"
       />
-      <CourseAdvantages />
-      <MainModules />
+      <AdvantagesCourse
+        data={advantages}
+        title="Преимущества курса" />
     </>
   );
 };

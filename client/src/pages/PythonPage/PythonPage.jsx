@@ -1,10 +1,12 @@
-
 import React from "react";
 import AboutCourse from "../../components/aboutCourse/aboutCourse";
 import python from "../../../public/images/python.png";
-import PythonBlock from "../../components/python-block/PythonBlock";
-import AdvantagesPython from "../../components/advantagesPython/AdvantagesPython";
 import PriseCourse from "../../components/priceCourse/PriceCourse";
+import advantages from '../../data/advantages';
+import AdvantagesCourse from "../../components/advantagesCourse/AdvantagesCourse";
+import Benefits from "../../components/benefits/Benefits";
+import benefitsData from "../../data/benefits";
+
 
 function PythonPage() {
   const pythonDescription = `
@@ -29,8 +31,15 @@ function PythonPage() {
         additional={["IT клуб", "Английский язык"]}
         price="15 000 сом"
       />
-      <AdvantagesPython />
-      <Benefits/>
+      <AdvantagesCourse
+        data={advantages}
+        title="Преимущества курса" />
+      <Benefits
+        benefitsData={benefitsData}
+        sectionTitle="Главные модули"
+        highlightTitle="Анализ информации"
+        additionalText="Машинное обучение"
+      />
     </div>
   );
 }

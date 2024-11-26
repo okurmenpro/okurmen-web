@@ -2,6 +2,11 @@ import React from 'react'
 import AboutCourse from '../../components/aboutCourse/aboutCourse';
 import FrontendIcons from '../../../public/icons/FrontentIcons.svg'
 import PriseCourse from '../../components/priceCourse/PriceCourse';
+import AdvantagesCourse from '../../components/advantagesCourse/AdvantagesCourse';
+import advantagesFront from '../../data/advantagesFrontend';
+
+
+
 function FrontendPage() {
   const frontendDescription = `
   Основные задачи фронтенд-разработчика — создать и настроить интерфейс, чтобы он был красивым, удобным и работал на всех устройствах. 
@@ -25,6 +30,11 @@ function FrontendPage() {
         additional={["IT клуб", "Английский язык"]}
         price="15 000 сом"
       />
+      <AdvantagesCourse
+        data={advantagesFront}
+        title="Преимущества курса" />
+
+
     </div>
   )
 }
