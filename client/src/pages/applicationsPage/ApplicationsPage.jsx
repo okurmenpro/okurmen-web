@@ -14,7 +14,7 @@ const ApplicationsPage = () => {
   const [isBarOpen, setIsBarOpen] = useState(false);
   const [isModal, setIsModal] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const rowsPerPage = 5; 
+  const rowsPerPage = 5;
 
   useEffect(() => {
     dispatch(groupStudentsSlice());
@@ -81,11 +81,11 @@ const ApplicationsPage = () => {
                     {student.name} {student.lastName}
                   </p>
                 </td>
-              
+
                 <td className="p-6 text-[#FF8A00] font-medium">
                   {student.studentGroup}
                 </td>
-             
+
                 <td className="p-6 text-center rounded-r-xl">
                   <div className="flex justify-center gap-4">
                     <button className="py-[12px] px-[24px] text-white rounded-full text-sm font-bold border-solid border-transparent hover:border-[#0acf83] border-[2px] bg-[#0acf83] hover:bg-transparent hover:text-[#0acf83] duration-300">
