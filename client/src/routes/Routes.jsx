@@ -16,7 +16,7 @@ import ManagerProfile from "../pages/managerProfilePage/ManagerProfile";
 import BackendPage1 from "../pages/backendPage/BackendPage";
 import UxUiPage from "../pages/uxuiPage/UxUiPage";
 import GroupPage from "../pages/groupPage/GroupPage";
-import StudentsPage from "../pages/studentsPage/StudetsPage";
+import StudentsPage from "../pages/studentsPage/StudentsPage";
 import BackendFrontend from "../pages/backendFrontend/BackendFrontend";
 import PythonPage from "../pages/pythonPage/PythonPage";
 import ApplicatoinsPage from "../pages/applicationsPage/ApplicationsPage";
