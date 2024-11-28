@@ -14,7 +14,7 @@ const StudentsPage = () => {
   const [isBarOpen, setIsBarOpen] = useState(false);
   const [isModal, setIsModal] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const rowsPerPage = 10;  // 10 items per page
+  const rowsPerPage = 10; // 10 items per page
 
   useEffect(() => {
     dispatch(groupStudentsSlice());
@@ -130,4 +130,3 @@ const StudentsPage = () => {
 };
 
 export default StudentsPage;
-s
