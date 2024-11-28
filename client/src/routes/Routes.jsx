@@ -47,7 +47,7 @@ const AppRoutes = () => {
         <Route path="/registration" element={<Register />} />
         <Route path="/register-confirm" element={<ConfirmRegisterPage />} />
         <Route path="/consultation" element={<ConsulationPage />} />
-        <Route path="archive" element={<Archive />} />
+        <Route path="/archive" element={<Archive />} />
       </>
     )
   );
