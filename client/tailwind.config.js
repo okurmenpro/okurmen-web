@@ -19,3 +19,19 @@ export default {
   },
   plugins: [],
 };
+
+// tailwind.config.js
+module.exports = {
+  content: [
+    "./src/**/*.{html,js,jsx,ts,tsx}", // укажите путь к вашим файлам
+  ],
+  theme: {
+    extend: {
+      clipPath: {
+        right: "polygon(0 0, 100% 0, 100% 85%, 0 100%)",
+        left: "polygon(0 15%, 100% 0, 100% 100%, 0 100%)",
+      },
+    },
+  },
+  plugins: [],
+};

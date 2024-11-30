@@ -51,13 +51,18 @@ const Header = () => {
     >
       <div className="container">
         <div className="flex items-center justify-between ">
-          <div className="ml-3 md:ml-0">
-            <img width={80} src="/public/images/logo.png" alt="" />
+          <div className="ml-3 md:ml-0 mx-[30px]">
+            <img
+              className="mx-[40px]"
+              width={80}
+              src="/public/images/logo.png"
+              alt=""
+            />
           </div>
           <Navbar navlinks={navlinks} />
           <div>
             <Link to={"/registration"}>
-              <button className="text-[15px] bg-black text-white p-4 rounded-full">
+              <button className="text-[15px] bg-black text-white p-[10px] rounded-[5px]  	">
                 Зарегистрироваться
               </button>
             </Link>
@@ -84,9 +89,6 @@ const Header = () => {
                 {link.title}
               </a>
             ))}
-            <div className="flex items-center justify-center">
-              <Button text={"Консультация"} />
-            </div>
           </div>
         </div>
       ) : null}

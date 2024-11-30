@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 
 import { useNavigate } from "react-router-dom";
-
+import { IoTrashOutline as Trash  } from "react-icons/io5";
+import { RiErrorWarningLine as Warn } from "react-icons/ri";
 const ContainerStudents = ({ data }) => {
   const navigate = useNavigate();
   return (
@@ -31,10 +32,10 @@ const ContainerStudents = ({ data }) => {
               </div>
               <div className="flex items-center justify-between max-w-[95px] w-full gap-[15px]">
                 <button>
-                  <img src="/public/icons/warning.svg" alt="warning" />
+                  <Warn size={30}/>
                 </button>
                 <button>
-                  <img src="/public/icons/deleteIcon.svg" alt="deleteIcon" />
+                  <Trash size={30}/>
                 </button>
               </div>
             </div>
