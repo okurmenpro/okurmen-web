@@ -4,7 +4,9 @@ import FrontendIcons from '../../../public/icons/FrontentIcons.svg'
 import PriseCourse from '../../components/priceCourse/PriceCourse';
 import AdvantagesCourse from '../../components/advantagesCourse/AdvantagesCourse';
 import advantagesFront from '../../data/advantagesFrontend';
-
+import MainModules from '../../components/mainModules/MainModules';
+import frontmodules from '../../data/frontmodules';
+import javascript from '../../../public/icons/javascript.svg'
 
 
 function FrontendPage() {
@@ -22,10 +24,11 @@ function FrontendPage() {
       />
       <PriseCourse
         title="Frontend"
-        // image={figmaLogo}
+        image={javascript}
         duration="2 месяца"
         englishIncluded={true}
         frequency="4 раза в неделю"
+        time="1,5 часа"
         startDate="12 ноября, 2024 год"
         additional={["IT клуб", "Английский язык"]}
         price="15 000 сом"
@@ -33,7 +36,9 @@ function FrontendPage() {
       <AdvantagesCourse
         data={advantagesFront}
         title="Преимущества курса" />
-
+      <MainModules
+        data={frontmodules}
+        title="Главные модули" />
 
     </div>
   )

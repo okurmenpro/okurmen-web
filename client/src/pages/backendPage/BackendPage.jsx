@@ -6,6 +6,7 @@ import AdvantagesCourse from "../../components/advantagesCourse/AdvantagesCourse
 import advantagesBackend from '../../data/advantagesBackend'
 import Benefits from "../../components/benefits/Benefits";
 import benefitsData from "../../data/benefits";
+import backend from '../../../public/icons/backend.svg'
 
 const BackendPage = () => {
   const backendDescription = `
@@ -24,10 +25,11 @@ const BackendPage = () => {
       />
       <PriseCourse
         title="Backend"
-        // image={javaLogo}
+        image={backend}
         duration="2 месяца"
         englishIncluded={true}
         frequency="4 раза в неделю"
+        time="1,5 часа"
         startDate="12 ноября, 2024 год"
         additional={["IT клуб", "Английский язык"]}
         price="15 000 сом"

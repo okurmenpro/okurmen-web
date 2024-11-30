@@ -1,9 +1,12 @@
 import React from "react";
 import figmalogo from "../../../public/images/figmalogo.png";
+import figma from '../../../public/images/figma.png'
 import AboutCourse from "../../components/aboutCourse/aboutCourse";
 import PriseCourse from "../../components/priceCourse/PriceCourse";
 import AdvantagesCourse from '../../components/advantagesCourse/AdvantagesCourse';
 import advantages from '../../data/advantages';
+import modules from "../../data/modules";
+import MainModules from "../../components/mainModules/MainModules";
 
 const UxUiPage = () => {
   const UxUiDescription = `
@@ -23,10 +26,11 @@ const UxUiPage = () => {
       />
       <PriseCourse
         title="UX/UI design"
-        // image={figmaLogo}
+        image={figma}
         duration="2 месяца"
         englishIncluded={true}
         frequency="4 раза в неделю"
+        time="1,5 часа"
         startDate="12 ноября, 2024 год"
         additional={["IT клуб", "Английский язык"]}
         price="15 000 сом"
@@ -34,6 +38,9 @@ const UxUiPage = () => {
       <AdvantagesCourse
         data={advantages}
         title="Преимущества курса" />
+      <MainModules
+        data={modules}
+        title="Главные модули" />
     </>
   );
 };
