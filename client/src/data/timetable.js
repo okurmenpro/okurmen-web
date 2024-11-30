@@ -11,8 +11,8 @@ export const generateScheduleForWeek = (year, month, day) => {
 
     schedule.push({
       id: currentDate.getDate(),
-      day: daysOfWeek[currentDate.getDay()],
-      date: formatDate(currentDate),
+      // day: daysOfWeek[currentDate.getDay()],
+      // date: formatDate(currentDate),
     });
   }
 

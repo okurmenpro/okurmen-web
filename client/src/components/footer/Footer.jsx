@@ -1,58 +1,70 @@
-import { IoLogoInstagram, IoLogoWhatsapp } from 'react-icons/io';
-import { FaTelegramPlane } from 'react-icons/fa';
-import { FiMail } from 'react-icons/fi';
-import Button from '../../ui/buttons/Button';
+import React from "react";
+import { IoLogoInstagram, IoLogoWhatsapp } from "react-icons/io";
 
 const Footer = () => {
-	return (
-		<footer className='bg-black  relative z-40'>
-			<div className='container'>
-				<div className='py-[20px] border-b-2 md:flex justify-between items-center text-white'>
-					<div className='mt-[40px] flex flex-col items-center md:block'>
-						<img src='/public/images/logo.png' alt='' />
-						<div className='mt-[20px] flex items-center gap-3'>
-							<Button text='Консультация' />
-							<button className='w-full md:w-[253px] border border-gray-500 text-white py-2 px-2 rounded-full'>
-								Турусбеков 109/1
-							</button>
-						</div>
-						<div className='text-white text-lg flex gap-2 mt-[20px] '>
-							<div className='w-[30px] h-[30px] bg-gray-600 p-1 rounded-full flex items-center justify-center'>
-							<a href="https://wa.me/500443423"><IoLogoWhatsapp /></a>	
-							</div>
-							<div className='w-[30px] h-[30px] bg-gray-600 p-1 rounded-full flex items-center justify-center'>
-							<a href="https://www.instagram.com/okurmen_it?igsh=NmE4cnZvcTdoemh4"><IoLogoInstagram /></a>	
-							</div>
-							<div className='w-[30px] h-[30px] bg-gray-600 p-1 rounded-full flex items-center justify-center'>
-							<a href="">	<FiMail /></a>
-							</div>
-						</div>
-					</div>
+  return (
+    <footer className="bg-orange-500 text-white py-8">
+      <div className="container mx-auto">
+        {/* Логотип */}
+        <div className="flex justify-center md:justify-start mb-8">
+          <img
+            src="/icons/okurmenlogo.svg"
+            alt="Okurmen Logo"
+            className="w-32"
+          />
+        </div>
+        <hr className="border-white-300 my-6" />
 
-					<div className='hidden md:flex gap-5'>
-						<ul>
-							<li>Башкы бет</li>
-							<li>Курстар</li>
-							<li>Компания жөнүндө</li>
-							<li>Менторлор</li>
-							<li>Окуялар</li>
-						</ul>
-						<ul>
-							<li>Ресурстар</li>
-							<li>IT Клуб</li>
-							<li>
-								<a>Билимдүү жаштар</a>
-							</li>
-							<li>Жетекчилик</li>
-						</ul>
-					</div>
-				</div>
-				<div className='text-gray-500 py-8 text-center'>
-					<h1>© 2022-2024 Окурмэн окуу борбору</h1>
-				</div>
-			</div>
-		</footer>
-	);
+        {/* Контент */}
+        <div className="grid md:grid-cols-4 gap-8 text-center md:text-left border-b border-white pb-6">
+          {/* Главная */}
+          <div>
+            <h2 className="font-bold mb-6 text-xl md:text-2xl">Главная</h2>
+            <ul>
+              <li className="mb-2 cursor-pointer hover:underline">
+                О компании
+              </li>
+              <li className="mb-2 cursor-pointer hover:underline">Курсы</li>
+              <li className="mb-2 cursor-pointer hover:underline">
+                Стажировка
+              </li>
+              <li className="cursor-pointer hover:underline">IT club</li>
+            </ul>
+          </div>
+          {/* Контакты */}
+          <div>
+            <h2 className="font-bold mb-6 text-xl md:text-2xl">Контакты</h2>
+            <p className="mb-2 flex items-center justify-center md:justify-start">
+              <IoLogoWhatsapp className="mr-2" /> +996705677798
+            </p>
+            <p className="flex items-center justify-center md:justify-start">
+              <IoLogoInstagram className="mr-2" /> okurmen_it
+            </p>
+          </div>
+          {/* Адрес */}
+          <div>
+            <h2 className="font-bold mb-6 text-xl md:text-2xl">Наш адрес</h2>
+            <p>Турусбекова 109/1</p>
+          </div>
+          {/* Другие ресурсы */}
+          <div>
+            <h2 className="font-bold mb-6 text-xl md:text-2xl">
+              Другие ресурсы
+            </h2>
+            <p className="mb-2 flex items-center justify-center md:justify-start">
+              <IoLogoInstagram className="mr-2" /> okurmen.jobs
+            </p>
+            <p className="mb-2 flex items-center justify-center md:justify-start">
+              <IoLogoInstagram className="mr-2" /> okurmen_kids
+            </p>
+            <p className="flex items-center justify-center md:justify-start">
+              <IoLogoInstagram className="mr-2" /> okurmen.studio
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;
