@@ -39,7 +39,7 @@ const DirectorDiagram = () => {
 
   const options = {
     responsive: true,
-    maintainAspectRatio: false, // Отключить соотношение сторон для растягивания
+    maintainAspectRatio: false, 
     plugins: {
       legend: {
         display: false,
@@ -55,7 +55,7 @@ const DirectorDiagram = () => {
           },
         },
         grid: {
-          display: false, // Убирает горизонтальные линии сетки
+          display: false, 
         },
       },
     },
