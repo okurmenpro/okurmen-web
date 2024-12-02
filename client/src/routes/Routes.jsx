@@ -16,7 +16,7 @@ import ManagerProfile from "../pages/managerProfilePage/ManagerProfile";
 import BackendPage1 from "../pages/backendPage/BackendPage";
 import UxUiPage from "../pages/uxuiPage/UxUiPage";
 import GroupPage from "../pages/groupPage/GroupPage";
-import StudentsPage from "../pages/studentsPage/StudetsPage";
+import StudentsPage from "../pages/studentsPage/StudentsPage";
 import BackendFrontend from "../pages/backendFrontend/BackendFrontend";
 import PythonPage from "../pages/pythonPage/PythonPage";
 import ApplicatoinsPage from "../pages/applicationsPage/ApplicationsPage";
@@ -47,7 +47,7 @@ const AppRoutes = () => {
         <Route path="/registration" element={<Register />} />
         <Route path="/register-confirm" element={<ConfirmRegisterPage />} />
         <Route path="/consultation" element={<ConsulationPage />} />
-        <Route path="archive" element={<Archive />} />
+        <Route path="/archive" element={<Archive />} />
       </>
     )
   );
