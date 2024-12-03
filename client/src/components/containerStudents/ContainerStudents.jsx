@@ -5,13 +5,10 @@ import { useState } from "react";
 import { BsTrash as Trash } from "react-icons/bs";
 import { RiErrorWarningLine as Warn } from "react-icons/ri";
 
-const ContainerStudents = ({ data }) => {
+const ContainerStudents = ({ data = [] }) => {
   const navigate = useNavigate();
-
-  
   const [currentPage, setCurrentPage] = useState(1);
   const studentsPerPage = 8;
-
 
   const totalStudents = data.length;
   const totalPages = Math.ceil(totalStudents / studentsPerPage);
@@ -20,7 +17,6 @@ const ContainerStudents = ({ data }) => {
 
   return (
     <div>
-     
       <div className="flex flex-wrap gap-[26px] justify-between">
         {currentStudents.map((student) => (
           <div
@@ -78,5 +74,6 @@ const ContainerStudents = ({ data }) => {
     </div>
   );
 };
+
 
 export default ContainerStudents;
