@@ -1,15 +1,15 @@
-import figma from '../../public/images/minifigma.png';
-import adobe from '../../public/images/adobelogo.png';
-import behance from '../../public/images/behance.png';
-import unsplash from '../../public/images/unsplash.png';
+import figmalogo from '../../public/icons/figmalogo.svg'
+import photoshop from '../../public/icons/photoshop.svg'
+import behance from '../../public/icons/behance.svg'
+import unsplash from '../../public/icons/unsplash.svg'
 
 const modules = [
   {
-    img: figma,
+    img: figmalogo,
     title: "Figma",
   },
   {
-    img: adobe,
+    img: photoshop,
     title: "Adobe",
   },
   {

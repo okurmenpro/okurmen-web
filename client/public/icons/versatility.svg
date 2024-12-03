@@ -1,0 +1,17 @@
+<svg width="100.000000" height="100.000000" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip667_250">
+			<rect id="multidimensional-raster_svgrepo.com" rx="0.000000" width="99.000000" height="99.000000" transform="translate(0.500000 0.500000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="multidimensional-raster_svgrepo.com" rx="0.000000" width="99.000000" height="99.000000" transform="translate(0.500000 0.500000)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip667_250)">
+		<g opacity="0.500000">
+			<path id="Vector" d="M92.18 55.1L92.18 75.34L74.47 82.6L74.47 62.36L92.18 55.1ZM53.64 45.82L53.64 67.6L71.35 60.38L71.35 38.6L53.64 45.82ZM72.66 21.18L56 28L72.71 34.81L89.33 28.04L72.66 21.18ZM31.5 21.18L14.83 28.04L31.45 34.81L48.16 28L31.5 21.18ZM12.02 55.17L12.02 75.3L29.72 82.57L29.72 62.44L12.02 55.17Z" fill="#FF7300" fill-opacity="1.000000" fill-rule="nonzero"/>
+		</g>
+		<path id="Vector" d="M52.08 8.87L8.33 26.83L8.33 77.75L52.08 95.7L95.83 77.75L95.83 26.83L52.08 8.87ZM57.58 28L72.66 21.83L87.75 28.04L72.7 34.16L57.58 28ZM75 37.75L91.66 30.91L91.66 51.41L75 58.25L75 37.75ZM75 62.75L91.66 55.91L91.66 74.95L75 81.79L75 62.75ZM52.08 13.37L67.16 19.58L52.08 25.75L37 19.58L52.08 13.37ZM16.41 28.04L31.5 21.83L46.58 28L31.45 34.16L16.41 28.04ZM12.5 30.91L29.25 37.79L29.25 58.29L12.5 51.41L12.5 30.91ZM29.25 81.83L12.5 74.95L12.5 55.91L29.25 62.79L29.25 81.83ZM50 90.37L33.33 83.54L33.33 64.45L50 71.25L50 90.37ZM50 66.75L33.33 59.95L33.33 39.45L50 46.25L50 66.75ZM37 36.41L52.08 30.25L67.16 36.41L52.08 42.62L37 36.41ZM70.83 59.95L54.16 66.75L54.16 46.25L70.83 39.45L70.83 59.95ZM70.83 83.5L54.16 90.37L54.16 71.25L70.83 64.45L70.83 83.5Z" fill="#FF7300" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+</svg>

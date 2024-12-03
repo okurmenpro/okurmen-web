@@ -22,6 +22,8 @@ import PythonPage from "../pages/pythonPage/PythonPage";
 import ApplicatoinsPage from "../pages/applicationsPage/ApplicationsPage";
 import ConsulationPage from "../components/consultationPage/ConsulationPage";
 import Archive from "../components/archive/Archive";
+import StudentProfile from "../pages/studentProfile/StudentProfile";
+import FrontendPage from "../pages/frontendPage/FrontendPage";
 
 const AppRoutes = () => {
   return createBrowserRouter(
@@ -41,6 +43,8 @@ const AppRoutes = () => {
           <Route path="/group/:id" element={<GroupPage />} />
           <Route path="/frontendBackend" element={<BackendFrontend />} />
           <Route path="/python" element={<PythonPage />} />
+          <Route path="/student-profile/:id" element={<StudentProfile />} />
+          <Route path="/frontend" element={<FrontendPage/>}/>
           <Route path="/student-profile/:id" element={<ProfilePage />} />
           <Route path="/uxui" element={<UxUiPage />} />
         </Route>
