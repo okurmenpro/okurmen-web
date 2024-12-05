@@ -12,7 +12,6 @@ import { WorkListingPage } from "../pages/workListingPage/WorkListingPage";
 import Register from "../pages/registrationPage/Register";
 import ProfilePage from "../pages/profilePage/ProfilePage";
 import ConfirmRegisterPage from "../pages/confirmRegisterPage/ConfirmRegisterPage";
-import ManagerProfile from "../pages/managerProfilePage/ManagerProfile";
 import BackendPage1 from "../pages/backendPage/BackendPage";
 import UxUiPage from "../pages/uxuiPage/UxUiPage";
 import GroupPage from "../pages/groupPage/GroupPage";
@@ -34,9 +33,20 @@ const AppRoutes = () => {
           <Route path="/management" element={<Management />} />
           <Route path="/course/:id" element={<CourseListingPage />} />
           <Route path="/work/:id" element={<WorkListingPage />} />
-          {/* <Route path="/profile" element={<ProfilePage />} /> */}
+          <Route path="/profile" element={<ProfilePage role="student" />} />
+          <Route
+            path="/student-profile/:id"
+            element={<ProfilePage role="student" />}
+          />
+          <Route
+            path="/manager-profile"
+            element={<ProfilePage role="manager" />}
+          />
+          <Route
+            path="/director-profile"
+            element={<ProfilePage role="director" />}
+          />
           <Route path="/students" element={<StudentsPage />} />
-          <Route path="/manager-profile" element={<ManagerProfile />} />
           <Route path="/applications" element={<ApplicatoinsPage />} />
           <Route path="/backend" element={<BackendPage1 />} />
           <Route path="/group/:id" element={<GroupPage />} />
