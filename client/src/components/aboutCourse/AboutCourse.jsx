@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Button from "../button/Button";
 
 const AboutCourse = ({ title, description, image, imageAlt }) => {
   return (
@@ -12,9 +13,10 @@ const AboutCourse = ({ title, description, image, imageAlt }) => {
           {description}
         </p>
         <NavLink to={"/consultation"}>
-          <button className="text-orange-500 border border-orange-500 font-semibold py-2 px-4 rounded">
-            Консультация
-          </button>
+          <Button
+          contentButton="Консультация"
+          className={`w-[120px]`}
+          />
         </NavLink>
       </div>
       <div className="order-last md:order-none md:w-[40%] flex justify-center p-4 hidden md:flex">

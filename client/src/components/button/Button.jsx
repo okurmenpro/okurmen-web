@@ -3,7 +3,7 @@ import React from 'react'
 function Button({ contentButton, className, color = 'orange' }) {
     const colorClasses = {
         orange: '',
-        black: 'text-[15px] bg-black text-white !border-black hover:!bg-white hover:!text-black ',
+        black: 'text-[15px] bg-black text-white !border-black hover:!bg-white hover:!text-black transition',
         border_orange: ''
     };
 
