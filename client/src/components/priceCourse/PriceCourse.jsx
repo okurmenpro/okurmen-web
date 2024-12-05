@@ -63,7 +63,7 @@ const PriseCourse = ({
                     <div className="text-right text-lg ">
                         <Button
                         contentButton="Консультация"
-                        className={`ml-[650px] w-[130px]`}
+                        className={`ml-[650px] text-base w-[150px]`}
                         />
                     </div>
                 </div>

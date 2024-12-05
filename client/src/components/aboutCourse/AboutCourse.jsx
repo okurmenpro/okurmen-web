@@ -15,7 +15,7 @@ const AboutCourse = ({ title, description, image, imageAlt }) => {
         <NavLink to={"/consultation"}>
           <Button
           contentButton="Консультация"
-          className={`w-[120px]`}
+          className={`w-[150px]`}
           />
         </NavLink>
       </div>
