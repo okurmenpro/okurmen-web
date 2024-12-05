@@ -3,6 +3,7 @@ import Navbar from "../navbar/Navbar";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Button from "../../ui/buttons/Button";
+import ButtonT from "../button/Button";
 
 const navlinks = [
   {
@@ -62,9 +63,10 @@ const Header = () => {
           <Navbar navlinks={navlinks} />
           <div>
             <Link to={"/registration"}>
-              <button className="text-[15px] bg-black text-white p-[10px] rounded-[5px]  	">
-                Зарегистрироваться
-              </button>
+              <ButtonT 
+              contentButton='Зарегистрироваться'
+              color="black"
+              />
             </Link>
           </div>
           <div className="hidden md:block">
