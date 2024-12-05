@@ -5,6 +5,7 @@ import AboutSection from "../../components/aboutSection/AboutSection";
 import Slider from "../../components/slider/Slider";
 import MentorSlider from "../../components/slider/MentorSlider";
 import HeroSection from "../../components/hero/HeroSection";
+import Mentors from "../../components/mentors/Mentors";
 
 const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage = () => {
       <div className="bg-[#F4F4F4]">
         <AboutSection />
         <CompanyPage />
+        <Mentors />
         <Slider />
         <MentorSlider />
         <CertificateSection />

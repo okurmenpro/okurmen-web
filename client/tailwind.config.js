@@ -22,11 +22,8 @@ export default {
   plugins: [],
 };
 
-// tailwind.config.js
 module.exports = {
-  content: [
-    "./src/**/*.{html,js,jsx,ts,tsx}", // укажите путь к вашим файлам
-  ],
+  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     extend: {
       clipPath: {
