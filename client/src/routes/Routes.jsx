@@ -34,7 +34,7 @@ const AppRoutes = () => {
           <Route path="/management" element={<Management />} />
           <Route path="/course/:id" element={<CourseListingPage />} />
           <Route path="/work/:id" element={<WorkListingPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
+          {/* <Route path="/profile" element={<ProfilePage />} /> */}
           <Route path="/students" element={<StudentsPage />} />
           <Route path="/manager-profile" element={<ManagerProfile />} />
           <Route path="/applications" element={<ApplicatoinsPage />} />
@@ -43,7 +43,6 @@ const AppRoutes = () => {
           <Route path="/frontendBackend" element={<BackendFrontend />} />
           <Route path="/python" element={<PythonPage />} />
           <Route path="/frontend" element={<FrontendPage />} />
-          <Route path="/student-profile/:id" element={<ProfilePage />} />
           <Route path="/uxui" element={<UxUiPage />} />
         </Route>
         <Route path="/registration" element={<Register />} />
