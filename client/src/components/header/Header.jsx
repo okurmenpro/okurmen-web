@@ -46,28 +46,32 @@ const Header = () => {
 
   return (
     <header
-      className={`'sm:px-6 w-full bg-white ${
-        isScroll ? "is-scroll" : "no-scroll"
-      }`}
+      className={`'sm:px-6 w-full bg-white ${isScroll ? "is-scroll" : "no-scroll"
+        }`}
     >
       <div className="container">
         <div className="flex items-center justify-between ">
-          <div className="ml-3 md:ml-0 mx-[30px]">
-            <img
-              className="mx-[40px]"
-              width={80}
-              src="/public/images/logo.png"
-              alt=""
-            />
-          </div>
-          <Navbar navlinks={navlinks} />
-          <div>
-            <Link to={"/registration"}>
-              <ButtonT 
-              contentButton='Зарегистрироваться'
-              color="black"
+          <Link to={'/'}>
+            <div className="ml-3 md:ml-0 mx-[30px]">
+              <img
+                className="mx-[40px]"
+                width={80}
+                src="/public/images/logo.png"
+                alt=""
               />
-            </Link>
+            </div>
+          </Link>
+          <Navbar navlinks={navlinks} />
+          <div className="flex gap-1">
+            <ButtonT
+              ButtonText="Войти"
+              color="border_black"
+            />
+              <ButtonT
+                ButtonText="Зарегестрироваться"
+                color="black"
+                to="/registration"
+              />
           </div>
           <div className="hidden md:block">
             <Button text="Консультация" />

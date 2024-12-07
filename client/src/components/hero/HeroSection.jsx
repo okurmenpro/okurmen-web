@@ -5,7 +5,6 @@ import python from "../../../public/icons/python.svg";
 import javascript from "../../../public/icons/javascript.svg";
 import java from "../../../public/icons/java.svg";
 import figma from "../../../public/icons/figma.svg";
-import { Link } from "react-router-dom";
 import Button from "../button/Button";
 
 const icons = [
@@ -28,15 +27,14 @@ const HeroSection = () => {
     <div className="w-full h-auto bg-white">
       <div className="text-center py-8 relative">
         <h1 className="text-blue-700 text-4xl font-bold">ОКУРМЭН</h1>
-        <p className="text-orange-400 text-lg mt-2">
+        <p className="text-orange-400 text-lg mt-2 mb-4">
           Пошаговое обучение IT-навыкам с нуля до уверенного пользователя
         </p>
-        <Link to="/consultation">
           <Button
-            className={`m-auto w-[150px]`}
-            contentButton='Консультация'
+            className={`m-auto w-[150px] pb-3`}
+            ButtonText='Консультация'
+            to='/consultation'
           />
-        </Link>
         <div className="relative mt-16 h-64 flex justify-center items-center">
           <div className="relative w-[80%] h-full flex justify-between items-center">
             {icons.map((icon, index) => (
