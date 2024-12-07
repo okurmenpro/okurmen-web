@@ -2,6 +2,7 @@ import React from "react";
 import Hourglass from "../../../public/icons/hourglass.svg";
 import Time from "../../../public/icons/TTime.svg";
 import calendar from '../../../public/icons/calendaer.svg'
+import Button from "../button/Button";
 
 const PriseCourse = ({
     title,
@@ -60,7 +61,11 @@ const PriseCourse = ({
                         Сумма обучения: <span className="text-black">{price}</span>
                     </div>
                     <div className="text-right text-lg ">
-                        <button className="border border-orange-400 rounded p-2 text-orange-500 ">Консультация</button>
+                        <Button
+                        ButtonText="Консультация"
+                        className={`ml-[650px] text-base w-[150px]`}
+                        to='/consultation'
+                        />
                     </div>
                 </div>
             </div>
