@@ -14,6 +14,14 @@ const ApplicationsPage = () => {
   const [isBarOpen, setIsBarOpen] = useState(false);
   const [isModal, setIsModal] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [collapsed, setCollapsed] = useState({});
+  const toggleCollapse = (id) => {
+    setCollapsed((prevState) => ({
+      ...prevState,
+      [id]: !prevState[id],
+    }));
+  };
+  
   const rowsPerPage = 5;
 
   useEffect(() => {
