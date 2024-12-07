@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { groupStudentsSlice } from "../../redux/students/GroupStudents";
 import SideBar from "../../components/sideBar/SideBar";
 import ButtonOrange from "../../ui/buttons/ButtonOrange";
-import ModalAddStudent from "../../components/modalAddStudent/ModalAddStudent";
+import ModalAddStudent from "../../components/modalAddStudent/ModalAddStudent"; 
 import { FaPlus } from "react-icons/fa";
 
 const ApplicationsPage = () => {
@@ -14,6 +14,14 @@ const ApplicationsPage = () => {
   const [isBarOpen, setIsBarOpen] = useState(false);
   const [isModal, setIsModal] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [collapsed, setCollapsed] = useState({});
+  const toggleCollapse = (id) => {
+    setCollapsed((prevState) => ({
+      ...prevState,
+      [id]: !prevState[id],
+    }));
+  };
+  
   const rowsPerPage = 5;
 
   useEffect(() => {
@@ -35,8 +43,8 @@ const ApplicationsPage = () => {
   };
 
   return (
-    <div className="container pb-8">
-      <h1 className="text-5xl font-semibold flex justify-center mb-[80px] pt-[50px]  font-medium">
+    <div className="container pb-8 pt-10">
+      <h1 className="text-5xl font-semibold flex justify-center mb-[80px] pt-[80px] font-medium">
         Заявки
       </h1>
       <SideBar isOpen={isBarOpen} setIsOpen={setIsBarOpen} />
@@ -67,26 +75,26 @@ const ApplicationsPage = () => {
             {currentData?.map((student, index) => (
               <tr
                 key={student._id}
-                className={`hover:shadow-md hover:shadow-orange-400 duration-200 rounded-xl ${
-                  index % 2 === 0 ? "bg-gray-200" : "bg-white"
+                className={`  ${
+                  index % 2 === 0 ? "bg-gray-50" : "bg-white"
                 }`}
               >
-                <td className="p-6 flex items-center gap-4 rounded-l-xl">
+                <td className="p-6 flex items-center justify-start gap-4 ">
                   <img
                     className="w-[47px] h-[47px] rounded-full"
                     src="/public/images/profileImg.png"
                     alt="profile"
                   />
-                  <p className="text-lg font-semibold">
+                  <p className="text-lg text-lg overflow-hidden text-ellipsis whitespace-nowrap max-w-[150px]">
                     {student.name} {student.lastName}
                   </p>
                 </td>
 
-                <td className="p-6 text-[#FF8A00] font-medium">
+                <td className="text-[#FF8A00]">
                   {student.studentGroup}
                 </td>
 
-                <td className="p-6 text-center rounded-r-xl">
+                <td className="text-center ">
                   <div className="flex justify-center gap-4">
                     <button className="py-[12px] px-[24px] text-white rounded-full text-sm font-bold border-solid border-transparent hover:border-[#0acf83] border-[2px] bg-[#0acf83] hover:bg-transparent hover:text-[#0acf83] duration-300">
                       Одобрить
@@ -103,23 +111,24 @@ const ApplicationsPage = () => {
       </div>
 
       <div className="flex justify-center items-center mt-4 gap-4">
-        <button
-          className="py-2 px-4 bg-gray-300 rounded-lg text-black font-semibold hover:bg-gray-400 duration-200"
-          disabled={currentPage === 1}
-          onClick={handlePrevPage}
-        >
-          Предыдущая
-        </button>
-        <p className="text-lg font-medium">
-          Страница {currentPage} из {totalPages}
-        </p>
-        <button
-          className="py-2 px-4 bg-gray-300 rounded-lg text-black font-semibold hover:bg-gray-400 duration-200"
-          disabled={currentPage === totalPages}
-          onClick={handleNextPage}
-        >
-          Следующая
-        </button>
+        {currentPage > 1 && (
+          <button
+            className="py-2 px-4 bg-[#FF8A00] rounded-lg text-white font-semibold hover:bg-orange-600 duration-200"
+            onClick={handlePrevPage}
+          >
+            Предыдущая
+          </button>
+        )}
+
+
+        {currentPage < totalPages && (
+          <button
+            className="py-2 px-4 bg-[#FF8A00] rounded-lg text-white font-semibold hover:bg-orange-600 duration-200"
+            onClick={handleNextPage}
+          >
+            Следующая
+          </button>
+        )}
       </div>
 
       <ModalAddStudent isModal={isModal} setIsModal={setIsModal} />
