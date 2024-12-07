@@ -44,7 +44,7 @@ const ApplicationsPage = () => {
 
   return (
     <div className="container pb-8 pt-10">
-      <h1 className="text-5xl font-semibold flex justify-center mb-[80px] pt-[50px] font-medium">
+      <h1 className="text-5xl font-semibold flex justify-center mb-[80px] pt-[80px] font-medium">
         Заявки
       </h1>
       <SideBar isOpen={isBarOpen} setIsOpen={setIsBarOpen} />
