@@ -6,6 +6,7 @@ import Slider from "../../components/slider/Slider";
 import MentorSlider from "../../components/slider/MentorSlider";
 import HeroSection from "../../components/hero/HeroSection";
 import Mentors from "../../components/mentors/Mentors";
+import AboutClub from "../../components/AboutClub/AboutClub";
 
 const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage = () => {
         <AboutSection />
         {/* <CompanyPage /> */}
         <Mentors />
+        <AboutClub />
         {/* <Slider /> */}
         {/* <CertificateSection /> */}
         <WorkSection />
