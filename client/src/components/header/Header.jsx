@@ -1,14 +1,9 @@
 import { useEffect, useState } from "react";
 import Navbar from "../navbar/Navbar";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Button from "../../ui/buttons/Button";
-
 const navlinks = [
-  {
-    title: "Башкы бет",
-    link: "/",
-  },
   {
     title: "Курстар",
     link: "#course",
@@ -29,7 +24,7 @@ const Header = () => {
 
   useEffect(() => {
     function scrollBar() {
-      if (window.scrollY >= 100) {
+      if (window.scrollY >= 0) {
         setIsScroll(true);
       } else {
         setIsScroll(false);
@@ -52,12 +47,14 @@ const Header = () => {
       <div className="container">
         <div className="flex items-center justify-between ">
           <div className="ml-3 md:ml-0 mx-[30px]">
+            <Link to={'/'}>
             <img
-              className="mx-[40px]"
+              className="mx-[40px] cursor-pointer"
               width={80}
               src="/public/images/logo.png"
               alt=""
             />
+            </Link>
           </div>
           <Navbar navlinks={navlinks} />
           <div>

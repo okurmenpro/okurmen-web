@@ -1,16 +1,19 @@
 import React from "react";
 import { IoLogoInstagram, IoLogoWhatsapp } from "react-icons/io";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="bg-orange-500 text-white py-8">
       <div className="container mx-auto">
         <div className="flex justify-center md:justify-start mb-8">
+          <NavLink to={'/'}>
           <img
             src="/icons/okurmenlogo.svg"
             alt="Okurmen Logo"
             className="w-32"
           />
+          </NavLink>
         </div>
         <hr className="border-white-300 my-6" />
         <div className="grid md:grid-cols-4 gap-8 text-center md:text-left border-b border-white pb-6">
