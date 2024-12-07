@@ -44,6 +44,7 @@ const Footer = () => {
           <div>
             <h2 className="font-bold mb-6 text-xl md:text-2xl">Наш адрес</h2>
             <a 
+            target="_blank"
             href="https://2gis.kg/bishkek/inside/70030076155378888/firm/70000001075854813?m=74.585266%2C42.878822%2F17.27">Турусбекова 109/1</a>
           </div>
           <div>
