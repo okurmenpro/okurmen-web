@@ -76,7 +76,7 @@ const ApplicationsPage = () => {
               <tr
                 key={student._id}
                 className={`  ${
-                  index % 2 === 0 ? "bg-gray-100" : "bg-white"
+                  index % 2 === 0 ? "bg-gray-50" : "bg-white"
                 }`}
               >
                 <td className="p-6 flex items-center justify-start gap-4 ">
