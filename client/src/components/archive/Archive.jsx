@@ -4,6 +4,7 @@ import FilterIcon from "../../../public/icons/filter.svg";
 import SearchInputIcon from "../../../public/icons/search.svg";
 import EmptyImage from "../../../public/images/folder.png";
 import { CiStar } from "react-icons/ci"; 
+import { NavLink } from "react-router-dom";
 
 const TrashList = () => {
   const initialData = new Array(20).fill(null).map((_, index) => ({
@@ -35,7 +36,10 @@ const TrashList = () => {
   return (
     <div className="container mx-auto p-4 sm:p-6 lg:p-8">
       <div className="flex mb-4 justify-center lg:justify-start">
+        <NavLink to={'/'}>
+
         <img src={Logo} alt="Logo" className="h-8 sm:h-10 w-auto" />
+        </NavLink>
       </div>
 
       <div className="flex flex-col sm:flex-row items-center mt-5 space-y-3 sm:space-y-0 sm:space-x-3 mb-6">
