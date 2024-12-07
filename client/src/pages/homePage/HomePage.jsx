@@ -5,6 +5,8 @@ import AboutSection from "../../components/aboutSection/AboutSection";
 import Slider from "../../components/slider/Slider";
 import MentorSlider from "../../components/slider/MentorSlider";
 import HeroSection from "../../components/hero/HeroSection";
+import Mentors from "../../components/mentors/Mentors";
+import AboutClub from "../../components/AboutClub/AboutClub";
 
 const HomePage = () => {
   return (
@@ -12,10 +14,11 @@ const HomePage = () => {
       <HeroSection />
       <div className="bg-[#F4F4F4]">
         <AboutSection />
-        <CompanyPage />
-        <Slider />
-        <MentorSlider />
-        <CertificateSection />
+        {/* <CompanyPage /> */}
+        <Mentors />
+        <AboutClub />
+        {/* <Slider /> */}
+        {/* <CertificateSection /> */}
         <WorkSection />
       </div>
     </div>

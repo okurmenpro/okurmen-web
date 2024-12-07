@@ -1,3 +1,5 @@
+import scrollbarHide from "tailwind-scrollbar-hide";
+/* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -20,11 +22,8 @@ export default {
   plugins: [],
 };
 
-// tailwind.config.js
 module.exports = {
-  content: [
-    "./src/**/*.{html,js,jsx,ts,tsx}", // укажите путь к вашим файлам
-  ],
+  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     extend: {
       clipPath: {
@@ -33,5 +32,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [scrollbarHide],
 };
