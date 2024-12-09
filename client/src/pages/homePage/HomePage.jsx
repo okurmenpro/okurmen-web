@@ -23,7 +23,7 @@ const HomePage = () => {
         {/* <Slider /> */}
         {/* <CertificateSection /> */}
         <Address/>
-        <WorkSection />
+        {/* <WorkSection /> */}
         {/* <WorkSection /> */}
       </div>
     </div>
