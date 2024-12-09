@@ -4,7 +4,7 @@ import whatsapp from "../../../public/icons/whatsapp.svg";
 import instagram from "../../../public/icons/instagram.svg";
 const Address = () => {
   return (
-    <div className="container bg-white">
+    <div className="container bg-white ">
       <h1 className="text-xl font-bold pt-4 poppins">Наш адрес</h1>
       <p className="flex items-center pt-4 gap-4 pb-2 text-xl font-semibold">
         <img src={location} alt="" />
@@ -23,7 +23,7 @@ const Address = () => {
         {" "}
         <img src={whatsapp} alt="" /> +996705677798{" "}
       </span>
-      <span className="flex items-center gap-4 text-xl font-semibold pb-8">
+      <span className="flex items-center gap-4 text-xl font-semibold pb-10 ">
         {" "}
         <img src={instagram} alt="" /> okurmen_it
       </span>
