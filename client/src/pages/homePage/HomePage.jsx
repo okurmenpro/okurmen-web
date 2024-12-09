@@ -7,6 +7,7 @@ import MentorSlider from "../../components/slider/MentorSlider";
 import HeroSection from "../../components/hero/HeroSection";
 import Mentors from "../../components/mentors/Mentors";
 import AboutClub from "../../components/AboutClub/AboutClub";
+import Address from "../../components/address/Address";
 
 const HomePage = () => {
   return (
@@ -19,6 +20,7 @@ const HomePage = () => {
         <AboutClub />
         {/* <Slider /> */}
         {/* <CertificateSection /> */}
+        <Address/>
         <WorkSection />
       </div>
     </div>
