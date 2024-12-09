@@ -7,7 +7,6 @@ import AboutSection from "../../components/aboutSection/AboutSection";
 import HeroSection from "../../components/hero/HeroSection";
 import Mentors from "../../components/mentors/Mentors";
 import AboutClub from "../../components/AboutClub/AboutClub";
-import Address from "../../components/address/Address";
 import Internshipsection from "../../components/internshipsection/Internshipsection";
 
 const HomePage = () => {
@@ -22,8 +21,6 @@ const HomePage = () => {
         <AboutClub />
         {/* <Slider /> */}
         {/* <CertificateSection /> */}
-        <Address/>
-        {/* <WorkSection /> */}
         {/* <WorkSection /> */}
       </div>
     </div>
