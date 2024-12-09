@@ -30,11 +30,11 @@ const HeroSection = () => {
         <p className="text-orange-400 text-lg mt-2 mb-4">
           Пошаговое обучение IT-навыкам с нуля до уверенного пользователя
         </p>
-          <Button
-            className={`m-auto w-[150px] pb-3`}
-            ButtonText='Консультация'
-            to='/consultation'
-          />
+        <Button
+          className={`m-auto w-[150px] `}
+          ButtonText="Консультация"
+          to="/consultation"
+        />
         <div className="relative mt-16 h-64 flex justify-center items-center">
           <div className="relative w-[80%] h-full flex justify-between items-center">
             {icons.map((icon, index) => (
