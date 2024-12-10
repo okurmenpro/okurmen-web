@@ -1,4 +1,5 @@
-import { Link, useNavigate } from "react-router-dom";
+/* eslint-disable react/prop-types */
+import { useNavigate } from "react-router-dom";
 const Navbar = ({ navlinks }) => {
   const navigate = useNavigate();
 
@@ -21,11 +22,9 @@ const Navbar = ({ navlinks }) => {
               onChange={(e) => handleChange(e)}
               className="outline-none w-[120px] "
             >
-              <option value="/" disabled>
-                Ресурстар
-              </option>
+              <option value="/">Ресурсы</option>
               <option value="/itclub">IT-club</option>
-              <option value="/management">Жетекчилик</option>
+              <option value="/management">Управление</option>
             </select>
           </div>
         </div>

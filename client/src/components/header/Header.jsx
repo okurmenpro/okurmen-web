@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import Button from "../button/Button";
 
 const navlinks = [
-  { title: "Курстар", link: "#course" },
-  { title: "Компания жөнүндө", link: "#company-info" },
-  { title: "Менторлор", link: "#mentors" },
+  { title: "Курсы", link: "#course" },
+  { title: "О компании", link: "#company-info" },
+  { title: "Менторы", link: "#mentors" },
 ];
 
 const Header = () => {
