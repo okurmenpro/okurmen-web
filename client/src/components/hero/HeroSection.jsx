@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import cSharp from "../../../public/icons/cSharp.svg";
-import cPlus from "../../../public/icons/cPlus.svg";
+import typeScript from "../../../public/icons/typeScript.svg";
 import python from "../../../public/icons/python.svg";
 import javascript from "../../../public/icons/javascript.svg";
 import java from "../../../public/icons/java.svg";
@@ -26,12 +26,12 @@ const icons = [
     link: "/frontend",
   },
   {
-    src: cPlus,
+    src: typeScript,
     alt: "C++",
     top: "30%",
     left: "42%",
     translateY: "0%",
-    link: "/cplusplus",
+    link: "/frontend",
   },
   {
     src: python,

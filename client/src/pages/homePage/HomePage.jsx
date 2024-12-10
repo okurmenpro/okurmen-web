@@ -22,7 +22,7 @@ const HomePage = () => {
         <AboutClub />
         {/* <Slider /> */}
         {/* <CertificateSection /> */}
-        <Address/>
+        <Address />
         {/* <WorkSection /> */}
         {/* <WorkSection /> */}
       </div>
