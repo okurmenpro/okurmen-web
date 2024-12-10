@@ -5,14 +5,10 @@ import AboutSection from "../../components/aboutSection/AboutSection";
 // import Slider from "../../components/slider/Slider";
 // import MentorSlider from "../../components/slider/MentorSlider";
 import HeroSection from "../../components/hero/HeroSection";
-<<<<<<< HEAD
-import Courses from "../../components/courses/Courses";
-=======
 import Mentors from "../../components/mentors/Mentors";
 import AboutClub from "../../components/AboutClub/AboutClub";
 import Address from "../../components/address/Address";
 import Internshipsection from "../../components/internshipsection/Internshipsection";
->>>>>>> dev
 
 const HomePage = () => {
   return (
@@ -20,14 +16,6 @@ const HomePage = () => {
       <HeroSection />
       <div className="bg-[#F4F4F4]">
         <AboutSection />
-<<<<<<< HEAD
-        <Courses />
-        <CompanyPage />
-        <Slider />
-        <MentorSlider />
-        <CertificateSection />
-        <WorkSection />
-=======
         {/* <CompanyPage /> */}
 
         <Mentors />
@@ -38,7 +26,6 @@ const HomePage = () => {
         <Address />
         {/* <WorkSection /> */}
         {/* <WorkSection /> */}
->>>>>>> dev
       </div>
     </div>
   );
