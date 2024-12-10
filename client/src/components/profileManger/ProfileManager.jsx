@@ -5,27 +5,18 @@ import { managerGetProfile } from "../../redux/auth/ProfileSlice";
 import BarChart from "../../ui/charts/BarChart";
 import InputImage from "../../ui/inputs/InputImage";
 import { useNavigate } from "react-router-dom";
-import ButtonOrange from "../../ui/buttons/ButtonOrange";
 
-const ManagerProfile = () => {
+const ProfileManager = () => {
   const [isUpdate, setIsUpdate] = useState(false);
   const inputRef = useRef(null);
   const data = useSelector((state) => state.profileReducer.data);
+  const dataStatus = useSelector((state) => state.profileReducer.status);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(managerGetProfile());
   }, [dispatch]);
-
-  const handleButtonClick = () => {
-    setIsUpdate(true);
-    setTimeout(() => {
-      if (inputRef.current) {
-        inputRef.current.focus();
-      }
-    }, 0);
-  };
 
   // save form && info user
   const handleSaveChangeValue = () => {
@@ -97,37 +88,6 @@ const ManagerProfile = () => {
                 title={"Количество приглашенных студентов  "}
                 isUpdate={isUpdate}
               />
-              <div
-                className=" flex flex-wrap justify-between mt-[10px] w-full self-end
-            "
-              >
-                <div className="">
-                  <ButtonOrange
-                    handleFunction={() => {
-                      setIsUpdate(true);
-                      if (!isUpdate) {
-                        handleButtonClick();
-                      }
-                      handleSaveChangeValue();
-                    }}
-                  >
-                    <p className="text-lg">
-                      {isUpdate ? "Сохранить" : "Изменить"}
-                    </p>
-                  </ButtonOrange>
-                </div>
-                <div>
-                  {isUpdate && (
-                    <ButtonOrange
-                      handleFunction={() => {
-                        setIsUpdate(false);
-                      }}
-                    >
-                      <p className="text-lg">Отменить</p>
-                    </ButtonOrange>
-                  )}
-                </div>
-              </div>
             </form>
           </div>
           <div className="max-w-[390px] w-full">
@@ -150,39 +110,40 @@ const ManagerProfile = () => {
             </button>
           </div>
           <div className="flex flex-col gap-[14px] ">
-            {data?.map((col) => (
-              <>
-                <h2 className="text-2xl font-semibold  max-md:text-3xl duration-100 text-start">
-                  {col.group}
-                </h2>
-                <div className=" w-full  flex  border-solid border p-[20px]  rounded-[19px] border-[#FF8A00]">
-                  <div className="flex flex-col gap-[10px]">
-                    {col?.groups?.map((colItem) => (
-                      <>
-                        <div
-                          onClick={() => {
-                            navigate(`/group/${colItem.NumGroup}`);
-                          }}
-                          className="flex last:mb-[30px] border border-solid cursor-pointer border-[#FF8A00] rounded-full py-[9px] px-[20px]"
-                        >
-                          <p className="font-bold text-[20px]">
-                            {colItem.NumGroup}-гр.
-                          </p>
-                          <p className="font-bold text-[20px]">
-                            препод:
-                            <span className="text-[#FF8A00]">
-                              {" "}
-                              {colItem.teacher}
-                            </span>
-                          </p>
-                        </div>
-                      </>
-                    ))}
+            {dataStatus === "success" &&
+              data?.map((col) => (
+                <>
+                  <h2 className="text-2xl font-semibold  max-md:text-3xl duration-100 text-start">
+                    {col.group}
+                  </h2>
+                  <div className=" w-full  flex  border-solid border p-[20px]  rounded-[19px] border-[#FF8A00]">
+                    <div className="flex flex-col gap-[10px]">
+                      {col?.groups?.map((colItem) => (
+                        <>
+                          <div
+                            onClick={() => {
+                              navigate(`/group/${colItem.NumGroup}`);
+                            }}
+                            className="flex last:mb-[30px] border border-solid cursor-pointer border-[#FF8A00] rounded-full py-[9px] px-[20px]"
+                          >
+                            <p className="font-bold text-[20px]">
+                              {colItem.NumGroup}-гр.
+                            </p>
+                            <p className="font-bold text-[20px]">
+                              препод:
+                              <span className="text-[#FF8A00]">
+                                {" "}
+                                {colItem.teacher}
+                              </span>
+                            </p>
+                          </div>
+                        </>
+                      ))}
+                    </div>
+                    <div></div>
                   </div>
-                  <div></div>
-                </div>
-              </>
-            ))}
+                </>
+              ))}
           </div>
         </div>
       </div>
@@ -190,4 +151,4 @@ const ManagerProfile = () => {
   );
 };
 
-export default ManagerProfile;
+export default ProfileManager;

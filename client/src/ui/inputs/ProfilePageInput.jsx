@@ -16,7 +16,7 @@ const ProfileInput = ({
             isUpdate ? "flex-col items-start" : "flex items-center"
           }`}
         >
-          <p className="text-base font-bold pb-[9px] pl-[5px] whitespace-nowrap">
+          <p className="text-base font-bold pb-[9px]  pl-[5px] whitespace-nowrap">
             {title}:
           </p>
           {isUpdate ? (
@@ -28,7 +28,7 @@ const ProfileInput = ({
             />
           ) : (
             <p
-              className={`pb-[9px] pl-[10px] text-base font-bold ${
+              className={`pb-[9px] pl-[10px] text-base  font-bold ${
                 placeholder === "неизвестно"
                   ? "text-[#d9d9d9]"
                   : "text-[#FF8A00]"

@@ -8,26 +8,41 @@ import TajikistanFlag from "../../../public/images/tajikistan.png";
 import KazakhstanFlag from "../../../public/images/kazakhstan.png";
 
 const countryData = [
-  { name: "Kyrgyzstan", flag: KyrgyzstanFlag, code: "+996" },
-  { name: "Uzbekistan", flag: UzbekistanFlag, code: "+998" },
-  { name: "Russia", flag: RussiaFlag, code: "+7" },
-  { name: "Tajikistan", flag: TajikistanFlag, code: "+992" },
-  { name: "Kazakhstan", flag: KazakhstanFlag, code: "+7" },
+  { name: "Kyrgyzstan", flag: KyrgyzstanFlag, code: "+996", phoneLength: 9 },
+  { name: "Uzbekistan", flag: UzbekistanFlag, code: "+998", phoneLength: 9 },
+  { name: "Russia", flag: RussiaFlag, code: "+7", phoneLength: 10 },
+  { name: "Tajikistan", flag: TajikistanFlag, code: "+992", phoneLength: 9 },
+  { name: "Kazakhstan", flag: KazakhstanFlag, code: "+7", phoneLength: 10 },
 ];
 
 const ConsulationPage = () => {
   const [selectedCountry, setSelectedCountry] = useState(countryData[0]);
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [name, setName] = useState("");
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
   const handleCountrySelect = (country) => {
     setSelectedCountry(country);
-    setDropdownOpen(false); 
+    setDropdownOpen(false);
   };
 
   const toggleDropdown = () => {
     setDropdownOpen((prev) => !prev);
+  };
+
+  const handleSubmit = () => {
+    setName("");
+    setPhoneNumber("");
+  };
+
+  const isFormValid = () => {
+    const phoneNumberDigits = phoneNumber.replace(/\D/g, "");
+
+    return (
+      name.trim() !== "" &&
+      phoneNumberDigits.length === selectedCountry.phoneLength
+    );
   };
 
   useEffect(() => {
@@ -60,7 +75,7 @@ const ConsulationPage = () => {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-8 items-center w-full">
+        <div className="flex flex-col md:flex-row gap-8 items-center w-full relative">
           <div className="w-full md:w-[50%] lg:w-[45%] border border-orange-500 rounded-xl p-6">
             <div className="mb-4">
               <p className="text-black font-medium text-base">
@@ -68,6 +83,8 @@ const ConsulationPage = () => {
               </p>
               <input
                 type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 placeholder="Имя"
                 className="w-full border px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
               />
@@ -77,11 +94,11 @@ const ConsulationPage = () => {
               Введите ваш номер
             </p>
 
-            <div className="mb-4 flex ">
+            <div className="mb-4 flex">
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={toggleDropdown}
-                  className="flex items-center border px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 "
+                  className="flex items-center border px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                 >
                   <img
                     src={selectedCountry.flag}
@@ -120,6 +137,19 @@ const ConsulationPage = () => {
               </div>
             </div>
           </div>
+
+          <button
+            onClick={handleSubmit}
+            type="submit"
+            disabled={!isFormValid()}
+            className={`w-[180px] h-[50px] absolute bottom-8 right-8 bg-orange-500 text-white py-2 px-6 rounded-md ${
+              !isFormValid()
+                ? "cursor-not-allowed opacity-50"
+                : "hover:bg-orange-600"
+            }`}
+          >
+            Отправить
+          </button>
 
           <div className="w-full md:w-[50%] lg:w-[45%]">
             <img
