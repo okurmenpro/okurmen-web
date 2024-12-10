@@ -12,7 +12,7 @@ import Internshipsection from "../../components/internshipsection/Internshipsect
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="mt-[100px]">
       <HeroSection />
       <div className="bg-[#F4F4F4]">
         <AboutSection />
