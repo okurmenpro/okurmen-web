@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import Button from "../button/Button";
 
 const navlinks = [
-  { title: "Курсы", link: "#course" },
   { title: "О компании", link: "#company-info" },
+  { title: "Курсы", link: "#course" },
   { title: "Менторы", link: "#mentors" },
 ];
 
@@ -46,7 +46,7 @@ const Header = () => {
             />
           </Link>
         </div>
-        <Navbar navlinks={navlinks} />
+        <Navbar  />
         <div className="flex gap-4 items-center">
           <Button ButtonText="Войти" color="border_black" />
           <Button
