@@ -17,6 +17,7 @@ const HomePage = () => {
       <div className="bg-[#F4F4F4]">
         <AboutSection />
         {/* <CompanyPage /> */}
+
         <Mentors />
         <Internshipsection />
         <AboutClub />
