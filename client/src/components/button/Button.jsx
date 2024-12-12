@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-function Button({ ButtonText, className = '', color = 'border_orange', type = "button", to }) {
+function Button({ ButtonText, className = '', color = 'border_orange', type = "button", to, onClick}) {
     const colorClasses = {
         border_orange: 'border border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-white transition',
         black: 'text-[15px] text-white bg-black hover:text-black hover:bg-white border border-black transition',
@@ -20,7 +20,7 @@ function Button({ ButtonText, className = '', color = 'border_orange', type = "b
     }
 
     return (
-        <button type={type} className={combinedClasses}>
+        <button onClick={onClick} type={type} className={combinedClasses}>
             {ButtonText}
         </button>
     );

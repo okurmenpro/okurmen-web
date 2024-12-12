@@ -46,9 +46,12 @@ const Header = () => {
             />
           </Link>
         </div>
-        <Navbar  />
-        <div className="flex gap-4 items-center">
-          <Button ButtonText="Войти" color="border_black" />
+        <Navbar navlinks={navlinks} />
+        <div className='flex gap-4'>
+          <Button
+            ButtonText="Войти"
+            color="border_black"
+          />
           <Button
             ButtonText="Зарегестрироваться"
             color="black"
