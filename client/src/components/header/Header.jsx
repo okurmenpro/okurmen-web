@@ -37,15 +37,15 @@ const Header = () => {
         </div>
         <Navbar navlinks={navlinks} />
         <div className='flex gap-4'>
-        <Button
-              ButtonText="Войти"
-              color="border_black"
-            />
-              <Button
-                ButtonText="Зарегестрироваться"
-                color="black"
-                to="/registration"
-              />
+          <Button
+            ButtonText="Войти"
+            color="border_black"
+          />
+          <Button
+            ButtonText="Зарегестрироваться"
+            color="black"
+            to="/registration"
+          />
         </div>
         <div className="flex md:hidden">
           <button onClick={handleMenu} className="w-7">
