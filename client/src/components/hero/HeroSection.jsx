@@ -61,7 +61,7 @@ const icons = [
 
 const HeroSection = () => {
   return (
-    <div className="w-full h-auto bg-white ">
+    <div className="w-full h-auto bg-white">
       <div className="text-center py-8 relative">
         <h1 className="text-blue-700 text-4xl font-bold">ОКУРМЭН</h1>
         <p className="text-orange-400 text-lg mt-2 mb-4">
@@ -69,7 +69,7 @@ const HeroSection = () => {
         </p>
 
         <Button
-          className={`m-auto w-[150px] `}
+          className={`m-auto w-[150px]`}
           ButtonText="Консультация"
           to="/consultation"
         />
@@ -97,6 +97,22 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .relative.mt-16.h-64 {
+            flex-direction: column;
+            height: auto;
+          }
+          .relative.w-[80%] {
+            width: 100%;
+            flex-wrap: wrap;
+          }
+          .absolute.h-16.w-16 {
+            position: static;
+            margin: 10px;
+          }
+        }
+      `}</style>
     </div>
   );
 };
