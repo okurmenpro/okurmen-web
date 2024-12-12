@@ -21,7 +21,7 @@ const Mentors = () => {
           <div
             key={index}
             className="flex-shrink-0 w-[280px] h-[350px] bg-white shadow-md rounded-xl flex flex-col items-center justify-between text-center p-6 relative"
-          >
+          > 
             <div className="absolute inset-0 bg-gradient-to-b from-gray-100 via-white to-gray-100 rounded-xl shadow-inner"></div>
             <div className="relative z-10 w-[150px] h-[150px] bg-gray-200 rounded-full"></div>
             <div className="relative z-10">

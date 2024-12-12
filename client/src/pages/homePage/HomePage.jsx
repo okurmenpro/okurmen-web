@@ -14,7 +14,7 @@ const HomePage = () => {
   return (
     <div className="mt-[100px]">
       <HeroSection />
-      <div className="bg-[#F4F4F4]">
+      <div className="bg-white">
         <AboutSection />
         {/* <CompanyPage /> */}
 
