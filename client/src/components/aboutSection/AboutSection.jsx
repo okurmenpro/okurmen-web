@@ -6,7 +6,7 @@ const AboutSection = () => {
   return (
     <div className="w-full bg-white py-12 mt-[-20px] mx-auto w-[1440px]">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center sm:p-6 md:p-8">
           <AboutInfo />
           <AboutImages />
         </div>
@@ -17,7 +17,7 @@ const AboutSection = () => {
 
 const AboutInfo = () => (
   <div>
-    <div className="descriptionOkurmen flex justify-space-between items-center">
+    <div className="flex justify-space-between items-center">
       <div className="h-[33.5px] w-[3px] bg-orange-400 mt-[-24px]"></div>
       <h2 className="text-black-400 text-xl font-bold mb-6 ml-[10px]">
         О компании
@@ -40,9 +40,9 @@ const AboutInfo = () => (
 );
 
 const AboutImages = () => (
-  <div className="flex flex-col lg:flex-row gap-8">
+  <div className="flex justify-center items-center gap-4 p-4 sm:p-6 md:p-8">
     <div
-      className="relative bg-orange-400 overflow-visible"
+      className="relative bg-orange-400 overflow-visible sm:p-6 md:p-8"
       style={{
         clipPath: "polygon(100% 15%, 100% 100%, 0 100%, 0% 0%)",
         width: "252px",
@@ -52,13 +52,13 @@ const AboutImages = () => (
       <img
         src={ulukbek}
         alt="Улукбек Бактыбек"
-        className="absolute object-cover mx-auto w-1/2 mt-[33px] ml-[50px]"
+        className="absolute object-cover mx-auto w-1/2 mt-[33px] ml-[30px]" 
         style={{ width: "176px", height: "283px", top: "-10px", left: "-10px" }}
       />
     </div>
 
     <div
-      className="relative bg-orange-400 overflow-visible"
+      className="relative bg-orange-400 overflow-visible sm:p-6 md:p-8 mr-[15px]"
       style={{
         clipPath: "polygon(0 15%, 100% 0, 100% 100%, 0 100%)",
         width: "252px",
