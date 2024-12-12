@@ -23,6 +23,7 @@ import Archive from "../components/archive/Archive";
 import FrontendPage from "../pages/frontendPage/FrontendPage";
 import ConfirmRegisterPage from "../pages/confirmRegisterPage/ConfirmRegisterPage";
 import RegistrationAdminPage from "../pages/registrationAdminPage/registrationAdminPage";
+import CSharp from "../pages/c_Sharp/CSharp";
 
 const AppRoutes = () => {
   return createBrowserRouter(
@@ -49,6 +50,7 @@ const AppRoutes = () => {
           />
           <Route path="/students" element={<StudentsPage />} />
           <Route path="/applications" element={<ApplicatoinsPage />} />
+          <Route path="/csharp" element={<CSharp/>}/>
           <Route path="/backend" element={<BackendPage1 />} />
           <Route path="/group/:id" element={<GroupPage />} />
           <Route path="/frontendBackend" element={<BackendFrontend />} />
