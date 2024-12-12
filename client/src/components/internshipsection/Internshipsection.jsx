@@ -37,7 +37,7 @@ function InternshipSection() {
           />
         </div>
 
-        <div className="flex-1 hidden lg:block">
+        <div className="lg:flex-1 lg:block lg:ml-8 hidden">
           <div className="border-3 border-orange-500 rounded-md overflow-hidden">
             <img
               src={internship}

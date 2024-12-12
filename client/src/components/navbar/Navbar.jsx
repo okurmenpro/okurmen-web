@@ -1,8 +1,4 @@
-/* eslint-disable react/prop-types */
-// import { useNavigate } from "react-router-dom";
 const Navbar = () => {
-  // const navigate = useNavigate();
-
   return (
     <nav className="hidden md:block">
       <div className="sm:flex md:flex items-center justify-center gap-8 text-base font-normal text-[#1B1A1A] ]">

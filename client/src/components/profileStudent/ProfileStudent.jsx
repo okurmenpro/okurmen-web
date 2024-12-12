@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import ProfileInput from "../../ui/inputs/ProfilePageInput";
 import InputImage from "../../ui/inputs/InputImage";
 import { useEffect, useRef, useState } from "react";
