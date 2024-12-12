@@ -4,7 +4,7 @@ import sanjar from "../../../public/images/sanjar.png";
 
 const AboutSection = () => {
   return (
-    <div className="w-full bg-white py-12 mt-[-20px] mx-auto w-[1440px]">
+    <div className="w-full bg-gray-100 py-12 mt-[-20px] mx-auto w-[1440px]">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <AboutInfo />
