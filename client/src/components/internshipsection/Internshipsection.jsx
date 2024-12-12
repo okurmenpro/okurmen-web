@@ -29,15 +29,18 @@ function InternshipSection() {
             опыт, а также возможность дальнейшего трудоустройства. По окончанию
             курса вы можете подать заявку на стажировку.
           </p>
-
-          <Button
-            className="mt-[70px] lg:mt-[70px] sm:mt-[30px] w-full lg:w-auto"
-            color="orange"
-            ButtonText="Подать заявку"
-          />
+          <a href="https://wa.me/996503677798"
+          target="_blank">
+            
+            <Button
+              className="mt-[70px] lg:mt-[70px] sm:mt-[30px] w-full lg:w-auto"
+              color="orange"
+              ButtonText="Подать заявку"
+            />
+          </a>
         </div>
 
-        <div className="flex-1 hidden lg:block">
+        <div className="lg:flex-1 lg:block lg:ml-8 hidden">
           <div className="border-3 border-orange-500 rounded-md overflow-hidden">
             <img
               src={internship}

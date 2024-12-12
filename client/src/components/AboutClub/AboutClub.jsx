@@ -21,7 +21,6 @@ function AboutClub() {
         неформальной обстановке.
       </p>
 
-      {/* Гибкая сетка с адаптивностью */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 w-full mx-auto">
         <div className="text-center">
           <div className="w-[150px] h-[150px] mx-auto flex items-center justify-center">
@@ -55,7 +54,6 @@ function AboutClub() {
           </p>
         </div>
 
-        {/* Третий блок по центру на планшетах */}
         <div className="text-center sm:col-span-2 lg:col-span-1">
           <div className="w-[150px] h-[150px] mx-auto flex items-center justify-center">
             <img
