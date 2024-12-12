@@ -1,5 +1,3 @@
-import React from "react";
-
 const Mentors = () => {
   const mentors = [
     { name: "John Doe", category: "frontend" },
@@ -14,7 +12,7 @@ const Mentors = () => {
   ];
 
   return (
-    <div className="w-full max-w-[1258px] mx-auto flex flex-col items-start mt-[100px] mb-[70px]">
+    <div id="mentors" className="w-full max-w-[1258px] mx-auto flex flex-col items-start mt-[100px] mb-[70px]">
       <h2 className="text-lg font-medium mb-6">
         <span className="border-l-4 border-orange-500 pl-2">Менторы</span>
       </h2>

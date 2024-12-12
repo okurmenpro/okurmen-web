@@ -9,7 +9,7 @@ function Button({ ButtonText, className = '', color = 'border_orange', type = "b
         border_black: 'border border-black hover:!bg-black hover:!text-white transition',
     };
 
-    const combinedClasses = `h-[40px] rounded px-6 py-1.5 mt-6 ${colorClasses[color] || colorClasses.border_orange} ${className}`;
+    const combinedClasses = `h-[40px] rounded px-6 py-1.5  ${colorClasses[color] || colorClasses.border_orange} ${className}`;
 
     if (to) {
         return (
