@@ -15,7 +15,7 @@ const icons = [
     top: "0%",
     left: "20%",
     translateY: "-80%",
-    link: "/backend",
+    link: "/cSharp",
   },
   {
     src: javascript,
@@ -72,7 +72,7 @@ const HeroSection = () => {
         <Button
           className={`m-auto w-[150px]`}
           ButtonText="Консультация"
-          to="/consultation"
+          to="https://wa.me/996705677798"
         />
 
         <div className="relative mt-16 h-64 flex justify-center items-center">
