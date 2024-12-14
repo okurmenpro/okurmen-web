@@ -26,8 +26,7 @@ const Mentors = () => {
             className="flex-shrink-0 w-[280px] h-[350px] bg-white shadow-md rounded-xl flex flex-col items-center justify-between text-center p-6 relative sm:w-[240px] sm:h-[300px] md:w-[220px] md:h-[280px] lg:w-[260px] lg:h-[320px]"
           >
             <div className="absolute inset-0 bg-gradient-to-b from-gray-100 via-white to-gray-100 rounded-xl shadow-inner"></div>
-            
-            {/* Image for Mentor's Portrait */}
+             
             <div className="relative z-10 w-[150px] h-[150px] sm:w-[120px] sm:h-[120px] object-fit:cover md:w-[100px] md:h-[100px] lg:w-[130px] lg:h-[130px] overflow-hidden rounded-full">
               <img
                 src={mentor.portrait}
