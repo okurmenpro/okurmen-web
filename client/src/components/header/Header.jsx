@@ -5,9 +5,11 @@ import { Link } from "react-router-dom";
 import Button from "../button/Button";
 
 const navlinks = [
-  { title: "О компании", link: "#company-info" },
-  { title: "Курсы", link: "#course" },
-  { title: "Менторы", link: "#mentors" },
+  { id: 1, title: "О компании", link: "#company-info" },
+  { id: 2, title: "Курсы", link: "#course" },
+  { id: 3, title: "Менторы", link: "#mentors" },
+  { id: 4, title: "Стажировка", link: "#internship" },
+  { id: 5, title: "It-club", link: "#it-club" },
 ];
 
 const Header = () => {
@@ -31,7 +33,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed left-0 w-full bg-white z-50  top-0 ${
+      className={`fixed  left-0 w-full bg-white z-50  top-0 ${
         isScroll ? "py-2 duration-150 shadow-lg" : "py-5 duration-150"
       }`}
     >
@@ -46,9 +48,8 @@ const Header = () => {
             />
           </Link>
         </div>
-        <Navbar  />
-        <div className="flex gap-4 items-center">
-          <Button ButtonText="Войти" color="border_black" />
+        <Navbar navlinks={navlinks} />
+        <div className="md:flex gap-4 items-center s:hidden ">
           <Button
             ButtonText="Зарегестрироваться"
             color="black"
@@ -61,21 +62,31 @@ const Header = () => {
           </button>
         </div>
       </div>
-
       {open && (
-        <div className="md:hidden absolute bg-[#00000068] h-screen w-full mt-4">
-          <div className="absolute w-full z-20 bg-white rounded-b-3xl pb-3 space-y-1 sm:px-3 md:px-0 shadow-lg">
-            {navlinks.map((link, idx) => (
-              <a
-                className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                key={idx}
-                href={link.link}
-              >
-                {link.title}
-              </a>
-            ))}
+        <>
+          <div
+            className={` ${
+              open
+                ? "s:absolute top-100 min-h-screen w-full  bg-[#00000038]"
+                : "md:hidden s:relative"
+            } `}
+          >
+            <div className="s:absolute top-0  w-full z-20 bg-white rounded-b-3xl  space-y-1 sm:px-3 md:px-0 shadow-lg py-4 px-4">
+              {navlinks.map((link, idx) => (
+                <a
+                  className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                  key={idx}
+                  href={link.link}
+                >
+                  {link.title}
+                </a>
+              ))}
+              <div className="flex flex-col items-start pl-3">
+                <Button ButtonText="Войти" color="border_black" />
+              </div>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </header>
   );
