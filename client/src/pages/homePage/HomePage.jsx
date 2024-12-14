@@ -9,7 +9,7 @@ import Mentors from "../../components/mentors/Mentors";
 import AboutClub from "../../components/AboutClub/AboutClub";
 import Address from "../../components/address/Address";
 import Internshipsection from "../../components/internshipsection/Internshipsection";
-
+import Trainers from "../../components/trainers/Trainers";
 const HomePage = () => {
   return (
     <div className="mt-[100px]">
@@ -17,7 +17,7 @@ const HomePage = () => {
       <div className="bg-white">
         <AboutSection />
         {/* <CompanyPage /> */}
-
+        <Trainers />
         <Mentors />
         <Internshipsection />
         <AboutClub />
