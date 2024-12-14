@@ -1,14 +1,12 @@
 const Mentors = () => {
   const mentors = [
-    { name: "John Doe", category: "frontend", portrait: "../../../public/images/soke.jpg" },
-    { name: "Jane Smith", category: "backend", portrait: "../../../public/images/toha.jpg" },
-    { name: "Alice Johnson", category: "UX/UI", portrait: "../../../public/images/kuke.png" },
-    { name: "Bob Brown", category: "Python", portrait: "../../../public/images/aidana.png" },
-    { name: "Charlie Davis", category: "DevOps", portrait: "../../../public/images/charlie.jpg" },
-    { name: "Eve White", category: "Data Science", portrait: "../../../public/images/eve.jpg" },
-    { name: "David Green", category: "QA", portrait: "../../../public/images/david.jpg" },
-    { name: "Sophia Lee", category: "Project Management", portrait: "../../../public/images/sophia.jpg" },
-    { name: "Michael King", category: "Mobile Development", portrait: "../../../public/images/michael.jpg" },
+    { name: "Саадат Жолчубаева", category: "frontend", portrait: "../../../public/images/soke.jpg" },
+    { name: "Тансулуу Карыбекова", category: "frontend", portrait: "../../../public/images/toha.jpg" },
+    { name: "Кулпунай Жекшенбекова", category: "frontend", portrait: "../../../public/images/kuke.png" },
+    { name: "Айдана Качкынбаева", category: "frontend", portrait: "../../../public/images/aidana.png" },
+    { name: "Алишер Талипжанов", category: "frontend", portrait: "../../../public/images/alisher.png" },
+    { name: "Элибек Бакытбекович", category: "frontend", portrait: "../../../public/images/elibek.PNG" },
+    { name: "Сыймык Токтобеков", category: "Project Manager", portrait: "../../../public/images/syimyk.png" },
   ];
 
   return (
@@ -27,11 +25,11 @@ const Mentors = () => {
           >
             <div className="absolute inset-0 bg-gradient-to-b from-gray-100 via-white to-gray-100 rounded-xl shadow-inner"></div>
              
-            <div className="relative z-10 w-[150px] h-[150px] sm:w-[120px] sm:h-[120px] object-fit:cover md:w-[100px] md:h-[100px] lg:w-[130px] lg:h-[130px] overflow-hidden rounded-full">
+            <div className="relative z-10 w-[150px] h-[150px] sm:w-[120px] sm:h-[120px] object-fit:cover md:w-[100px] md:h-[100px] lg:w-[130px] lg:h-[130px] overflow-hidden rounded">
               <img
                 src={mentor.portrait}
                 alt={mentor.name}
-                className="w-full h-full object-cover rounded-full"
+                className="w-full h-full object-cover rounded-xl"
               />
             </div>
             
