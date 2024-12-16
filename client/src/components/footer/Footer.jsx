@@ -1,5 +1,6 @@
 import { IoLogoInstagram, IoLogoWhatsapp } from "react-icons/io";
 import { NavLink } from "react-router-dom";
+import Logo from "/icons/logo.svg";
 
 const Footer = () => {
   return (
@@ -7,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="flex justify-center md:justify-start mb-8">
           <NavLink to={"/"}>
-            <img src="/icons/logo.svg" alt="Okurmen Logo" className="w-32" />
+            <img src={Logo} alt="Okurmen Logo" className="w-32" />
           </NavLink>
         </div>
         <hr className="border-white-300 my-6" />
