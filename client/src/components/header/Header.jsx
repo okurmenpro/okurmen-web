@@ -3,6 +3,7 @@ import Navbar from "../navbar/Navbar";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Button from "../button/Button";
+import Logo from "/images/logo.png";
 
 const navlinks = [
   { id: 1, title: "О компании", link: "#company-info" },
@@ -40,12 +41,7 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between py-4">
         <div className="ml-3 md:ml-0 mx-[30px]">
           <Link to={"/"}>
-            <img
-              className="cursor-pointer"
-              width={80}
-              src="/images/logo.png"
-              alt="Logo"
-            />
+            <img className="cursor-pointer" width={80} src={Logo} alt="Logo" />
           </Link>
         </div>
         <Navbar navlinks={navlinks} />

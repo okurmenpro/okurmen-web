@@ -1,12 +1,12 @@
 const Mentors = () => {
   const mentors = [
-    { name: "Саадат Жолчубаева", category: "frontend", portrait: "../../../public/images/soke.jpg" },
-    { name: "Тансулуу Карыбекова", category: "frontend", portrait: "../../../public/images/toha.jpg" },
-    { name: "Кулпунай Жекшенбекова", category: "frontend", portrait: "../../../public/images/kuke.png" },
-    { name: "Айдана Качкынбаева", category: "frontend", portrait: "../../../public/images/aidana.png" },
-    { name: "Алишер Талипжанов", category: "frontend", portrait: "../../../public/images/alisher.png" },
-    { name: "Элибек Бакытбекович", category: "frontend", portrait: "../../../public/images/elibek.PNG" },
-    { name: "Сыймык Токтобеков", category: "Project Manager", portrait: "../../../public/images/syimyk.png" },
+    { name: "Саадат Жолчубаева", category: "Frontend", portrait: "../../../public/images/soke.jpg" },
+    { name: "Тансулуу Карыбекова", category: "Frontend", portrait: "../../../public/images/toha.jpg" },
+    { name: "Кулпунай Жекшенбекова", category: "Frontend", portrait: "../../../public/images/kuke.png" },
+    { name: "Айдана Качкынбай кызы", category: "Frontend", portrait: "../../../public/images/aidana.png" },
+    { name: "Алишер Талипжанов", category: "Frontend", portrait: "../../../public/images/alisher.png" },
+    { name: "Элибек Бакытбекович", category: "Frontend", portrait: "../../../public/images/elibek.PNG" },
+
   ];
 
   return (
