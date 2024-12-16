@@ -1,12 +1,11 @@
 const Trainers = () => {
     const trainers = [
-      { name: "Баястан", category: "frontend", portrait: "../../../public/images/bayastanIT.jpg" },
-      { name: "Кумарбек", category: "ENGLISH", portrait: "../../../public/images/kumar.jpg" },
-      { name: "Жанара", category: "ENGLISH", portrait: "../../../public/images/zhanara.jpg" },
-      { name: "Баястан", category: "ENGLISH", portrait: "../../../public/images/bayastanENGLISH.jpg" },
-      { name: "Кутман Акунов", category: "frontend", portrait: "../../../public/images/kutman.JPG" },
-      { name: " ", category: "frontend", portrait: "../../../public/images/" },
-      { name: " ", category: "Project Manager", portrait: "../../../public/images/" },
+      { name: "Белек Абдрашитов", category: "Backend", portrait: "../../../public/images/belek.png" },
+      { name: "Жанара", category: "English", portrait: "../../../public/images/zhanara.jpg" },
+      { name: "Баястан", category: "Frontend", portrait: "../../../public/images/bayastanIT.jpg" },
+      { name: "Баястан", category: "English", portrait: "../../../public/images/bayastanENGLISH.jpg" },
+      { name: "Кутман Акунов", category: "Frontend", portrait: "../../../public/images/kutman.JPG" },
+      { name: "Кумарбек", category: "English", portrait: "../../../public/images/kumar.jpg" },
     ];
   
     return (
