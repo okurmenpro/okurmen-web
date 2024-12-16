@@ -24,6 +24,7 @@ const icons = [
     left: "30%",
     translateY: "-10%",
     link: "/frontend",
+    mobileTranslateY: "-20%",
   },
   {
     src: typeScript,
@@ -61,15 +62,15 @@ const icons = [
 
 const HeroSection = () => {
   return (
-    <div className="w-full h-auto bg-white ">
+    <div className="w-full h-auto bg-white">
       <div className="text-center py-8 relative">
         <h1 className="text-blue-700 text-4xl font-bold">ОКУРМЭН</h1>
-        <p className="text-orange-400 text-lg mt-2 mb-4">
+        <p className="text-orange-400 text-lg mt-2 mb-[50px]">
           Пошаговое обучение IT-навыкам с нуля до уверенного пользователя
         </p>
 
         <Button
-          className={`m-auto w-[150px] `}
+          className={`m-auto w-[150px]`}
           ButtonText="Консультация"
           to="/consultation"
         />
@@ -97,6 +98,58 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @media (max-width: 1024px) {
+          .relative.mt-16.h-64 {
+            height: auto;
+            flex-direction: column;
+          }
+          .relative.w-[80%] {
+            width: 100%;
+            flex-wrap: wrap;
+          }
+          .absolute.h-16.w-16 {
+            position: static;
+            margin: 10px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          h1 {
+            font-size: 2xl;
+          }
+          p {
+            font-size: base;
+          }
+          .relative.mt-16.h-64 {
+            height: auto;
+            flex-direction: column;
+          }
+          .relative.w-[80%] {
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+          .absolute.h-16.w-16 {
+            position: static;
+            margin: 10px;
+          }
+
+          .absolute:nth-child(2) {
+            transform: translateY(-25%) !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          h1 {
+            font-size: xl;
+          }
+          p {
+            font-size: sm;
+          }
+        }
+      `}</style>
     </div>
   );
 };

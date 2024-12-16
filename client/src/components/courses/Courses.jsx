@@ -116,6 +116,7 @@ const Courses = () => {
                     Адрес: <span className="font-bold">{event.address}</span>
                   </p>
                 </div>
+                1
                 <div className="flex justify-end mt-auto">
                   <button className="bg-transparent border-2 border-orange-500 text-orange-500 py-2 px-6 rounded-lg text-lg font-medium hover:bg-orange-500 hover:text-white transition">
                     Консультация

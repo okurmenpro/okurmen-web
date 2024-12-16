@@ -1,33 +1,85 @@
-import { Link, useNavigate } from "react-router-dom";
-const Navbar = ({ navlinks }) => {
-  const navigate = useNavigate();
-
-  const handleChange = (e) => {
-    const path = e.target.value;
-    navigate(path);
-  };
-
+const Navbar = () => {
   return (
     <nav className="hidden md:block">
       <div className="sm:flex md:flex items-center justify-center gap-8 text-base font-normal text-[#1B1A1A] ]">
-        <div className="flex justify-between gap-5 ">
-          {navlinks.map((link, idx) => (
-            <a key={idx} href={link.link}>
-              {link.title}
-            </a>
-          ))}
-          <div>
-            <select
-              onChange={(e) => handleChange(e)}
-              className="outline-none w-[120px] "
-            >
-              <option value="/" disabled>
-                Ресурстар
-              </option>
-              <option value="/itclub">IT-club</option>
-              <option value="/management">Жетекчилик</option>
-            </select>
-          </div>
+        <div>
+          <ul className="flex justify-between gap-6">
+            <li>
+              <button
+                onClick={() => {
+                  const section = document.getElementById("");
+                  if (section) {
+                    window.scroll({
+                      behavior: "smooth",
+                      top: section.offsetTop,
+                    });
+                  }
+                }}
+              >
+                О компании
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => {
+                  const section = document.getElementById("");
+                  if (section) {
+                    window.scroll({
+                      behavior: "auto",
+                      top: section.offsetTop,
+                    });
+                  }
+                }}
+              >
+                Курсы
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => {
+                  const section = document.getElementById("mentors");
+                  if (section) {
+                    window.scrollTo({
+                      behavior: "smooth",
+                      top: section.offsetTop,
+                    });
+                  }
+                }}
+              >
+                Менторы
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => {
+                  const section = document.getElementById("internship");
+                  if (section) {
+                    window.scroll({
+                      behavior: "smooth",
+                      top: section.offsetTop,
+                    });
+                  }
+                }}
+              >
+                Стажировка
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => {
+                  const section = document.getElementById("itclub");
+                  if (section) {
+                    window.scroll({
+                      behavior: "smooth",
+                      top: section.offsetTop,
+                    });
+                  }
+                }}
+              >
+                IT club
+              </button>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>

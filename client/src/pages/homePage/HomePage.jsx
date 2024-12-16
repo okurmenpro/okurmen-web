@@ -24,6 +24,7 @@ const HomePage = () => {
         <CertificateSection />
         <WorkSection />
         {/* <CompanyPage /> */}
+
         <Mentors />
         <Internshipsection />
         <AboutClub />
