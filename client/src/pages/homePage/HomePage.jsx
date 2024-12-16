@@ -5,6 +5,7 @@ import AboutSection from "../../components/aboutSection/AboutSection";
 // import Slider from "../../components/slider/Slider";
 // import MentorSlider from "../../components/slider/MentorSlider";
 import HeroSection from "../../components/hero/HeroSection";
+import Courses from "../../components/courses/Courses";
 import Mentors from "../../components/mentors/Mentors";
 import AboutClub from "../../components/AboutClub/AboutClub";
 import Address from "../../components/address/Address";
@@ -16,6 +17,12 @@ const HomePage = () => {
       <HeroSection />
       <div className="bg-white">
         <AboutSection />
+        <Courses />
+        {/* <CompanyPage /> */}
+        {/* <Slider /> */}
+        {/* <MentorSlider /> */}
+        {/* <CertificateSection /> */}
+        {/* <WorkSection /> */}
         {/* <CompanyPage /> */}
 
         <Mentors />
