@@ -18,11 +18,11 @@ const HomePage = () => {
       <div className="bg-[#F4F4F4]">
         <AboutSection />
         <Courses />
-        <CompanyPage />
-        <Slider />
-        <MentorSlider />
-        <CertificateSection />
-        <WorkSection />
+        {/* <CompanyPage /> */}
+        {/* <Slider /> */}
+        {/* <MentorSlider /> */}
+        {/* <CertificateSection /> */}
+        {/* <WorkSection /> */}
         {/* <CompanyPage /> */}
 
         <Mentors />
