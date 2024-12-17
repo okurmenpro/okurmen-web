@@ -1,7 +1,6 @@
 import React from "react";
-import internship from "../../../public/images/internship.png";
 import Button from "../button/Button";
-
+import teamphoto from '../../../public/images/teamPortarit.png'
 function InternshipSection() {
   return (
     <div
@@ -12,7 +11,7 @@ function InternshipSection() {
         Стажировка
       </h2>
 
-      <div className="flex flex-col lg:flex-row mt-8 gap-8">
+      <div className="flex flex-col lg:flex-row mt-8 gap-8 ">
         <div className="flex-1">
           <p className="mt-4 text-gray-800">
             <span className="text-lg font-semibold text-orange-500">
@@ -23,15 +22,13 @@ function InternshipSection() {
             работать в команде. Программа рассчитана на 3 месяца и охватывает
             как frontend, backend, UX/UI разработку. <br />
           </p>
-          <p className="mt-[10px] text-gray-800">
+          <p className="mt-[20px] text-gray-800">
             В ходе стажировки участники познакомятся с современными
             инструментами и технологиями веб-разработки, получат ценные знания и
             опыт, а также возможность дальнейшего трудоустройства. По окончанию
             курса вы можете подать заявку на стажировку.
           </p>
-          <a href="https://wa.me/996503677798"
-          target="_blank">
-            
+          <a href="https://wa.me/996503677798" target="_blank">
             <Button
               className="mt-[70px] lg:mt-[70px] sm:mt-[30px] w-full lg:w-auto"
               color="orange"
@@ -43,9 +40,9 @@ function InternshipSection() {
         <div className="lg:flex-1 lg:block lg:ml-8 hidden">
           <div className="border-3 border-orange-500 rounded-md overflow-hidden">
             <img
-              src={internship}
+              src={teamphoto}
               alt="Team photo"
-              className="w-full h-auto object-cover max-h-[300px] sm:max-h-[400px] lg:max-h-[500px]"
+              className="  w-[500px] h-[390px] object-cover max-h-[300px] sm:max-h-[400px] lg:max-h-[500px] ml-[20px]  rounded"
             />
           </div>
         </div>
