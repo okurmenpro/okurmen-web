@@ -1,12 +1,21 @@
+import React from "react";
+
+// Импорты изображений из src/assets/images
+import soke from "/images/soke.jpg";
+import toha from "/images/toha.jpg";
+import kuke from "/images/kuke.png";
+import aidana from "/images/aidana.png";
+import alisher from "/images/alisher.png";
+import elibek from "/images/elibek.png";
+
 const Mentors = () => {
   const mentors = [
-    { name: "Саадат Жолчубаева", category: "Frontend", portrait: "../../../public/images/soke.jpg" },
-    { name: "Тансулуу Карыбекова", category: "Frontend", portrait: "../../../public/images/toha.jpg" },
-    { name: "Кулпунай Жекшенбекова", category: "Frontend", portrait: "../../../public/images/kuke.png" },
-    { name: "Айдана Качкынбай кызы", category: "Frontend", portrait: "../../../public/images/aidana.png" },
-    { name: "Алишер Талипжанов", category: "Frontend", portrait: "../../../public/images/alisher.png" },
-    { name: "Элибек Бакытбекович", category: "Frontend", portrait: "../../../public/images/elibek.PNG" },
-
+    { name: "Саадат Жолчубаева", category: "Frontend", portrait: soke },
+    { name: "Тансулуу Карыбекова", category: "Frontend", portrait: toha },
+    { name: "Кулпунай Жекшенбекова", category: "Frontend", portrait: kuke },
+    { name: "Айдана Качкынбай кызы", category: "Frontend", portrait: aidana },
+    { name: "Алишер Талипжанов", category: "Frontend", portrait: alisher },
+    { name: "Элибек Бакытбекович", category: "Frontend", portrait: elibek },
   ];
 
   return (
@@ -24,15 +33,15 @@ const Mentors = () => {
             className="flex-shrink-0 w-[280px] h-[350px] bg-white shadow-md rounded-xl flex flex-col items-center justify-between text-center p-6 relative sm:w-[240px] sm:h-[300px] md:w-[220px] md:h-[280px] lg:w-[260px] lg:h-[320px]"
           >
             <div className="absolute inset-0 bg-gradient-to-b from-gray-100 via-white to-gray-100 rounded-xl shadow-inner"></div>
-             
-            <div className="relative z-10 w-[150px] h-[150px] sm:w-[120px] sm:h-[120px] object-fit:cover md:w-[100px] md:h-[100px] lg:w-[130px] lg:h-[130px] overflow-hidden rounded">
+
+            <div className="relative z-10 w-[150px] h-[150px] sm:w-[120px] sm:h-[120px] md:w-[100px] md:h-[100px] lg:w-[130px] lg:h-[130px] overflow-hidden rounded">
               <img
                 src={mentor.portrait}
                 alt={mentor.name}
                 className="w-full h-full object-cover rounded-xl"
               />
             </div>
-            
+
             <div className="relative z-10">
               <p className="text-lg font-medium text-black mb-2 sm:text-base md:text-sm lg:text-base">
                 {mentor.name}
