@@ -74,14 +74,14 @@ const Courses = () => {
 
   return (
     <div className="container ml-[73px]">
-      {/* Header */}
+
       <div className="mb-6">
         <span className="text-lg font-semibold text-gray-800 border-l-4 border-orange-500 pl-2">
           Курсы
         </span>
       </div>
 
-      {/* Tabs */}
+     
       <div className="flex space-x-4 mb-8">
         {Object.keys(courses).map((tab) => (
           <button
@@ -98,7 +98,7 @@ const Courses = () => {
         ))}
       </div>
 
-      {/* Events Tab */}
+
       {activeTab === "События" ? (
         <div className="flex justify-center">
           {courses["События"].map((event, index) => (
@@ -133,7 +133,7 @@ const Courses = () => {
           ))}
         </div>
       ) : (
-        // Other Tabs Content
+    
         <div
           className="flex space-x-8 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100"
           style={{ overflowY: "hidden" }}
@@ -143,14 +143,14 @@ const Courses = () => {
               key={index}
               className="bg-gray-50 shadow-xl rounded-lg p-6 flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-6 min-w-[350px] sm:min-w-[500px] lg:min-w-[750px] h-auto sm:h-[350px]"
             >
-              {/* Image */}
+            
               <img
                 src={course.image}
                 alt={course.title}
                 className="w-32 h-32 sm:w-40 sm:h-40 rounded-lg object-cover"
               />
 
-              {/* Content */}
+      
               <div className="flex flex-col space-y-4 w-full">
                 <h3 className="text-lg sm:text-2xl font-bold text-center sm:text-left">
                   {course.title}
