@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "../button/Button";
-import BektenAzhymyrza from "../../../public/images/bektenAzhymyrza.png";
-
+import teamphoto from '../../../public/images/teamPortarit.png'
 function InternshipSection() {
   return (
     <div
@@ -41,7 +40,7 @@ function InternshipSection() {
         <div className="lg:flex-1 lg:block lg:ml-8 hidden">
           <div className="border-3 border-orange-500 rounded-md overflow-hidden">
             <img
-              src={BektenAzhymyrza}
+              src={teamphoto}
               alt="Team photo"
               className="  w-[500px] h-[390px] object-cover max-h-[300px] sm:max-h-[400px] lg:max-h-[500px] ml-[20px]  rounded"
             />

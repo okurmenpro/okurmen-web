@@ -73,18 +73,21 @@ const Courses = () => {
   };
 
   return (
-    <div className="container p-8 ml-[73px]">
+    <div className="container ml-[73px]">
+
       <div className="mb-6">
         <span className="text-lg font-semibold text-gray-800 border-l-4 border-orange-500 pl-2">
           Курсы
         </span>
       </div>
+
+     
       <div className="flex space-x-4 mb-8">
         {Object.keys(courses).map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`py-2 px-4 rounded font-medium ${
+            className={`py-2 px-4 rounded font-medium whitespace-nowrap text-sm ${
               activeTab === tab
                 ? "bg-orange-500 text-white"
                 : "text-gray-700 hover:bg-gray-100"
@@ -94,35 +97,34 @@ const Courses = () => {
           </button>
         ))}
       </div>
+
+
       {activeTab === "События" ? (
         <div className="flex justify-center">
           {courses["События"].map((event, index) => (
             <div
               key={index}
-              className="flex flex-row bg-black text-white rounded-lg overflow-hidden h-[350px] w-[1200px] shadow-xl"
+              className="flex flex-col lg:flex-row bg-black text-white rounded-lg overflow-hidden shadow-xl w-full lg:w-[1200px] h-auto lg:h-[350px]"
             >
-              <div className="w-1/2 h-full">
+              <div className="w-full lg:w-1/2 h-[200px] lg:h-full">
                 <img
                   src={event.image}
                   alt="Event"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="w-1/2 p-6 flex flex-col justify-between h-full text-left">
-                <div className="flex flex-col mb-4 ml-[370px] mt-[130px]">
+              <div className="w-full lg:w-1/2 p-6 flex flex-col justify-between text-right">
+                <div className="mb-6">
                   <p className="text-sm mb-2">
                     Начало: <span className="font-bold">{event.date}</span>
                   </p>
-                  <p className="text-sm mb-4">
+                  <p className="text-sm">
                     Адрес: <span className="font-bold">{event.address}</span>
                   </p>
                 </div>
-                1
-                <div className="flex justify-end mt-auto">
+                <div className="flex justify-center lg:justify-end">
                   <Button
-                    className={
-                      "bg-transparent border-2 border-orange-500 text-orange-500 py-2 px-6 rounded-lg text-lg font-medium hover:bg-orange-500 hover:text-white transition"
-                    }
+                    className="bg-transparent border-2 border-orange-500 text-orange-500 py-2 px-4 rounded-lg text-sm hover:bg-orange-500 hover:text-white transition"
                     ButtonText="Консультация"
                   />
                 </div>
@@ -131,61 +133,41 @@ const Courses = () => {
           ))}
         </div>
       ) : (
+    
         <div
-          className={`flex ${
-            activeTab === "Для детей"
-              ? "justify-center"
-              : "overflow-x-auto space-x-8"
-          }`}
-          style={{
-            overflowX: "auto",
-            overflowY: "hidden",
-            scrollbarWidth: "thin",
-            msOverflowStyle: "none",
-          }}
+          className="flex space-x-8 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100"
+          style={{ overflowY: "hidden" }}
         >
           {courses[activeTab].map((course, index) => (
             <div
               key={index}
-              className={`bg-gray-50 shadow-xl rounded-lg p-6 flex flex-row items-center space-x-6 ${
-                activeTab === "Для детей" ? "w-[1200px]" : "w-[850px]"
-              } h-[350px]`}
+              className="bg-gray-50 shadow-xl rounded-lg p-6 flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-6 min-w-[350px] sm:min-w-[500px] lg:min-w-[750px] h-auto sm:h-[350px]"
             >
-              {activeTab === "Для детей" && course.images ? (
-                <div className="flex space-x-4 w-1/2">
-                  <img
-                    src={course.images[0]}
-                    alt="Python"
-                    className="w-40 h-40 rounded-lg object-cover"
-                  />
-                  <img
-                    src={course.images[1]}
-                    alt="JavaScript"
-                    className="w-40 h-40 rounded-lg object-cover"
-                  />
-                </div>
-              ) : (
-                <img
-                  src={course.image}
-                  alt={course.title}
-                  className="w-40 h-40 rounded-lg object-cover"
-                />
-              )}
-              <div className="flex flex-col space-y-4 text-gray-800 w-[600px]">
-                <h3 className="text-2xl font-bold">{course.title}</h3>
-                <div className="flex items-center space-x-2">
-                  <FaClock className="" />
-                  <p className="text-lg">
+            
+              <img
+                src={course.image}
+                alt={course.title}
+                className="w-32 h-32 sm:w-40 sm:h-40 rounded-lg object-cover"
+              />
+
+      
+              <div className="flex flex-col space-y-4 w-full">
+                <h3 className="text-lg sm:text-2xl font-bold text-center sm:text-left">
+                  {course.title}
+                </h3>
+                <div className="flex items-center justify-center sm:justify-start space-x-2">
+                  <FaClock />
+                  <p className="text-sm sm:text-lg">
                     {course.description}{" "}
                     <span className="text-orange-500">{course.extra}</span>
                   </p>
                 </div>
-                <div className="flex items-center space-x-2 text-lg text-gray-600">
-                  <FaRegCalendarAlt className="bg-black-200" />
+                <div className="flex items-center justify-center sm:justify-start space-x-2 text-gray-600 text-sm sm:text-lg">
+                  <FaRegCalendarAlt />
                   <span>{course.schedule}</span>
                 </div>
-                <div>
-                  <button className="bg-orange-500 text-white py-2 px-6 rounded-lg text-lg font-medium hover:bg-orange-600">
+                <div className="flex justify-center sm:justify-start mt-2 sm:mt-auto">
+                  <button className="bg-orange-500 text-white py-2 px-4 rounded-lg text-sm sm:text-base hover:bg-orange-600 transition">
                     Подробнее
                   </button>
                 </div>
