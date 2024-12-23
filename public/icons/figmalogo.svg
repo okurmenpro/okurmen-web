@@ -1,0 +1,18 @@
+<svg width="66.666504" height="100.000000" viewBox="0 0 66.6665 100" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip772_503">
+			<rect id="figma logo" rx="0.000000" width="65.666664" height="99.000000" transform="translate(0.500000 0.500000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="figma logo" rx="0.000000" width="65.666664" height="99.000000" transform="translate(0.500000 0.500000)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip772_503)">
+		<path id="Vector" d="M16.66 100C25.86 100 33.33 92.53 33.33 83.33L33.33 66.66L16.66 66.66C7.46 66.66 0 74.13 0 83.33C0 92.53 7.46 100 16.66 100Z" fill="#0ACF83" fill-opacity="1.000000" fill-rule="nonzero"/>
+		<path id="Vector" d="M0 50C0 40.8 7.46 33.33 16.66 33.33L33.33 33.33L33.33 66.66L16.66 66.66C7.46 66.66 0 59.2 0 50Z" fill="#A259FF" fill-opacity="1.000000" fill-rule="nonzero"/>
+		<path id="Vector" d="M0 16.66C0 7.46 7.46 0 16.66 0L33.33 0L33.33 33.33L16.66 33.33C7.46 33.33 0 25.86 0 16.66Z" fill="#F24E1E" fill-opacity="1.000000" fill-rule="nonzero"/>
+		<path id="Vector" d="M33.33 0L50 0C59.2 0 66.66 7.46 66.66 16.66C66.66 25.86 59.2 33.33 50 33.33L33.33 33.33L33.33 0Z" fill="#FF7262" fill-opacity="1.000000" fill-rule="nonzero"/>
+		<path id="Vector" d="M66.66 50C66.66 59.2 59.2 66.66 50 66.66C40.8 66.66 33.33 59.2 33.33 50C33.33 40.8 40.8 33.33 50 33.33C59.2 33.33 66.66 40.8 66.66 50Z" fill="#1ABCFE" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+</svg>
