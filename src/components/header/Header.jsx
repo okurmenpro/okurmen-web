@@ -84,7 +84,7 @@ const Header = () => {
               </a>
             ))}
             <div className="flex flex-col items-start pl-3">
-              <Button ButtonText="Войти " color="border_black" />
+              <Button ButtonText="Войти" color="border_black" />
             </div>
           </div>
         </div>
