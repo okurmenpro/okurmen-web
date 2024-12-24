@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"; 
 import Navbar from "../navbar/Navbar";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -16,6 +16,7 @@ const navlinks = [
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [isScroll, setIsScroll] = useState(false);
+  const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
     function scrollBar() {
@@ -32,9 +33,17 @@ const Header = () => {
     setOpen((prev) => !prev);
   };
 
+  const handleMouseEnter = (id) => {
+    setHovered(id);
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(false);
+  };
+
   return (
     <header
-      className={`fixed  left-0 w-full bg-white z-50  top-0 ${
+      className={`fixed left-0 w-full bg-white z-50 top-0 ${
         isScroll ? "py-2 duration-150 shadow-lg" : "py-5 duration-150"
       }`}
     >
@@ -44,7 +53,7 @@ const Header = () => {
             <img className="cursor-pointer" width={80} src={Logo} alt="Logo" />
           </Link>
         </div>
-        <Navbar navlinks={navlinks} />
+        <Navbar navlinks={navlinks} hovered={hovered} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} />
         <div className="md:flex gap-4 items-center s:hidden ">
           <Button
             ButtonText="Зарегестрироваться"
@@ -59,30 +68,26 @@ const Header = () => {
         </div>
       </div>
       {open && (
-        <>
-          <div
-            className={` ${
-              open
-                ? "s:absolute top-100 min-h-screen w-full  bg-[#00000038]"
-                : "md:hidden s:relative"
-            } `}
-          >
-            <div className="s:absolute top-0  w-full z-20 bg-white rounded-b-3xl  space-y-1 sm:px-3 md:px-0 shadow-lg py-4 px-4">
-              {navlinks.map((link, idx) => (
-                <a
-                  className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                  key={idx}
-                  href={link.link}
-                >
-                  {link.title}
-                </a>
-              ))}
-              <div className="flex flex-col items-start pl-3">
-                <Button ButtonText="Войти" color="border_black" />
-              </div>
+        <div
+          className={`${
+            open ? "s:absolute top-100 min-h-screen w-full  bg-[#00000038]" : "md:hidden s:relative"
+          }`}
+        >
+          <div className="s:absolute top-0  w-full z-20 bg-white rounded-b-3xl  space-y-1 sm:px-3 md:px-0 shadow-lg py-4 px-4">
+            {navlinks.map((link, idx) => (
+              <a
+                className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                key={idx}
+                href={link.link}
+              >
+                {link.title}
+              </a>
+            ))}
+            <div className="flex flex-col items-start pl-3">
+              <Button ButtonText="Войти" color="border_black" />
             </div>
           </div>
-        </>
+        </div>
       )}
     </header>
   );
