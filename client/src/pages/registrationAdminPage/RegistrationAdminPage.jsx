@@ -2,7 +2,6 @@ import AdminAccountSetup from "../../components/registrationAdmin/AdminAccountSe
 import AdminConfirmCode from "../../components/registrationAdmin/AdminConfirmCode";
 import AdminContactInfo from "../../components/registrationAdmin/AdminContactInfo";
 
-/* eslint-disable react/prop-types */
 const RegistrationAdminPage = ({ role }) => {
   switch (role) {
     case "contact-info":

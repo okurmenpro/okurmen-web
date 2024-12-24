@@ -5,13 +5,13 @@ import star from "../../../public/images/star.png";
 
 function AboutClub() {
   return (
-    <div id="itclub" className="w-[1258px] mx-auto py-10">
+    <div id="itclub" className="w-full max-w-[1258px] mx-auto py-10 px-4">
       <h2 className="text-lg font-medium mb-6">
         <span className="border-l-4 border-orange-500 pl-2 h-[33.5px] flex items-center">
           IT-клуб
         </span>
       </h2>
-      <p className="text-lg text-gray-800 mt-4  mb-[100px]">
+      <p className="text-lg text-gray-800 mt-4 mb-[100px]">
         <span className="text-orange-500 font-medium">IT-клуб</span> — это
         сообщество или группа, где люди, интересующиеся технологиями,
         программированием, дизайном и другими IT-направлениями, собираются,
@@ -21,9 +21,9 @@ function AboutClub() {
         неформальной обстановке.
       </p>
 
-      <div className="grid grid-cols-3 gap-8 mt-12 w-[1000px] mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 w-full mx-auto">
         <div className="text-center">
-          <div className="w-150px h-150px mx-auto flex items-center justify-center">
+          <div className="w-[150px] h-[150px] mx-auto flex items-center justify-center">
             <img
               src={cup}
               alt="Education Icon"
@@ -38,7 +38,7 @@ function AboutClub() {
         </div>
 
         <div className="text-center">
-          <div className="w-150px h-150px mx-auto flex items-center justify-center">
+          <div className="w-[150px] h-[150px] mx-auto flex items-center justify-center">
             <img
               src={computerClub}
               alt="Real Projects Icon"
@@ -54,8 +54,8 @@ function AboutClub() {
           </p>
         </div>
 
-        <div className="text-center">
-          <div className="w-150px h-150px mx-auto flex items-center justify-center">
+        <div className="text-center sm:col-span-2 lg:col-span-1">
+          <div className="w-[150px] h-[150px] mx-auto flex items-center justify-center">
             <img
               src={star}
               alt="IT Company Icon"
