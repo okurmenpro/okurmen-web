@@ -1,6 +1,6 @@
 import React from "react";
 import AboutCourse from "../../components/aboutCourse/aboutCourse";
-import python from "../../../public/images/python.png";
+import pythonImage from '../../../public/icons/pythonImage.svg'
 import PriseCourse from "../../components/priceCourse/PriceCourse";
 import advantages from '../../data/advantages';
 import AdvantagesCourse from "../../components/advantagesCourse/AdvantagesCourse";
@@ -19,13 +19,13 @@ function PythonPage() {
       <AboutCourse
         title="Python"
         description={pythonDescription}
-        image={python}
+        image={pythonImage}
         imageAlt="Python logo"
       />
       <PriseCourse
         title="Python"
         image={pythonLogo}
-        duration="2 месяца"
+        duration="6 месяца"
         englishIncluded={true}
         frequency="4 раза в неделю"
         time="1,5 часа"

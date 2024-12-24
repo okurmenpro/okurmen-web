@@ -5,6 +5,7 @@ import AdvantagesCourse from "../../components/advantagesCourse/AdvantagesCourse
 import advantagesBackend from '../../data/advantagesBackend';
 import sharp from '../../../public/icons/sharp.svg';
 import c_sharp from '../../../public/icons/c_sharp.svg'
+import advantages from "../../data/advantages";
 
 const CSharp = () => {
     const backendDescription = `
@@ -29,7 +30,7 @@ const CSharp = () => {
                 price="15 000 сом"
             />
             <AdvantagesCourse
-                data={advantagesBackend}
+                data={advantages}
                 title="Преимущества курса" />
             {/* <Benefits
                 benefitsData={benefitsData}

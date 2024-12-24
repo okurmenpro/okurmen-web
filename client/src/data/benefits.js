@@ -15,6 +15,7 @@ const benefits = [
     },
     {
       img: numpy,
+      title: "Анализ информации",
     },
     {
       img: scikit,
