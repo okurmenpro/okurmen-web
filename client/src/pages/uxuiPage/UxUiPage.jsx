@@ -18,7 +18,7 @@ const UxUiPage = () => {
   return (
     <>
       <AboutCourse
-        title="UX/UI"
+        title="UX/UI design"
         description={UxUiDescription}
         image={figmalogo}
         imageAlt="Python logo"
