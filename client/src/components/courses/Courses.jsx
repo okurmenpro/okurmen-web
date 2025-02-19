@@ -143,13 +143,13 @@ const Courses = () => {
       ) : (
 
         <div
-          className="flex space-x-8 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100"
+          className="flex space-x-8 overflow-x-auto scrollbar-hide  "
           style={{ overflowY: "hidden" }}
         >
           {courses[activeTab].map((course, index) => (
             <div
               key={index}
-              className="bg-gray-50 shadow-xl rounded-lg p-6 flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-6 min-w-[350px] sm:min-w-[500px] lg:min-w-[750px] h-auto sm:h-[350px]"
+              className="rounded-2xl p-6 flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-6 min-w-[350px] sm:min-w-[500px] lg:min-w-[750px] h-auto sm:h-[350px] shadow-[inset_0_0_40px_20px_rgba(0,0,0,0.15)]"
             >
 
               <img
