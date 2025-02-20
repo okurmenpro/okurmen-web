@@ -1,0 +1,146 @@
+.hero-container {
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.hero-button {
+  display: inline-block;
+}
+
+.icons-container {
+  width: 100%;
+  height: 250px;
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  transition: transform 0.3s ease;
+  width: 3.5rem;
+
+}
+
+.react {
+  width: 4.5rem;
+}
+
+.figma {
+  width: 2.5rem;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.csharp {
+  top: 0%;
+  left: 20%;
+  transform: translateY(-80%);
+}
+
+.js {
+  top: 10%;
+  left: 30%;
+  transform: translateY(-10%);
+}
+
+.react {
+  top: 30%;
+  left: 42%;
+  transform: translateY(0%);
+}
+
+.python {
+  top: 31%;
+  left: 57%;
+  transform: translateY(0%);
+}
+
+.figma {
+  top: 12%;
+  left: 68%;
+  transform: translateY(-19.5%);
+}
+
+.java {
+  top: 0%;
+  left: 77%;
+  transform: translateY(-86%);
+}
+
+
+@media (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .icon {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .icons-container {
+    height: auto;
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: -1rem;
+  }
+
+  .hero-button {
+    transform: translateY(95px);
+  }
+
+  .icon {
+    position: static;
+    width: 3rem;
+    height: 3rem;
+    margin: auto;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.8rem;
+  }
+
+  .icons-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .hero-button {
+    transform: translateY(55px);
+  }
+
+  .icons-container {
+    height: auto;
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-15%);
+  }
+}
