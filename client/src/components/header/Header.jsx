@@ -48,7 +48,7 @@ const Header = () => {
       } transition-all duration-150`}
     >
       <div className="container mx-auto flex items-center justify-between py-4">
-        <Link to="/" className="ml-3 md:ml-0">
+        <Link to="/" className="ml- md:ml-0">
           <img className="cursor-pointer" width={80} src={Logo} alt="Logo" />
         </Link>
 
