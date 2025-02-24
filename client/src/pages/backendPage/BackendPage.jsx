@@ -4,10 +4,9 @@ import AboutCourse from "../../components/aboutCourse/aboutCourse";
 import PriseCourse from "../../components/priceCourse/PriceCourse";
 import AdvantagesCourse from "../../components/advantagesCourse/AdvantagesCourse";
 import advantagesBackend from '../../data/advantagesBackend'
-import Benefits from "../../components/benefits/Benefits";
-import benefitsData from "../../data/benefits";
 import backend from '../../../public/icons/backend.svg'
-
+import MainModules from "../../components/mainModules/MainModules";
+import javaModules from '../../data/javaModules'
 const BackendPage = () => {
   const backendDescription = `
  Java — это язык программирования, который используется для создания программ и приложений. Он очень популярен и может работать на разных устройствах, таких как компьютеры, телефоны и серверы.
@@ -35,11 +34,9 @@ const BackendPage = () => {
       <AdvantagesCourse
         data={advantagesBackend}
         title="Преимущества курса" />
-      <Benefits
-        benefitsData={benefitsData}
-        sectionTitle="Главные модули"
-        highlightTitle="Анализ информации"
-        additionalText="Машинное обучение"
+      <MainModules
+        data={javaModules}
+        title="Главные модули"
       />
 
     </div>
