@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import cSharp from "../../../public/icons/cSharp.svg";
-import react from "../../../public/icons/react.svg";
+import react from "../../../public/icons/react-logo.svg";
 import python from "../../../public/icons/python.svg";
 import javascript from "../../../public/icons/javascript.svg";
 import java from "../../../public/icons/java.svg";
@@ -33,7 +33,7 @@ const icons = [
     left: "42%",
     translateY: "0%",
     link: "/frontend",
-    mobileTranslateY: "-20%", // добавлен параметр для мобильных устройств
+    mobileTranslateY: "-20%", 
   },
   {
     src: python,
@@ -71,10 +71,10 @@ const HeroSection = () => {
         </p>
 
         <Button
-          className={`m-auto w-[150px]`}
+          className={` w-[150px] pb-2.5`}
           ButtonText="Консультация"
           to="https://wa.me/+996705677798"
-          target="_blank" // добавляем атрибут для открытия в новой вкладке
+          target="_blank" 
         />
 
         <div className="relative mt-16 h-64 flex justify-center items-center">
