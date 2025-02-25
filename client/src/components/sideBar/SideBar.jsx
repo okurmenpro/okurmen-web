@@ -38,12 +38,12 @@ const SideBar = ({ isOpen, setIsOpen, checkboxState, setCheckboxState, onFilter 
     <>
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-20"
+          className="fixed inset-0 bg-black bg-opacity-50 z-40"
           onClick={() => setIsOpen(false)}
         ></div>
       )}
       <div
-        className={`fixed top-0 z-30 h-full bg-white duration-300 ${
+        className={`fixed top-0 z-50 h-full bg-white duration-300 ${
           isOpen ? "left-0" : "-left-full"
         } w-3/4 sm:w-2/3 md:w-1/2 lg:w-[381px]`}
       >
@@ -105,7 +105,7 @@ const SideBar = ({ isOpen, setIsOpen, checkboxState, setCheckboxState, onFilter 
 
           <div className="mb-4 flex flex-col">
             <Button ButtonText="Искать"  color="border_orange" onClick={onFilter} />
-            <Button ButtonText="Очистить" onClick={handleClear} color="orange" />
+            <Button ButtonText="Очистить" className="mt-4" onClick={handleClear} color="orange" />
           </div>
         </div>
       </div>

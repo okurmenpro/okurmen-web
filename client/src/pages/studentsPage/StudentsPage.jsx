@@ -5,8 +5,8 @@ import { useEffect, useState, useMemo } from "react";
 import SideBar from "../../components/sideBar/SideBar";
 import ButtonOrange from "../../ui/buttons/ButtonOrange";
 import ModalAddStudent from "../../components/modalAddStudent/ModalAddStudent";
+import Button from "../../components/button/Button";
 
-// Temporary mock data to simulate API
 const mockData = [
   { id: 1, name: "Student A", direction: "Backend", status: "Студент", level: "Internship" },
   { id: 2, name: "Student B", direction: "Frontend", status: "Выпускник", level: "Bootcamp" },
@@ -31,7 +31,6 @@ const StudentsPage = () => {
   const [filteredData, setFilteredData] = useState(mockData);
 
   useEffect(() => {
-    // Simulating Redux data fetch
     dispatch(() => console.log("Fetching student data (mock)"));
   }, [dispatch]);
 
@@ -63,9 +62,9 @@ const StudentsPage = () => {
           <SearchInput />
         </div>
         <div className=" max-w-fit ">
-          <ButtonOrange handleFunction={() => setIsModal(true)}>
-            <p className="text-base text-neutral-50 font-bold">Добавить</p>
-          </ButtonOrange>
+
+          <Button ButtonText="Добавить" color="orange" handleFunction={() => setIsModal(true)}>
+          </Button>
         </div>
       </div>
       <div className="flex flex-col justify-between items-start h-[90px]">
