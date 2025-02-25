@@ -8,14 +8,14 @@ import people from "../../public/images/people.png";
 const advantagesFront = [
   {
     img: universal,
-    title: "Простой синтаксис",
+    title: "Универсальность",
     description: "Легко обучиться, ведь Python похож на английский язык",
     width: "116px",
     height: "116px",
   },
   {
     img: versatility,
-    title: "Широкое использование",
+    title: "Разносторонность",
     description:
       "Python применяется в веб-разработке, анализе информации, машинном обучении и автоматизации",
     width: "102px",

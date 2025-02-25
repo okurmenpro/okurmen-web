@@ -18,11 +18,9 @@ const ProfileManager = () => {
     dispatch(managerGetProfile());
   }, [dispatch]);
 
-  // save form && info user
   const handleSaveChangeValue = () => {
     console.log("save");
   };
-  // save photo
   const handleFileChange = (event) => {
     console.log(event);
   };

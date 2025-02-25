@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 export const generateScheduleForWeek = (year, month, day) => {
   const schedule = [];
   const firstDayOfWeek = (new Date(year, month, day).getDay() + 6) % 7;
