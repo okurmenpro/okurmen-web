@@ -5,20 +5,27 @@ import AboutSection from "../../components/aboutSection/AboutSection";
 // import Slider from "../../components/slider/Slider";
 // import MentorSlider from "../../components/slider/MentorSlider";
 import HeroSection from "../../components/hero/HeroSection";
-import Mentors from "../../components/mentors/Mentors";
+import Courses from "../../components/courses/Courses";
+// import Mentors from "../../components/mentors/Mentors";
+// import Trainers from "../../components/trainers/Trainers";
 import AboutClub from "../../components/AboutClub/AboutClub";
 import Address from "../../components/address/Address";
 import Internshipsection from "../../components/internshipsection/Internshipsection";
-
 const HomePage = () => {
   return (
     <div className="mt-[100px]">
       <HeroSection />
-      <div className="bg-[#F4F4F4]">
+      <div className="bg-white">
         <AboutSection />
+        <Courses />
         {/* <CompanyPage /> */}
-
-        <Mentors />
+        {/* <Slider /> */}
+        {/* <MentorSlider /> */}
+        {/* <CertificateSection /> */}
+        {/* <WorkSection /> */}
+        {/* <CompanyPage /> */}
+        {/* <Trainers />
+        <Mentors /> */}
         <Internshipsection />
         <AboutClub />
         {/* <Slider /> */}

@@ -3,22 +3,26 @@ import Button from "../button/Button";
 
 const AboutCourse = ({ title, description, image, imageAlt }) => {
   return (
-    <div className="flex flex-col justify-between md:flex-row items-center bg-white p-6 rounded-lg m-0-auto mt-[70px] mx-auto w-[1200px] mb-[-180px]">
-      <div className="md:w-1/2 p-4">
-        <h2 className="text-4xl md:text-6xl font-bold text-blue-700 mb-2">
+    <div className="flex flex-col-reverse md:flex-row items-center bg-white p-4 md:p-6 rounded-lg mt-6 md:mt-[70px] mx-auto max-w-[95%] md:w-[1200px] mb-[-60px] md:mb-[-180px]">
+      <div className="w-full md:w-1/2 p-4">
+        <h2 className="text-[rgb(0,6,148)] text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
           {title}
         </h2>
-        <p className="text-gray-700 mb-4 my-6 font-medium text-xl">
+        <p className="text-gray-700 my-4 font-medium text-base sm:text-lg md:text-xl">
           {description}
         </p>
-          <Button
+        <Button
           ButtonText="Консультация"
-          className={`w-[150px]`}
-          to='/consultation'
-          />
+          className="w-full sm:w-auto px-6 py-2"
+          to="/consultation"
+        />
       </div>
-      <div className="order-last md:order-none md:w-[40%] flex justify-center p-4 hidden md:flex">
-        <img src={image} alt={imageAlt} className="max-w-full h-auto" />
+      <div className="w-full md:w-[50%] flex justify-center p-4">
+        <img
+          src={image}
+          alt={imageAlt}
+          className="hidden md:order-none md:flex justify-center p-4max-w-full h-auto md:h-auto sm:max-h-[350px] object-cover"
+        />
       </div>
     </div>
   );
