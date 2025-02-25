@@ -1,21 +1,7 @@
-import { useNavigate } from "react-router-dom";
 import { RxCross1 as Back } from "react-icons/rx";
-import { useEffect, useState } from "react";
+import Button from "../button/Button";
 
-const SideBar = ({ isOpen, setIsOpen }) => {
-  const navigate = useNavigate();
-
-  const [checkboxState, setCheckboxState] = useState({
-    Backend: false,
-    "UX/UI": false,
-    Frontend: false,
-    Гость: false,
-    Студент: false,
-    Выпускник: false,
-    Internship: false,
-    Bootcamp: false,
-  });
-
+const SideBar = ({ isOpen, setIsOpen, checkboxState, setCheckboxState, onFilter }) => {
   const Checkbox = ({ selected, label, onChange }) => (
     <label className="flex items-center gap-2 cursor-pointer relative">
       <input
@@ -25,27 +11,8 @@ const SideBar = ({ isOpen, setIsOpen }) => {
         className="w-6 h-6 appearance-none border border-gray-400 rounded-md checked:bg-orange-500 checked:border-orange-500 focus:ring-2 focus:ring-orange-500 relative"
       />
       <span className="text-black">{label}</span>
-      <span
-        className={`absolute left-2 top-1/2 transform -translate-y-1/2 w-3 h-2 border-t-2 border-r-2 border-white rotate-[130deg] ${
-          selected ? "block" : "hidden"
-        }`}
-      ></span>
     </label>
   );
-  
-  
-  
-
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isOpen]);
 
   const handleCheckboxChange = (label) => {
     setCheckboxState((prevState) => ({
@@ -55,7 +22,6 @@ const SideBar = ({ isOpen, setIsOpen }) => {
   };
 
   const handleClear = () => {
-    console.log("Clearing checkboxes");
     setCheckboxState({
       Backend: false,
       "UX/UI": false,
@@ -72,12 +38,12 @@ const SideBar = ({ isOpen, setIsOpen }) => {
     <>
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-20"
+          className="fixed inset-0 bg-black bg-opacity-50 z-40"
           onClick={() => setIsOpen(false)}
         ></div>
       )}
       <div
-        className={`fixed top-0 z-30 h-full bg-white duration-300 ${
+        className={`fixed top-0 z-50 h-full bg-white duration-300 ${
           isOpen ? "left-0" : "-left-full"
         } w-3/4 sm:w-2/3 md:w-1/2 lg:w-[381px]`}
       >
@@ -90,27 +56,6 @@ const SideBar = ({ isOpen, setIsOpen }) => {
 
         <div className="pt-[30px] px-[30px] h-full overflow-y-auto flex flex-col justify-between">
           <div>
-            
-
-            <ul className="flex flex-col gap-[25px] mb-5">
-              <li>
-                <button
-                  onClick={() => {
-                    navigate("/students");
-                    setIsOpen(false);
-                  }}
-                  className="flex items-center font-medium text-base"
-                >
-                  Заявки
-                  <img
-                    className="mt-[2px] ml-3"
-                    src="/icons/arrowRight.svg"
-                    alt="arrow"
-                  />
-                </button>
-              </li>
-            </ul>
-
             <div className="flex flex-col gap-5 text-xl font-medium">
               <p>Направление</p>
               <Checkbox
@@ -158,13 +103,9 @@ const SideBar = ({ isOpen, setIsOpen }) => {
             </div>
           </div>
 
-          <div className="mb-6">
-            <button
-              onClick={handleClear}
-              className="w-full py-2 text-center bg-orange-500 text-white font-medium rounded-lg"
-            >
-              Очистить
-            </button>
+          <div className="mb-4 flex flex-col">
+            <Button ButtonText="Искать"  color="border_orange" onClick={onFilter} />
+            <Button ButtonText="Очистить" className="mt-4" onClick={handleClear} color="orange" />
           </div>
         </div>
       </div>

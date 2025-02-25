@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 import ButtonOrange from "../../ui/buttons/ButtonOrange";
 import ModalInput from "../../ui/inputs/ModalInput";
 import Modal from "../../ui/Modal";
