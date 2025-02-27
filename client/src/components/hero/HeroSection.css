@@ -19,8 +19,6 @@
   position: absolute;
   transition: transform 0.3s ease;
   width: 3.5rem;
- 
-  
 }
 
 .react {
@@ -103,7 +101,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.6rem;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     margin-top: -1rem;
   }
 
@@ -118,28 +116,47 @@
     margin: auto;
     transform: translateY(0);
   }
+  .react {
+    width: 70px;
+  }
+  .figma {
+    width: 40px;
+    padding-top: 15px;
+  }
+
 }
 
 @media (max-width: 480px) {
   .hero-content h1 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
 
   .hero-content p {
-    font-size: 0.8rem;
+    font-size: 1rem;
+    width: 400px;
   }
 
   .icons-container {
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .icon {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-
+ .figma {
+   width: 43px;
+   padding-top: 12px;
+ }
+ .react {
+   width: 68px;
+   margin-top: -10px !important;
+ }
+.js {
+  width: 45px;
+}
   .hero-button {
     transform: translateY(55px);
+    width: 110px !important;
+    height: 30px !important;
+    padding: 0  !important;
+    font-size: 14px !important;
   }
 
   .icons-container {
