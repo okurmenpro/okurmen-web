@@ -51,17 +51,17 @@ const AppRoutes = () => {
           />
           <Route path="/students" element={<StudentsPage />} />
           <Route path="/applications" element={<ApplicatoinsPage />} />
-          <Route path="/csharp" element={<CSharp/>}/>
+          <Route path="/csharp" element={<CSharp />} />
           <Route path="/backend" element={<BackendPage1 />} />
           <Route path="/group/:id" element={<GroupPage />} />
           <Route path="/frontendBackend" element={<BackendFrontend />} />
           <Route path="/python" element={<PythonPage />} />
           <Route path="/frontend" element={<FrontendPage />} />
           <Route path="/uxui" element={<UxUiPage />} />
+          <Route path="/consultation" element={<ConsulationPage />} />
         </Route>
         <Route path="/registration" element={<Register />} />
         <Route path="/register-confirm" element={<ConfirmRegisterPage />} />
-        <Route path="/consultation" element={<ConsulationPage />} />
         <Route
           path="/register/admin/contact-info"
           element={<RegistrationAdminPage role="contact-info" />}
@@ -76,7 +76,7 @@ const AppRoutes = () => {
         />
 
         <Route path="/archive" element={<Archive />} />
-        <Route path='/location' element={<Map/>}/>
+        <Route path='/location' element={<Map />} />
       </>
     )
   );
