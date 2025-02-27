@@ -4,27 +4,24 @@ import AboutCourse from "../../components/aboutCourse/aboutCourse";
 import PriseCourse from "../../components/priceCourse/PriceCourse";
 import AdvantagesCourse from "../../components/advantagesCourse/AdvantagesCourse";
 import advantagesBackend from '../../data/advantagesBackend'
-import Benefits from "../../components/benefits/Benefits";
-import benefitsData from "../../data/benefits";
 import backend from '../../../public/icons/backend.svg'
-
+import MainModules from "../../components/mainModules/MainModules";
+import javaModules from '../../data/javaModules'
 const BackendPage = () => {
   const backendDescription = `
-  Бэкенд — это та часть любого веб-сайта или приложения, которую не
-          видит пользователь, но которая обеспечивает его работу. Если
-          представить сайт как ресторан, то бэкенд — это кухня, где повара
-          готовят еду, а интерфейс, который видит пользователь (фронтенд) — это
-          обеденный зал, где подают блюда.`
+ Java — это язык программирования, который используется для создания программ и приложений. Он очень популярен и может работать на разных устройствах, таких как компьютеры, телефоны и серверы.
+ 
+ Java устроен так, чтобы код было легко поддерживать и обновлять. Это помогает, если нужно изменить программу или исправить ошибки.`
   return (
     <div>
       <AboutCourse
-        title="Backend"
+        title="Java - Backend"
         description={backendDescription}
         image={Java}
         imageAlt="Backend logo"
       />
       <PriseCourse
-        title="Backend"
+        title="Java"
         image={backend}
         duration="2 месяца"
         englishIncluded={true}
@@ -37,11 +34,9 @@ const BackendPage = () => {
       <AdvantagesCourse
         data={advantagesBackend}
         title="Преимущества курса" />
-      <Benefits
-        benefitsData={benefitsData}
-        sectionTitle="Главные модули"
-        highlightTitle="Анализ информации"
-        additionalText="Машинное обучение"
+      <MainModules
+        data={javaModules}
+        title="Главные модули"
       />
 
     </div>

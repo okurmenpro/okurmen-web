@@ -1,6 +1,6 @@
 const Map = () => {
 	return (
-		<div className='container'>
+		<section id="location" className='container '>
 			<div className='w-full'>
 				<div className=' inline-block md:flex justify-between items-center mt-[140px]'>
 					<h1 className='text-4xl font-semibold'>
@@ -16,7 +16,7 @@ const Map = () => {
 					</iframe>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

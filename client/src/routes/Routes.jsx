@@ -24,6 +24,7 @@ import FrontendPage from "../pages/frontendPage/FrontendPage";
 import ConfirmRegisterPage from "../pages/confirmRegisterPage/ConfirmRegisterPage";
 import RegistrationAdminPage from "../pages/registrationAdminPage/registrationAdminPage";
 import CSharp from "../pages/c_Sharp/CSharp";
+import Map from '../components/map/Map'
 
 const AppRoutes = () => {
   return createBrowserRouter(
@@ -75,6 +76,7 @@ const AppRoutes = () => {
         />
 
         <Route path="/archive" element={<Archive />} />
+        <Route path='/location' element={<Map/>}/>
       </>
     ),
     {

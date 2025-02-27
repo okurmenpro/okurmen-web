@@ -7,8 +7,8 @@ const MainModules = ({ data, title }) => {
         <p className="text-black font-medium text-4xl mb-5">{title}</p>
       </div>
       <div className="flex justify-center items-center mb-20">
-        <div className="border border-orange-500 rounded-2xl inline-block p-6 border-2">
-          <div className="flex justify-center px-[50px] py-[20px]  items-center gap-20">
+        <div className="max-w-[750px] border border-orange-500 rounded-2xl inline-block p-6 border-2">
+          <div className="grid grid-cols-4 md:flex md:flex-wrap justify-center px-[50px] py-[20px] items-center gap-6 md:gap-20">
             {data.map((module, index) => (
               <div key={index} className="text-center">
                 <img
