@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import okurmen from "../../../public/images/logo.png";
+import Button from "../button/Button";
 import greet from "../../../public/images/hands.png";
 import KyrgyzstanFlag from "../../../public/images/kyrgyzstan.png";
 import RussiaFlag from "../../../public/images/russia.png";
@@ -51,7 +51,6 @@ const ConsultationPage = () => {
 
   const handlePhoneChange = (e) => {
     const onlyDigits = e.target.value.replace(/\D/g, "");
-    // Ограничиваем длину номера в зависимости от выбранной страны
     if (onlyDigits.length <= selectedCountry.phoneLength) {
       setPhoneNumber(onlyDigits);
     }
@@ -91,56 +90,50 @@ const ConsultationPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-row justify-center min-h-screen px-4 md:px-0">
-      <div className="w-full md:w-[80%] lg:w-[65%] flex flex-col items-start justify-start pt-16 md:pt-24 lg:pt-32">
-        <div className="mb-8">
-          <img src={okurmen} alt="okurmen logo" className="max-w-full h-auto" />
-        </div>
-
+    <div className="flex flex-col items-center justify-center min-h-screen px-4 md:px-6 mt-5 lg:px-8">
+      <div className="w-full max-w-[90%] lg:max-w-[65%] pt-10 md:pt-16">
+        {/* Заголовок */}
         <div className="flex items-center mb-6">
-          <div className="w-1 h-[25px] bg-orange-500 mr-3"></div>
-          <p className="text-neutral-950 font-medium text-xl">Консультация</p>
+          <div className="w-1 h-6 bg-orange-500 mr-3"></div>
+          <p className="text-neutral-950 font-semibold text-lg">Консультация</p>
         </div>
 
-        <div className="mb-8 max-w-lg">
-          <p className="text-neutral-950 text-lg">
-            Чтобы связаться с нами, заполните следующую форму и отправьте нам
-          </p>
-        </div>
+        <p className="text-neutral-950 text-lg mb-6 max-w-lg">
+          Чтобы связаться с нами, заполните следующую форму и отправьте нам
+        </p>
 
-        <div className="flex flex-col md:flex-row gap-8 items-center w-full relative">
-          <div className="w-full md:w-[50%] lg:w-[45%] border border-orange-500 rounded-xl p-6">
+        {/* Контент */}
+        <div className="flex flex-col md:flex-row gap-10 items-center w-full">
+          {/* Форма */}
+          <div className="w-full md:w-[60%] lg:w-[45%] border border-orange-500 rounded-xl p-6">
             <div className="mb-4">
-              <p className="text-black font-medium text-base">
-                Введите ваше имя
-              </p>
+              <p className="text-black font-medium text-base">Введите ваше имя</p>
               <input
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Имя"
-                className="w-full border px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                className="w-full border border-orange-400 px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
               />
             </div>
 
-            <div className="mb-4">
+            <div className="mb-4 relative">
               <p className="text-black font-medium text-base">Направление</p>
-              <div className="relative" ref={directionDropdownRef}>
+              <div ref={directionDropdownRef}>
                 <button
                   onClick={toggleDirectionDropdown}
-                  className="w-full border px-3 py-2 rounded-md flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full border text-gray-400 border-orange-400 px-3 py-2 rounded-md flex justify-between items-center focus:ring-2 focus:ring-orange-500"
                 >
                   {direction || "Направление"}
                   <span
-                    className={`ml-2 transform transition-transform ${
-                      directionDropdownOpen ? "rotate-180" : ""
-                    }`}
+                    className={`ml-2  transition-transform ${directionDropdownOpen ? "rotate-180" : ""
+                      }`}
                   >
                     ▼
                   </span>
                 </button>
                 {directionDropdownOpen && (
-                  <ul className="absolute mt-2 w-full border bg-white rounded-md shadow-lg z-10">
+                  <ul className="absolute w-full border bg-white rounded-md shadow-lg z-10">
                     {directions.map((dir) => (
                       <li
                         key={dir}
@@ -156,20 +149,21 @@ const ConsultationPage = () => {
             </div>
 
             <div className="mb-4">
-              <p className="text-black font-medium text-base">
-                Введите ваш номер
-              </p>
-              <div className="flex">
+              <p className="text-black font-medium text-base">Введите ваш номер</p>
+              <div className="flex border border-orange-400 rounded-md">
                 <div className="relative" ref={dropdownRef}>
                   <button
                     onClick={toggleDropdown}
-                    className="flex items-center border px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="flex items-center px-3 py-2"
                   >
                     <img
                       src={selectedCountry.flag}
                       alt={selectedCountry.name}
-                      className="w-6 h-6 mr-2"
+                      className="w-8 h-6 object-contain"
                     />
+                    <span className="ml-2 text-black mr-3">
+                      {selectedCountry.code}
+                    </span>
                   </button>
                   {dropdownOpen && (
                     <ul className="absolute mt-2 w-32 border bg-white rounded-md shadow-lg z-10">
@@ -182,51 +176,44 @@ const ConsultationPage = () => {
                           <img
                             src={country.flag}
                             alt={country.name}
-                            className="w-6 h-6 mr-2"
+                            className="w-8 h-6 object-contain"
                           />
+                          <span className="ml-2">{country.code}</span>
                         </li>
                       ))}
                     </ul>
                   )}
                 </div>
+                <input
+                  type="text"
+                  value={phoneNumber}
+                  onChange={handlePhoneChange}
+                  placeholder="000 000 000"
+                  className="w-full ml-4 mx-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white"
+                />
 
-                <div className="flex items-center">
-                  <span className="text-lg mr-2">{selectedCountry.code}</span>
-                  <input
-                    type="text"
-                    value={phoneNumber}
-                    onChange={handlePhoneChange}
-                    placeholder="000 000 000"
-                    className="w-full border px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                  />
-                </div>
               </div>
             </div>
+
+            <button
+              onClick={handleSubmit}
+              disabled={!isFormValid()}
+              className={`w-full mt-4 py-3 rounded-md text-white text-lg ${isFormValid()
+                  ? "bg-orange-500 hover:bg-orange-600"
+                  : "bg-gray-300 cursor-not-allowed"
+                }`}
+            >
+              Отправить
+            </button>
           </div>
 
-          <button
-            onClick={handleSubmit}
-            type="submit"
-            disabled={!isFormValid()}
-            className={`w-[180px] h-[50px] absolute bottom-8 right-8 bg-orange-500 text-white py-2 px-6 rounded-md ${
-              !isFormValid()
-                ? "cursor-not-allowed opacity-50"
-                : "hover:bg-orange-600"
-            }`}
-          >
-            Отправить
-          </button>
-
-          <div className="w-full md:w-[50%] lg:w-[45%]">
-            <img
-              src={greet}
-              alt="greet"
-              className="w-full h-auto rounded-xl object-contain"
-            />
+          <div className="hidden md:block w-full lg:w-[45%]">
+            <img src={greet} alt="greet" className="w-full h-auto rounded-xl" />
           </div>
         </div>
       </div>
     </div>
+
   );
 };
 
