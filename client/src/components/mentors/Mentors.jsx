@@ -1,32 +1,28 @@
 import React from "react";
-
-// Импорты изображений из src/assets/images
-import soke from "/images/soke.jpg";
-import toha from "/images/toha.jpg";
-import kuke from "/images/kuke.png";
-import aidana from "/images/aidana.png";
-import alisher from "/images/alisher.png";
-import elibek from "/images/elibek.png";
+import saadat from "../../../public/images/soke.jpg";
+import tansuluu from '../../../public/images/toha.jpg';
+import kulpunai from '../../../public/images/kuke.png';
+import aidana from '../../../public/images/aidana.png';
+import alisher from '../../../public/images/alisher.PNG';
 
 const Mentors = () => {
   const mentors = [
-    { name: "Саадат Жолчубаева", category: "Frontend", portrait: soke },
-    { name: "Тансулуу Карыбекова", category: "Frontend", portrait: toha },
-    { name: "Кулпунай Жекшенбекова", category: "Frontend", portrait: kuke },
+    { name: "Саадат Жолчубаева", category: "Frontend", portrait: saadat },
+    { name: "Тансулуу Карыбекова", category: "Frontend", portrait: tansuluu },
+    { name: "Кулпунай Жекшенбекова", category: "Frontend", portrait: kulpunai },
     { name: "Айдана Качкынбай кызы", category: "Frontend", portrait: aidana },
     { name: "Алишер Талипжанов", category: "Frontend", portrait: alisher },
-    { name: "Элибек Бакытбекович", category: "Frontend", portrait: elibek },
   ];
 
   return (
     <div
       id="mentors"
-      className="w-full max-w-[1258px] mx-auto flex flex-col items-start mt-[100px] mb-[70px] px-4 sm:px-6 lg:px-8"
+      className="container mx-auto flex flex-col items-start mt-[100px] mb-[70px] px-4 sm:px-6 lg:px-8"
     >
       <h2 className="text-lg font-medium mb-6">
         <span className="border-l-4 border-orange-500 pl-2">Менторы</span>
       </h2>
-      <div className="flex gap-6 overflow-x-auto no-scrollbar w-full">
+      <div className="flex gap-6 overflow-x-auto scrollbar-hide no-scrollbar w-full">
         {mentors.map((mentor, index) => (
           <div
             key={index}

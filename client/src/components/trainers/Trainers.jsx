@@ -1,9 +1,9 @@
-import belek from "/images/belek.png";
-import zhanara from "/images/zhanara.jpg";
-import bayastanIT from "/images/bayastanIT.jpg";
-import bayastanENGLISH from "/images/bayastanENGLISH.jpg";
-import kutman from "/images/kutman.jpg";
-import kumar from "/images/kumar.jpg";
+import belek from "../../../public/images/belek.png";
+import zhanara from "../../../public/images/zhanara.jpg";
+import bayastanIT from "../../../public/images/bayastanIT.jpg";
+import bayastanENGLISH from "../../../public/images/bayastanENGLISH.jpg";
+// import kutman from "../../../public/images/kutman.jpg";
+import kumar from "../../../public/images/kumar.jpg";
 
 const Trainers = () => {
   const trainers = [
@@ -11,19 +11,19 @@ const Trainers = () => {
     { name: "Жанара", category: "English", portrait: zhanara },
     { name: "Баястан", category: "Frontend", portrait: bayastanIT },
     { name: "Баястан", category: "English", portrait: bayastanENGLISH },
-    { name: "Кутман Акунов", category: "Frontend", portrait: kutman },
+    // { name: "Кутман Акунов", category: "Frontend", portrait: kutman },
     { name: "Кумарбек", category: "English", portrait: kumar },
   ];
 
   return (
     <div
       id="mentors"
-      className="w-full max-w-[1258px] mx-auto flex flex-col items-start mt-[100px] mb-[70px] px-4 sm:px-6 lg:px-8"
+      className="container mx-auto flex flex-col items-start !mt-[100px] !mb-[100px] px-4 sm:px-6 lg:px-8"
     >
       <h2 className="text-lg font-medium mb-6">
         <span className="border-l-4 border-orange-500 pl-2">Тренеры</span>
       </h2>
-      <div className="flex gap-6 overflow-x-auto no-scrollbar w-full">
+      <div className="flex gap-6 overflow-x-auto scrollbar-hide no-scrollbar w-full">
         {trainers.map((trainer, index) => (
           <div
             key={index}
