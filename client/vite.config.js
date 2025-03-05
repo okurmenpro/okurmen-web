@@ -1,10 +1,10 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  base: '/okurmen-web/',
+  base: "/",
   plugins: [react()],
   build: {
-    outDir: 'dist', // Ensure this is correct
+    outDir: "dist", // Ensure this is correct
   },
 });
