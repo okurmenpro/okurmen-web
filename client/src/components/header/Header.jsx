@@ -17,53 +17,79 @@ const navlinks = [
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [isScroll, setIsScroll] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
-  const isHomePage = location.pathname === "/";
+  const [clicked, setClicked] = useState(null);
 
   useEffect(() => {
     function scrollBar() {
-      if (window.scrollY >= 50) setIsScroll(true);
-      else setIsScroll(false);
+      setIsScroll(window.scrollY >= 50);
     }
     window.addEventListener("scroll", scrollBar);
     return () => window.removeEventListener("scroll", scrollBar);
   }, []);
 
-  const handleMenu = () => setOpen((prev) => !prev);
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        open &&
+        !event.target.closest(".mobile-menu") &&
+        !event.target.closest(".menu-button")
+      ) {
+        setOpen(false);
+        setClicked(null);
+      }
+    }
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [open]);
+
+  const handleMenu = (event) => {
+    event.stopPropagation();
+    setOpen((prev) => !prev);
+  };
+
+  const handleMobileClick = (id) =>
+    setClicked((prev) => (prev === id ? null : id));
 
   return (
     <header
-      className={`fixed left-0 w-full bg-white z-40 top-0 ${isScroll ? "py-2 shadow-lg" : "py-5"} transition-all duration-150`}
+      className={`fixed left-0 w-full bg-white z-40 top-0 ${
+        isScroll ? "py-2 shadow-lg" : "py-5"
+      } transition-all duration-150`}
     >
       <div className="container mx-auto flex items-center justify-between py-4">
         <Link to="/" className="ml-3 md:ml-0">
           <img className="cursor-pointer" width={80} src={Logo} alt="Logo" />
         </Link>
 
-        {isHomePage ? (
-          <>
-            <Navbar navlinks={navlinks} />
-            <div className="hidden md:flex gap-4 items-center">
-              <Button ButtonText="Зарегистрироваться" color="black" to="/registration" />
-            </div>
-            <button className="md:hidden" onClick={handleMenu}>
-              {open ? <FaTimes /> : <FaBars />}
-            </button>
-          </>
-        ) : (
-          <button className="text-orange-400" onClick={() => navigate(-1)}>
-            <div className="text-4xl font-extrabold mb-[-10px]">
-              <MdOutlineKeyboardBackspace />
-            </div>
-            назад
-          </button>
-        )}
+        <Navbar
+          navlinks={navlinks}
+          clicked={clicked}
+          handleMobileClick={handleMobileClick}
+        />
+
+        <div className="hidden md:flex gap-4 items-center">
+          <Button
+            ButtonText="Зарегестрироваться"
+            color="black"
+            to="/registration"
+          />
+        </div>
+
+        <button className="md:hidden menu-button" onClick={handleMenu}>
+          {open ? <FaTimes /> : <FaBars />}
+        </button>
       </div>
 
-      {open && isHomePage && (
-        <div className="absolute top-0 w-full bg-[#00000038] z-10">
-          <div className="bg-white shadow-lg rounded-b-3xl space-y-1 py-4 px-4">
+      {open && (
+        <div className="absolute top-0 w-full bg-[#00000038] z-10 mobile-menu">
+          <div className="bg-white shadow-lg rounded-b-3xl space-y-1 py-4 px-4 relative">
+            <button
+              className="absolute top-2 right-4 text-xl"
+              style={{ right: "1rem" }}
+              onClick={() => setOpen(false)}
+            >
+              <FaTimes />
+            </button>
             {navlinks.map((link) => (
               <div key={link.id}>
                 <Link
@@ -73,6 +99,23 @@ const Header = () => {
                 >
                   {link.title}
                 </Link>
+                {link.id === 2 && clicked === link.id && (
+                  <ul className="pl-4 space-y-2">
+                    {["C#", "JS", "React", "Python", "Figma", "Java"].map(
+                      (subItem) => (
+                        <li key={subItem}>
+                          <Link
+                            to={`/${subItem.toLowerCase()}`}
+                            className="block text-black py-2 px-3 hover:bg-gray-200"
+                            onClick={() => setClicked(null)}
+                          >
+                            {subItem}
+                          </Link>
+                        </li>
+                      )
+                    )}
+                  </ul>
+                )}
               </div>
             ))}
           </div>

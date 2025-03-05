@@ -1,9 +1,9 @@
 import React from "react";
 import saadat from "../../../public/images/soke.jpg";
-import tansuluu from '../../../public/images/toha.jpg';
-import kulpunai from '../../../public/images/kuke.png';
-import aidana from '../../../public/images/aidana.png';
-import alisher from '../../../public/images/alisher.PNG';
+import tansuluu from "../../../public/images/toha.jpg";
+import kulpunai from "../../../public/images/kuke.png";
+import aidana from "../../../public/images/aidana.png";
+import alisher from "../../../public/images/alisher.PNG";
 
 const Mentors = () => {
   const mentors = [
