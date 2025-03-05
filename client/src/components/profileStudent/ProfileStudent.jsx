@@ -1,12 +1,13 @@
 import ProfileInput from "../../ui/inputs/ProfilePageInput";
 import InputImage from "../../ui/inputs/InputImage";
 import { useEffect, useRef, useState } from "react";
-import ButtonOrange from "../../ui/buttons/ButtonOrange";
 import { useDispatch, useSelector } from "react-redux";
 import { createProfile, getProfile } from "../../redux/auth/ProfileSlice";
 import { useForm } from "react-hook-form";
 import AttendanceChart from "../../ui/charts/AttendanceChart";
 import { useMatch } from "react-router-dom";
+import Button from "../button/Button";
+import { PiWarningCircleBold } from "react-icons/pi";
 
 const ProfileStudent = () => {
   const dispatch = useDispatch();
@@ -80,8 +81,8 @@ const ProfileStudent = () => {
   }, [dispatch]);
 
   return (
-    <div className="container">
-      <div className=" flex justify-between gap-[30px] min-h-[100vh] pt-[100px]  max-lg:flex-wrap">
+    <div className="container !max-w-6xl">
+      <div className="mt-4 flex justify-between gap-[30px] min-h-[100vh] pt-[100px]  max-lg:flex-wrap">
         <div
           className="flex flex-col justify-start
           items-center max-w-[400px] w-full"
@@ -114,9 +115,8 @@ const ProfileStudent = () => {
           <div className="flex flex-col max-w-[390px] w-full">
             <form
               onSubmit={handleSubmit(handleSaveChangeValue)}
-              className={`flex flex-col ${
-                isUpdate ? "gap-[10px]" : "gap-[20px]"
-              }`}
+              className={`flex flex-col ${isUpdate ? "gap-[10px]" : "gap-[20px]"
+                }`}
             >
               <ProfileInput
                 placeholder={profileData?.status}
@@ -166,7 +166,9 @@ const ProfileStudent = () => {
             "
                   >
                     <div className="">
-                      <ButtonOrange
+                      <Button
+                        color="orange"
+                        ButtonText="Изменить"
                         handleFunction={() => {
                           setIsUpdate(true);
                           if (!isUpdate) {
@@ -178,7 +180,7 @@ const ProfileStudent = () => {
                         <p className="text-lg">
                           {isUpdate ? "Сохранить" : "Изменить"}
                         </p>
-                      </ButtonOrange>
+                      </Button>
                     </div>
                     <div>
                       {isUpdate && (
@@ -197,16 +199,30 @@ const ProfileStudent = () => {
             </form>
           </div>
           <div className="flex justify-center mt-[20px]"></div>
+
+
+
+
+          <div className="border border-2 border-red-700 rounded-md p-4 bg-red-200 font-bold text-sm">
+            <div className="flex gap-3 items-center">
+              <div className="text-red-600 text-2xl">
+                < PiWarningCircleBold />
+              </div>
+              <span className="text-xl">Предупреждение</span>
+            </div>
+            <p className="mt-2">Причина : Пропуск уроков</p>
+            <p className="leading-4 mt-4">Сообщение:Вы пропустили несколько уроков, если есть какие то веские причины сообщите нам</p>
+          </div>
         </div>
-        <div className="flex flex-col max-w-[445px] w-full gap-y-[70px] pt-[78px]">
+        <div className="flex flex-col max-w-[445px] w-full gap-y-[70px] pt-[78px]  mb-20">
           <div
             className="flex flex-col justify-start
           max-w-[443px] w-full  "
           >
-            <h1 className="text-4xl font-semibold mb-[23px] max-md:text-3xl duration-100">
+            <h2 className="text-2xl font-bold max-md:text-3xl duration-100">
               В группе
-            </h1>
-            <div className="mt-[21px] max-w-[443px] w-full rounded-[14px] border-[2px] border-solid border-[#FF8A00] px-[19px] py-[23px]">
+            </h2>
+            <div className="mt-[21px] max-w-[443px] w-full rounded-[14px] border-[2px] border-solid border-[#FF8A00] px-[19px] py-[15px]">
               <p className=" w-full mb-1 text-xl font-bold">
                 <span>1</span> - гр.{" "}
                 <span className="text-[#FF8a00]">Frontend</span> препод:{" "}
@@ -232,7 +248,28 @@ const ProfileStudent = () => {
             </div>
 
             <AttendanceChart />
+
           </div>
+
+
+          <div className="flex justify-between flex-wrap">
+            <div className="flex flex-col gap-y-[9px]">
+              <h2 className="mb-2 text-2xl font-bold">Расписание</h2>
+              <div className="flex gap-3">
+                <Button className="rounded-3xl" ButtonText="Это неделя" color="border_orange" />
+                <Button className="rounded-3xl" ButtonText='Этот месяц' color="border_orange" />
+              </div>
+
+              <p className="mt-2 text-2xl font-bold">Ноябрь</p>
+              <div className="border border-2  border-orange-400 rounded-lg p-2 max-w-[130px]">
+                <p>
+                  Сб (20.11.2024)
+                </p>
+              </div>
+            </div>
+          </div>
+
+
         </div>
       </div>
     </div>

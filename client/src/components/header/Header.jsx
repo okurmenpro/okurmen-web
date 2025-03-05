@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import Navbar from "../navbar/Navbar";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Button from "../button/Button";
 import Logo from "/images/logo.png";
+import { MdOutlineKeyboardBackspace } from "react-icons/md";
 
 const navlinks = [
   { id: 1, title: "О компании", link: "#company-info" },
@@ -51,7 +52,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed left-0 w-full bg-white z-50 top-0 ${
+      className={`fixed left-0 w-full bg-white z-40 top-0 ${
         isScroll ? "py-2 shadow-lg" : "py-5"
       } transition-all duration-150`}
     >
@@ -94,7 +95,7 @@ const Header = () => {
                 <Link
                   to={link.link}
                   className="block text-black py-2 px-3 text-base font-medium hover:bg-gray-700 hover:text-white"
-                  onClick={() => handleMobileClick(link.id)}
+                  onClick={() => setOpen(false)}
                 >
                   {link.title}
                 </Link>

@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { FaClock } from "react-icons/fa";
 import Py2 from "../../../public/images/py2.png";
 import Js2 from "../../../public/images/js2.png";
+import front_back from "../../../public/images/image.png";
 import Code from "../../../public/images/code.png";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import Button from "../button/Button";
-
+import { Link } from "react-router-dom";
 const Courses = () => {
   const [activeTab, setActiveTab] = useState("Следующие потоки");
 
@@ -57,15 +58,16 @@ const Courses = () => {
     "Для детей": [
       {
         title: "Frontend + Backend",
-        description: "Срок обучения: 1 месяц",
-        extra: "",
-        schedule: "2 раза в неделю",
-        images: [Py2, Js2],
+        description: "Срок обучения: 5 месяцев",
+        extra: "+ английский язык",
+        schedule: "3 раза в неделю",
+        image: front_back,
       },
     ],
     События: [
       {
-        date: "22.11.24 в 15:00",
+        name: " Frontend разработке",
+        date: "05.05.25 в 15:00",
         address: "Турусбекова 109/1",
         image: Code,
       },
@@ -81,17 +83,16 @@ const Courses = () => {
         </span>
       </div>
 
-     
+
       <div className="flex space-x-4 mb-8">
         {Object.keys(courses).map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`py-2 px-4 rounded font-medium whitespace-nowrap text-sm ${
-              activeTab === tab
+            className={`py-2 px-4 rounded font-medium whitespace-nowrap text-sm ${activeTab === tab
                 ? "bg-orange-500 text-white"
                 : "text-gray-700 hover:bg-gray-100"
-            }`}
+              }`}
           >
             {tab}
           </button>
@@ -114,13 +115,20 @@ const Courses = () => {
                 />
               </div>
               <div className="w-full lg:w-1/2 p-6 flex flex-col justify-between text-right">
-                <div className="mb-6">
-                  <p className="text-sm mb-2">
-                    Начало: <span className="font-bold">{event.date}</span>
-                  </p>
-                  <p className="text-sm">
-                    Адрес: <span className="font-bold">{event.address}</span>
-                  </p>
+                <div className="mb-6 font-bold">
+                  <h1 className="text-white pt-5 pb-14 font-medium text-3xl">Пробный урок по<span className=" text-orange-600">{event.name}</span></h1>
+                  <div  className="text-sm mb-2 text-[18px]">
+                    <p>
+                      Начало: <span>{event.date}</span>
+                    </p>
+                    <Link to={'/location'}>
+                    <p className="cursor-pointer" >
+                      Адрес: <span>{event.address}</span>
+                    </p>
+                    </Link>
+                
+                  </div>
+
                 </div>
                 <div className="flex justify-center lg:justify-end">
                   <Button
@@ -133,24 +141,24 @@ const Courses = () => {
           ))}
         </div>
       ) : (
-    
+
         <div
-          className="flex space-x-8 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100"
+          className="flex space-x-8 overflow-x-auto scrollbar-hide  "
           style={{ overflowY: "hidden" }}
         >
           {courses[activeTab].map((course, index) => (
             <div
               key={index}
-              className="bg-gray-50 shadow-xl rounded-lg p-6 flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-6 min-w-[350px] sm:min-w-[500px] lg:min-w-[750px] h-auto sm:h-[350px]"
+              className="rounded-2xl p-6 flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-6 min-w-[350px] sm:min-w-[500px] lg:min-w-[750px] h-auto sm:h-[350px] shadow-[inset_0_0_40px_20px_rgba(0,0,0,0.15)]"
             >
-            
+
               <img
                 src={course.image}
                 alt={course.title}
                 className="w-32 h-32 sm:w-40 sm:h-40 rounded-lg object-cover"
               />
 
-      
+
               <div className="flex flex-col space-y-4 w-full">
                 <h3 className="text-lg sm:text-2xl font-bold text-center sm:text-left">
                   {course.title}

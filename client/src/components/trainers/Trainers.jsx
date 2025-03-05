@@ -2,7 +2,6 @@ import belek from "/images/belek.png";
 import zhanara from "/images/zhanara.jpg";
 import bayastanIT from "/images/bayastanIT.jpg";
 import bayastanENGLISH from "/images/bayastanENGLISH.jpg";
-// import kutman from "/images/kutman.jpg";
 import kumar from "/images/kumar.jpg";
 
 const Trainers = () => {
@@ -18,12 +17,12 @@ const Trainers = () => {
   return (
     <div
       id="mentors"
-      className="w-full max-w-[1258px] mx-auto flex flex-col items-start mt-[100px] mb-[70px] px-4 sm:px-6 lg:px-8"
+      className="container mx-auto flex flex-col items-start !mt-[100px] !mb-[100px] px-4 sm:px-6 lg:px-8"
     >
       <h2 className="text-lg font-medium mb-6">
         <span className="border-l-4 border-orange-500 pl-2">Тренеры</span>
       </h2>
-      <div className="flex gap-6 overflow-x-auto no-scrollbar w-full">
+      <div className="flex gap-6 overflow-x-auto scrollbar-hide no-scrollbar w-full">
         {trainers.map((trainer, index) => (
           <div
             key={index}
