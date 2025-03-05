@@ -14,32 +14,40 @@ const navlinks = [
 ];
 
 const Header = () => {
-  const [open, setOpen] = useState(false); 
+  const [open, setOpen] = useState(false);
   const [isScroll, setIsScroll] = useState(false);
-  const [clicked, setClicked] = useState(null);  
-  const [hovered, setHovered] = useState(false); 
+  const [clicked, setClicked] = useState(null);
 
   useEffect(() => {
     function scrollBar() {
-      if (window.scrollY >= 50) setIsScroll(true);
-      else setIsScroll(false);
+      setIsScroll(window.scrollY >= 50);
     }
     window.addEventListener("scroll", scrollBar);
+    return () => window.removeEventListener("scroll", scrollBar);
   }, []);
 
-  const handleMenu = () => setOpen((prev) => !prev);
-  
-  const handleMobileClick = (id) => {
-    setClicked((prev) => (prev === id ? null : id));  
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        open &&
+        !event.target.closest(".mobile-menu") &&
+        !event.target.closest(".menu-button")
+      ) {
+        setOpen(false);
+        setClicked(null);
+      }
+    }
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [open]);
+
+  const handleMenu = (event) => {
+    event.stopPropagation();
+    setOpen((prev) => !prev);
   };
 
-  const handleMouseEnter = () => {
-    setHovered(true);  
-  };
-
-  const handleMouseLeave = () => {
-    setHovered(false); 
-  };
+  const handleMobileClick = (id) =>
+    setClicked((prev) => (prev === id ? null : id));
 
   return (
     <header
@@ -55,24 +63,32 @@ const Header = () => {
         <Navbar
           navlinks={navlinks}
           clicked={clicked}
-          hovered={hovered}
           handleMobileClick={handleMobileClick}
-          handleMouseEnter={handleMouseEnter}
-          handleMouseLeave={handleMouseLeave}
         />
 
         <div className="hidden md:flex gap-4 items-center">
-          <Button ButtonText="Зарегестрироваться" color="black" to="/registration" />
+          <Button
+            ButtonText="Зарегестрироваться"
+            color="black"
+            to="/registration"
+          />
         </div>
 
-        <button className="md:hidden" onClick={handleMenu}>
+        <button className="md:hidden menu-button" onClick={handleMenu}>
           {open ? <FaTimes /> : <FaBars />}
         </button>
       </div>
 
       {open && (
-        <div className="absolute top-0 w-full bg-[#00000038] z-10">
-          <div className="bg-white shadow-lg rounded-b-3xl space-y-1 py-4 px-4">
+        <div className="absolute top-0 w-full bg-[#00000038] z-10 mobile-menu">
+          <div className="bg-white shadow-lg rounded-b-3xl space-y-1 py-4 px-4 relative">
+            <button
+              className="absolute top-2 right-4 text-xl"
+              style={{ right: "1rem" }}
+              onClick={() => setOpen(false)}
+            >
+              <FaTimes />
+            </button>
             {navlinks.map((link) => (
               <div key={link.id}>
                 <Link
@@ -84,17 +100,19 @@ const Header = () => {
                 </Link>
                 {link.id === 2 && clicked === link.id && (
                   <ul className="pl-4 space-y-2">
-                    {['C#', 'JS', 'React', 'Python', 'Figma', 'Java'].map((subItem) => (
-                      <li key={subItem}>
-                        <Link
-                          to={`/${subItem.toLowerCase()}`}
-                          className="block text-black py-2 px-3 hover:bg-gray-200"
-                          onClick={() => setClicked(null)}  
-                        >
-                          {subItem}
-                        </Link>
-                      </li>
-                    ))}
+                    {["C#", "JS", "React", "Python", "Figma", "Java"].map(
+                      (subItem) => (
+                        <li key={subItem}>
+                          <Link
+                            to={`/${subItem.toLowerCase()}`}
+                            className="block text-black py-2 px-3 hover:bg-gray-200"
+                            onClick={() => setClicked(null)}
+                          >
+                            {subItem}
+                          </Link>
+                        </li>
+                      )
+                    )}
                   </ul>
                 )}
               </div>

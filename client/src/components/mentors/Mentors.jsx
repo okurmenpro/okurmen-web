@@ -6,7 +6,6 @@ import toha from "/images/toha.jpg";
 import kuke from "/images/kuke.png";
 import aidana from "/images/aidana.png";
 import alisher from "/images/alisher.png";
-import elibek from "/images/elibek.png";
 
 const Mentors = () => {
   const mentors = [
@@ -15,7 +14,7 @@ const Mentors = () => {
     { name: "Кулпунай Жекшенбекова", category: "Frontend", portrait: kuke },
     { name: "Айдана Качкынбай кызы", category: "Frontend", portrait: aidana },
     { name: "Алишер Талипжанов", category: "Frontend", portrait: alisher },
-    { name: "Элибек Бакытбекович", category: "Frontend", portrait: elibek },
+    { name: "Элибек Бакытбекович", category: "Frontend" },
   ];
 
   return (

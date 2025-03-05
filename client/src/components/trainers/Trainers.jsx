@@ -2,7 +2,7 @@ import belek from "/images/belek.png";
 import zhanara from "/images/zhanara.jpg";
 import bayastanIT from "/images/bayastanIT.jpg";
 import bayastanENGLISH from "/images/bayastanENGLISH.jpg";
-import kutman from "/images/kutman.jpg";
+// import kutman from "/images/kutman.jpg";
 import kumar from "/images/kumar.jpg";
 
 const Trainers = () => {
@@ -11,7 +11,7 @@ const Trainers = () => {
     { name: "Жанара", category: "English", portrait: zhanara },
     { name: "Баястан", category: "Frontend", portrait: bayastanIT },
     { name: "Баястан", category: "English", portrait: bayastanENGLISH },
-    { name: "Кутман Акунов", category: "Frontend", portrait: kutman },
+    { name: "Кутман Акунов", category: "Frontend" },
     { name: "Кумарбек", category: "English", portrait: kumar },
   ];
 
