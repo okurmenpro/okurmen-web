@@ -58,10 +58,10 @@ const AppRoutes = () => {
           <Route path="/python" element={<PythonPage />} />
           <Route path="/frontend" element={<FrontendPage />} />
           <Route path="/uxui" element={<UxUiPage />} />
+          <Route path="/consultation" element={<ConsulationPage />} />
         </Route>
         <Route path="/registration" element={<Register />} />
         <Route path="/register-confirm" element={<ConfirmRegisterPage />} />
-        <Route path="/consultation" element={<ConsulationPage />} />
         <Route
           path="/register/admin/contact-info"
           element={<RegistrationAdminPage role="contact-info" />}
