@@ -25,7 +25,7 @@ const HeroSection = () => {
         <h1 className="font-bold text-5xl md:text-6xl text-blue-900">
           ОКУРМЭН
         </h1>
-        <p className="pt-5 pb-10 text-orange-400 text-center p-2.5 w-full sm:max-w-xs md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
+        <p className="pt-5 pb-10 text-orange-400 font-semibold text-center p-2.5 w-full sm:max-w-xs md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
           Пошаговое обучение IT-навыкам с нуля до уверенного пользователя
         </p>
 

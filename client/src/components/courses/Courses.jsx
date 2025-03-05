@@ -90,8 +90,8 @@ const Courses = () => {
             key={tab}
             onClick={() => setActiveTab(tab)}
             className={`py-2 px-4 rounded font-medium whitespace-nowrap text-sm ${activeTab === tab
-                ? "bg-orange-500 text-white"
-                : "text-gray-700 hover:bg-gray-100"
+              ? "bg-orange-500 text-white"
+              : "text-gray-700 hover:bg-gray-100"
               }`}
           >
             {tab}
@@ -117,16 +117,16 @@ const Courses = () => {
               <div className="w-full lg:w-1/2 p-6 flex flex-col justify-between text-right">
                 <div className="mb-6 font-bold">
                   <h1 className="text-white pt-5 pb-14 font-medium text-3xl">Пробный урок по<span className=" text-orange-600">{event.name}</span></h1>
-                  <div  className="text-sm mb-2 text-[18px]">
+                  <div className="text-sm mb-2 text-[18px]">
                     <p>
                       Начало: <span>{event.date}</span>
                     </p>
                     <Link to={'/location'}>
-                    <p className="cursor-pointer" >
-                      Адрес: <span>{event.address}</span>
-                    </p>
+                      <p className="cursor-pointer" >
+                        Адрес: <span>{event.address}</span>
+                      </p>
                     </Link>
-                
+
                   </div>
 
                 </div>
@@ -175,9 +175,10 @@ const Courses = () => {
                   <span>{course.schedule}</span>
                 </div>
                 <div className="flex justify-center sm:justify-start mt-2 sm:mt-auto">
-                  <button className="bg-orange-500 text-white py-2 px-4 rounded-lg text-sm sm:text-base hover:bg-orange-600 transition">
-                    Подробнее
-                  </button>
+                  <Button
+                  ButtonText='Подробнее'
+                  color="orange"/>
+                    
                 </div>
               </div>
             </div>

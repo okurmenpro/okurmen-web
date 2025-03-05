@@ -2,6 +2,14 @@ import { IoLogoInstagram, IoLogoWhatsapp } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import Logo from "/icons/logo.svg";
 
+const instagramLinks = [
+  { href: "https://www.instagram.com/okurmen.jobs/", label: "okurmen.jobs" },
+  { href: "https://www.instagram.com/okurmen_kids/", label: "okurmen_kids" },
+  { href: "https://www.instagram.com/okurmen.studio/", label: "okurmen.studio" },
+  { href: "https://www.instagram.com/okurmen_pro/", label: "okurmen_pro" },
+];
+
+
 const Footer = () => {
   return (
     <footer className="bg-orange-500 text-white py-8">
@@ -61,38 +69,22 @@ const Footer = () => {
             <h2 className="font-bold mb-6 text-xl md:text-2xl">
               Другие ресурсы
             </h2>
-            <a
-              href="https://www.instagram.com/okurmen.jobs/"
-              target="_blank"
-              className="mb-2 flex items-center justify-center md:justify-start cursor-pointer"
-            >
-              <IoLogoInstagram className="mr-2" />
-              <span className="text-[#0f1f5e]">okurmen.jobs</span>
-            </a>
-            <a
-              href="https://www.instagram.com/okurmen_kids/"
-              target="_blank"
-              className="mb-2 flex items-center justify-center md:justify-start cursor-pointer"
-            >
-              <IoLogoInstagram className="mr-2" />
-              <span className="text-[#0f1f5e]">okurmen_kids</span>
-            </a>
-            <a
-              href="https://www.instagram.com/okurmen.studio/"
-              target="_blank"
-              className="flex items-center justify-center md:justify-start cursor-pointer"
-            >
-              <IoLogoInstagram className="mr-2" />
-              <span className="text-[#0f1f5e]">okurmen.studio</span>
-            </a>
-            <a
-              href="https://www.instagram.com/okurmen_pro/"
-              target="_blank"
-              className="flex items-center cursor-pointer"
-            >
-              <IoLogoInstagram className="mr-2" />
-              <span className="text-[#0f1f5e]">okurmen_pro</span>
-            </a>
+            <div>
+              {instagramLinks.map(({ href, label }) => (
+                <a
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mb-2 flex items-center justify-center md:justify-start cursor-pointer"
+                >
+                  <IoLogoInstagram className="mr-2" />
+                  <span className="text-[#0f1f5e]">{label}</span>
+                </a>
+              ))}
+
+            </div>
+
           </div>
         </div>
       </div>
