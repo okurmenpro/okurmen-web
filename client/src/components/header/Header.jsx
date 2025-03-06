@@ -5,13 +5,33 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Button from "../button/Button";
 import Logo from "/images/logo.png";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
-
+import { HashLink } from 'react-router-hash-link';
 const navlinks = [
-  { id: 1, title: "О компании", link: "#company-info" },
-  { id: 2, title: "Курсы", link: "#course" },
-  { id: 3, title: "Менторы", link: "#mentors" },
-  { id: 4, title: "Стажировка", link: "#internship" },
-  { id: 5, title: "It-club", link: "#it-club" },
+  {
+    id: 1,
+    title: "О компании",
+    link: "#company-info"
+  },
+  {
+    id: 2,
+    title: "Курсы",
+    link: "#course"
+  },
+  {
+    id: 3,
+    title: "Тренеры",
+    link: "#trainers"
+  },
+  {
+    id: 4,
+    title: "Стажировка",
+    link: "#internship"
+  },
+  {
+    id: 5,
+    title: "It-club",
+    link: "#it-club"
+  },
 ];
 
 const Header = () => {
@@ -43,7 +63,17 @@ const Header = () => {
 
         {isHomePage ? (
           <>
-            <Navbar navlinks={navlinks} />
+            <nav className="hidden md:flex gap-4">
+              {navlinks.map((link) => (
+                <HashLink 
+                  key={link.id} 
+                  smooth to={link.link} 
+                  className="text-black py-2 px-3 text-base  hover:text-gray-500"
+                >
+                  {link.title}
+                </HashLink>
+              ))}
+            </nav>
             <div className="hidden md:flex gap-4 items-center">
               <Button ButtonText="Зарегистрироваться" color="black" to="/registration" />
             </div>
@@ -66,13 +96,14 @@ const Header = () => {
           <div className="bg-white shadow-lg rounded-b-3xl space-y-1 py-4 px-4">
             {navlinks.map((link) => (
               <div key={link.id}>
-                <Link
+                <HashLink
+                  smooth
                   to={link.link}
                   className="block text-black py-2 px-3 text-base font-medium hover:bg-gray-700 hover:text-white"
                   onClick={() => setOpen(false)}
                 >
                   {link.title}
-                </Link>
+                </HashLink>
               </div>
             ))}
           </div>
@@ -80,6 +111,7 @@ const Header = () => {
       )}
     </header>
   );
+
 };
 
 export default Header;
