@@ -1,35 +1,34 @@
 import { useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Button from "../button/Button";
+import { HashLink } from "react-router-hash-link";
 import Logo from "/images/logo.png";
-import { HashLink } from 'react-router-hash-link';
 
 const navlinks = [
   {
     id: 1,
     title: "О компании",
-    link: "#company-info"
+    link: "#company-info",
   },
   {
     id: 2,
     title: "Курсы",
-    link: "#course"
+    link: "#course",
   },
   {
     id: 3,
     title: "Тренеры",
-    link: "#trainers"
+    link: "#trainers",
   },
   {
     id: 4,
     title: "Стажировка",
-    link: "#internship"
+    link: "#internship",
   },
   {
     id: 5,
     title: "It-club",
-    link: "#it-club"
+    link: "#it-club",
   },
 ];
 
@@ -73,33 +72,35 @@ const Header = () => {
         <Link to="/" className="ml-3 md:ml-0">
           <img className="cursor-pointer" width={80} src={Logo} alt="Logo" />
         </Link>
-        <>
-          <nav className="hidden md:flex gap-4">
-            {navlinks.map((link) => (
-              <HashLink
-                key={link.id}
-                smooth to={link.link}
-                className="text-black py-2 px-3 text-base hover:text-gray-500"
-              >
-                {link.title}
-              </HashLink>
-            ))}
-          </nav>
-          <div className="hidden md:flex gap-4 items-center">
-            {/* <Button ButtonText="Зарегистрироваться" color="black" to="/registration" /> */}
-          </div>
-          <button className="md:hidden" onClick={handleMenu}>
-            {open ? <FaTimes /> : <FaBars />}
-          </button>
-        </>
+        <nav className="hidden md:flex gap-4">
+          {navlinks.map((link) => (
+            <HashLink
+              key={link.id}
+              smooth
+              to={link.link}
+              className="text-black py-2 px-3 text-base hover:text-gray-500"
+            >
+              {link.title}
+            </HashLink>
+          ))}
+        </nav>
+        <button className="md:hidden menu-button" onClick={handleMenu}>
+          {open ? <FaTimes /> : <FaBars />}
+        </button>
       </div>
-
       {open && (
         <div className="absolute top-0 w-full bg-[#00000038] z-10">
-          <div className="bg-white shadow-lg rounded-b-3xl space-y-1 py-4 px-4">
-            {navlinks.map((link) => (
-              <div key={link.id}>
+          <div className="bg-white shadow-lg rounded-b-3xl py-4 px-4 relative mobile-menu">
+            <button
+              className="absolute right-4 top-4 text-black text-2xl"
+              onClick={() => setOpen(false)}
+            >
+              <FaTimes />
+            </button>
+            <div className="flex flex-col justify-start pt-7 space-y-2">
+              {navlinks.map((link) => (
                 <HashLink
+                  key={link.id}
                   smooth
                   to={link.link}
                   className="block text-black py-2 px-3 text-base font-medium hover:bg-gray-700 hover:text-white"
@@ -107,11 +108,13 @@ const Header = () => {
                 >
                   {link.title}
                 </HashLink>
-              </div>
-            ))}
+              ))}
+            </div>
+
           </div>
         </div>
       )}
+
     </header>
   );
 };
