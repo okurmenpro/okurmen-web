@@ -2,7 +2,7 @@ import belek from "../../../public/images/belek.png";
 import zhanara from "../../../public/images/zhanara.jpg";
 import bayastanIT from "../../../public/images/bayastanIT.jpg";
 import bayastanENGLISH from "../../../public/images/bayastanENGLISH.jpg";
-import kutman from "../../../public/images/kutman.jpg";
+import kutman from "../../../public/images/kutman.jpg.png";
 import kumar from "../../../public/images/kumar.jpg";
 
 const Trainers = () => {

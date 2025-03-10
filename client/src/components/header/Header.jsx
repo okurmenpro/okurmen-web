@@ -37,30 +37,53 @@ const navlinks = [
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [isScroll, setIsScroll] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
-  const isHomePage = location.pathname === "/";
+  const [clicked, setClicked] = useState(null);
 
   useEffect(() => {
     function scrollBar() {
-      if (window.scrollY >= 50) setIsScroll(true);
-      else setIsScroll(false);
+      setIsScroll(window.scrollY >= 50);
     }
     window.addEventListener("scroll", scrollBar);
     return () => window.removeEventListener("scroll", scrollBar);
   }, []);
 
-  const handleMenu = () => setOpen((prev) => !prev);
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        open &&
+        !event.target.closest(".mobile-menu") &&
+        !event.target.closest(".menu-button")
+      ) {
+        setOpen(false);
+        setClicked(null);
+      }
+    }
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [open]);
 
+  const handleMenu = (event) => {
+    event.stopPropagation();
+    setOpen((prev) => !prev);
+  };
+
+  const handleMobileClick = (id) =>
+    setClicked((prev) => (prev === id ? null : id));
+
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+  
   return (
     <header
-      className={`fixed left-0 w-full bg-white z-40 top-0 ${isScroll ? "py-2 shadow-lg" : "py-5"} transition-all duration-150`}
+      className={`fixed left-0 w-full bg-white z-40 top-0 ${
+        isScroll ? "py-2 shadow-lg" : "py-5"
+      } transition-all duration-150`}
     >
       <div className="container mx-auto flex items-center justify-between py-4">
         <Link to="/" className="ml-3 md:ml-0">
           <img className="cursor-pointer" width={80} src={Logo} alt="Logo" />
         </Link>
-
+  
         {isHomePage ? (
           <>
             <nav className="hidden md:flex gap-4">
@@ -90,7 +113,7 @@ const Header = () => {
           </button>
         )}
       </div>
-
+  
       {open && isHomePage && (
         <div className="absolute top-0 w-full bg-[#00000038] z-10">
           <div className="bg-white shadow-lg rounded-b-3xl space-y-1 py-4 px-4">
@@ -111,7 +134,9 @@ const Header = () => {
       )}
     </header>
   );
-
+  
 };
+
+
 
 export default Header;
