@@ -24,6 +24,9 @@ export default {
         right: "polygon(0 0, 100% 0, 100% 85%, 0 100%)",
         left: "polygon(0 15%, 100% 0, 100% 100%, 0 100%)",
       },
+      fontFamily: {
+        ubuntu: ['Ubuntu', 'sans-serif'],
+      },
     },
   },
   plugins: [scrollbarHide],

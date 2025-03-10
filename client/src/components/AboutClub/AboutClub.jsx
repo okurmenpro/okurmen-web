@@ -5,7 +5,7 @@ import star from "../../../public/images/star.png";
 
 function AboutClub() {
   return (
-    <div id="itclub" className="w-full max-w-[1258px] mx-auto py-10 px-4">
+    <div id="itclub" className="w-full font-ubuntu max-w-[1258px] mx-auto py-10 px-4">
       <h2 className="text-lg font-medium mb-6">
         <span className="border-l-4 border-orange-500 pl-2 h-[33.5px] flex items-center">
           IT-клуб
