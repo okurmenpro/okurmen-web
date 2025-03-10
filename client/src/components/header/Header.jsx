@@ -86,7 +86,7 @@ const Header = () => {
             ))}
           </nav>
           <div className="hidden md:flex gap-4 items-center">
-            <Button ButtonText="Зарегистрироваться" color="black" to="/registration" />
+            {/* <Button ButtonText="Зарегистрироваться" color="black" to="/registration" /> */}
           </div>
           <button className="md:hidden" onClick={handleMenu}>
             {open ? <FaTimes /> : <FaBars />}
