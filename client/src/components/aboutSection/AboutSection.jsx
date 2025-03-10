@@ -16,7 +16,8 @@ const AboutSection = () => {
 };
 
 const AboutInfo = () => (
-  <div>
+  <div  >
+
     <div className="flex justify-space-between items-center">
       <div className="h-[33.5px] w-[3px] bg-orange-400 mt-[-24px]"></div>
       <h2 className="text-black-400 text-xl font-bold mb-6 ml-[10px]">
@@ -37,6 +38,7 @@ const AboutInfo = () => (
       традиции и обычаи.
     </p>
   </div>
+ 
 );
 
 const AboutImages = () => (
