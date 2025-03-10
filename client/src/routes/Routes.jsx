@@ -25,6 +25,7 @@ import ConfirmRegisterPage from "../pages/confirmRegisterPage/ConfirmRegisterPag
 import RegistrationAdminPage from "../pages/registrationAdminPage/registrationAdminPage";
 import CSharp from "../pages/c_Sharp/CSharp";
 import Map from "../components/map/Map";
+import NotFound from "../pages/notFound"; // Add a 404 page component
 
 const AppRoutes = () => {
   return createBrowserRouter(
@@ -77,11 +78,11 @@ const AppRoutes = () => {
 
         <Route path="/archive" element={<Archive />} />
         <Route path="/location" element={<Map />} />
+
+        {/* Catch all unknown routes and show a 404 page */}
+        <Route path="*" element={<NotFound />} />
       </>
-    ),
-    {
-      basename: "/",
-    }
+    )
   );
 };
 
