@@ -17,17 +17,28 @@ const HomePage = () => {
     <div className="mt-[100px]">
       <HeroSection />
       <div className="bg-white">
-        <AboutSection />
-        <Courses />
+        <section id="company-info">
+          <AboutSection />
+        </section>
+        <section id="course">
+          <Courses />
+        </section>
         {/* <CompanyPage /> */}
         {/* <Slider /> */}
         {/* <CertificateSection /> */}
         {/* <WorkSection /> */}
         {/* <CompanyPage /> */}
+
+        <section id="trainers">
         <Trainers />
-        <Mentors />
-        <Internshipsection />
-        <AboutClub />
+        </section>
+          <Mentors />
+        <section id="internship">
+          <Internshipsection />
+        </section>
+        <section id="it-club">
+          <AboutClub />
+        </section>
         {/* <Slider /> */}
         {/* <CertificateSection /> */}
         <Address />
