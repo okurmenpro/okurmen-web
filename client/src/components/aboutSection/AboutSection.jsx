@@ -42,9 +42,9 @@ const AboutInfo = () => (
 );
 
 const AboutImages = () => (
-  <div className="flex justify-center items-center gap-4 p-4 sm:p-6 md:p-8">
+  <div className="flex justify-center items-center ml-3 gap-4 sm:p-4 md:p-8">
     <div
-      className="relative bg-orange-400 overflow-visible sm:p-6 md:p-8"
+      className="relative bg-orange-400 overflow-visible sm:p-4 md:p-8"
       style={{
         clipPath: "polygon(100% 15%, 100% 100%, 0 100%, 0% 0%)",
         width: "252px",
@@ -55,12 +55,12 @@ const AboutImages = () => (
         src={ulukbek}
         alt="Улукбек Бактыбек"
         className="absolute object-cover mx-auto w-1/2 mt-[33px] ml-[30px]" 
-        style={{ width: "176px", height: "283px", top: "-10px", left: "-10px" }}
+        style={{ width: "176px", height: "283px", top: "-5px", left: "-10px" }}
       />
     </div>
 
     <div
-      className="relative bg-orange-400 overflow-visible sm:p-6 md:p-8 mr-[15px]"
+      className="relative bg-orange-400 overflow-visible sm:p-4 md:p-8 mr-[15px]"
       style={{
         clipPath: "polygon(0 15%, 100% 0, 100% 100%, 0 100%)",
         width: "252px",
@@ -70,8 +70,8 @@ const AboutImages = () => (
       <img
         src={sanjar}
         alt="Санжар Мадумар"
-        className="absolute object-cover mx-auto w-1/2 mt-[44px] ml-[25px]"
-        style={{ width: "226px", height: "286px", top: "-15px", left: "-15px" }}
+        className="absolute object-cover mx-auto w-1/2 sm:h-16 mt-[44px] ml-[25px]"
+        style={{ width: "226px", height: "286px", top: "-5px", left: "-15px" }}
       />
     </div>
   </div>

@@ -4,7 +4,7 @@ import Button from "../button/Button";
 import Logo from "/images/logo.png";
 import { useState, useEffect, useRef } from "react";
 import { HashLink } from 'react-router-hash-link';
-import { courses } from '../../data/courses'; 
+import { courses } from '../../data/courses';
 
 const navlinks = [
   { id: 1, title: "О компании", link: "#company-info" },
@@ -12,7 +12,7 @@ const navlinks = [
   { id: 3, title: "Тренеры", link: "#trainers" },
   { id: 4, title: "Стажировка", link: "#internship" },
   { id: 5, title: "It-club", link: "#it-club" },
-];
+]
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -69,7 +69,7 @@ const Header = () => {
         </nav>
 
         <div className="hidden md:flex gap-4 items-center">
-          <Button ButtonText="Зарегистрироваться" color="black" to="/registration" />
+          {/* <Button ButtonText="Зарегистрироваться" color="black" to="/registration" /> */}
         </div>
 
       
@@ -77,13 +77,19 @@ const Header = () => {
           {open ? <FaTimes /> : <FaBars />}
         </button>
       </div>
-
       {open && (
-        <div className="absolute top-0 w-full bg-[#00000038] z-10 mobile-menu">
-          <div className="bg-white shadow-lg rounded-b-3xl space-y-1 py-4 px-4">
-            {navlinks.map(link => (
-              <div key={link.id}>
+        <div className="absolute top-0 w-full bg-[#00000038] z-10">
+          <div className="bg-white shadow-lg rounded-b-3xl py-4 px-4 relative mobile-menu">
+            <button
+              className="absolute right-4 top-4 text-black text-2xl"
+              onClick={() => setOpen(false)}
+            >
+              <FaTimes />
+            </button>
+            <div className="flex flex-col justify-start pt-7 space-y-2">
+              {navlinks.map((link) => (
                 <HashLink
+                  key={link.id}
                   smooth
                   to={link.link}
                   className="block text-black py-2 px-3 text-base font-medium hover:bg-gray-700 hover:text-white"
@@ -91,11 +97,13 @@ const Header = () => {
                 >
                   {link.title}
                 </HashLink>
-              </div>
-            ))}
+              ))}
+            </div>
+
           </div>
         </div>
       )}
+
     </header>
   );
 };
