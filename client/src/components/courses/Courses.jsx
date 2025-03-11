@@ -5,7 +5,14 @@ import Js2 from "../../../public/images/js2.png";
 import front_back from "../../../public/images/image.png";
 import Code from "../../../public/images/code.png";
 import Button from "../button/Button";
+import sharp from "../../../public/icons/sharp.svg";
 import { Link } from "react-router-dom";
+import BackendFrontend from "../../pages/backendFrontend/BackendFrontend";
+import BackendPage from "../../pages/backendPage/BackendPage";
+import PythonPage from "../../pages/pythonPage/PythonPage";
+import FrontendPage from "../../pages/frontendPage/FrontendPage";
+import CSharp from "../../pages/c_Sharp/CSharp";
+import UxUiPage from "../../pages/uxuiPage/UxUiPage";
 
 const Courses = () => {
   const [activeTab, setActiveTab] = useState("Следующие потоки");
@@ -17,7 +24,7 @@ const Courses = () => {
         description: "Срок обучения: 5 месяцев",
         extra: "+ английский язык",
         schedule: "3 раза в неделю",
-        image: Js2,
+        link: "frontendBackend",
       },
       {
         title: "Python",
@@ -25,34 +32,39 @@ const Courses = () => {
         extra: "+ английский язык",
         schedule: "4 раза в неделю",
         image: Py2,
+        link: "python"
       },
       {
-        title: "React",
+        title: "Frontend",
         description: "Срок обучения: 3 месяца",
         extra: "+ английский язык",
         schedule: "3 раза в неделю",
         image: Js2,
+        link: "FrontendPage"
       },
       {
-        title: "Data Science",
+        title: "C#",
         description: "Срок обучения: 6 месяцев",
         extra: "+ английский язык",
         schedule: "2 раза в неделю",
-        image: Py2,
+        image: sharp,
+        link: "csharp"
       },
       {
-        title: "Mobile Development",
+        title: "Java",
         description: "Срок обучения: 4 месяца",
         extra: "+ английский язык",
         schedule: "3 раза в неделю",
         image: Js2,
+        link: "backend"
       },
       {
-        title: "Machine Learning",
+        title: "UX/UI design",
         description: "Срок обучения: 5 месяцев",
         extra: "+ английский язык",
         schedule: "3 раза в неделю",
         image: Py2,
+        link: "uxui"
       },
     ],
     "Для детей": [
@@ -87,11 +99,10 @@ const Courses = () => {
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`py-2 px-4 rounded font-medium whitespace-nowrap text-sm ${
-              activeTab === tab
-                ? "bg-orange-500 text-white"
-                : "text-gray-700 hover:bg-gray-100"
-            }`}
+            className={`py-2 px-4 rounded font-medium whitespace-nowrap text-sm ${activeTab === tab
+              ? "bg-orange-500 text-white"
+              : "text-gray-700 hover:bg-gray-100"
+              }`}
           >
             {tab}
           </button>
@@ -143,18 +154,41 @@ const Courses = () => {
               key={index}
               className="rounded-2xl p-6 flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-6 min-w-[350px] sm:min-w-[500px] lg:min-w-[750px] h-auto sm:h-[350px] shadow-[inset_0_0_40px_20px_rgba(0,0,0,0.15)]"
             >
-              <img
-                src={course.image}
-                alt={course.title}
-                className="w-32 h-32 sm:w-40 sm:h-40 rounded-lg object-cover"
-              />
+              <div className="relative">
+                {/* Рендерим основное изображение только если это не первая карточка 
+          и если у карточки есть image */}
+                {!(index === 0 && course.title === "Frontend + Backend") && course.image && (
+                  <img
+                    src={course.image}
+                    alt={course.title}
+                    className="w-32 sm:w-40 aspect-square rounded-lg object-cover"
+                  />
+                )}
 
+                {/* Для карточек с названием "Frontend + Backend" выводим оверлей с двумя фото */}
+                {course.title === "Frontend + Backend" && (
+                  <div className="flex flex-wrap sm:flex-none">
+                    <img
+                      src={Js2}
+                      alt="JavaScript"
+                      className="w-16 sm:w-[100px] aspect-square object-cover sm:absolute sm:bottom-[15px] sm:left-[-10px]"
+                    />
+                    <img
+                      src={Py2}
+                      alt="Python"
+                      className="w-16 sm:w-[100px] aspect-square object-cover sm:absolute sm:top-[15px] sm:right-[1px]"
+                    />
+                  </div>
+                )}
+              </div>
+
+              {/* Остальное содержимое карточки */}
               <div className="flex flex-col space-y-4 w-full">
                 <h3 className="text-lg sm:text-2xl font-bold text-center sm:text-left">
                   {course.title}
                 </h3>
-                <div className="flex items-center justify-center sm:justify-start space-x-2">
-                  <FaClock />
+                <div className="flex items-start space-x-2 sm:space-x-4">
+                  <FaClock className="sm:mt-1.5 mt-0.5" />
                   <p className="text-sm sm:text-lg">
                     {course.description}{" "}
                     <span className="text-orange-500">{course.extra}</span>
@@ -165,11 +199,14 @@ const Courses = () => {
                   <span>{course.schedule}</span>
                 </div>
                 <div className="flex justify-center sm:justify-start mt-2 sm:mt-auto">
-                  <Button ButtonText="Подробнее" color="orange" />
+                  <Link to={course.link}>
+                    <Button ButtonText="Подробнее" color="orange" />
+                  </Link>
                 </div>
               </div>
             </div>
           ))}
+
         </div>
       )}
     </div>
