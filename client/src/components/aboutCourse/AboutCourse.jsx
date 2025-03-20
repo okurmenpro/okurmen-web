@@ -28,4 +28,5 @@ const AboutCourse = ({ title, description, image, imageAlt }) => {
   );
 };
 
+
 export default AboutCourse;
