@@ -3,7 +3,7 @@ import Button from "../button/Button";
 
 const AboutCourse = ({ title, description, image, imageAlt }) => {
   return (
-    <div className="flex flex-col-reverse md:flex-row items-center bg-white p-4 md:p-6 rounded-lg mt-6 md:mt-[70px] mx-auto max-w-[95%] md:w-[1200px] mb-[-60px] md:mb-[-180px]">
+    <div className="flex flex-col-reverse md:flex-row items-center bg-white p-4 md:p-6 rounded-lg mt-10 md:mt-[70px] mx-auto max-w-[95%] md:w-[1200px] mb-[-60px] md:mb-[-180px]">
       <div className="w-full md:w-1/2 p-4">
         <h2 className="text-[rgb(0,6,148)] text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
           {title}
@@ -27,5 +27,6 @@ const AboutCourse = ({ title, description, image, imageAlt }) => {
     </div>
   );
 };
+
 
 export default AboutCourse;
