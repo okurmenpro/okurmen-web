@@ -94,9 +94,9 @@ const Courses = () => {
               <img
                 src={course.image}
                 alt={course.title}
-                className={`${course.title === "UX/UI design" ? "h-[115px]" :
-                    course.title === "Java" ? "h-[119px]" :
-                    course.title === "C#" ? "h-[119px]" :
+                className={`${course.title === "UX/UI design" ? "h-[118px]" :
+                  course.title === "Java" ? "h-[118px]" :
+                    course.title === "C#" ? "h-[116px]" :
                       "w-[100px] sm:w-[150px] lg:w-[120px]"
                   } h-auto object-contain rounded-lg`}
               />
@@ -104,12 +104,13 @@ const Courses = () => {
               <h3 className="text-lg sm:text-2xl font-bold text-center">
                 {course.title}
               </h3>
-              <div className="flex items-center space-x-2">
-                <FaClock className=" sm:relative sm:top-0 top-[-2px]" />
+              <div className="flex items-start space-x-2">
+                <FaClock className="relative sm:top-1.5 top-[3.5px]" />
                 <p className="text-sm sm:text-lg">
                   {course.description} <span className="text-orange-500">{course.extra}</span>
                 </p>
               </div>
+
               <div className="flex items-center text-gray-600 text-sm sm:text-lg">
                 <FaRegCalendarAlt />
                 <span className="ml-2">{course.schedule}</span>
