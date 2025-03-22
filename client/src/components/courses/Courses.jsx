@@ -5,6 +5,9 @@ import Js2 from "../../../public/images/js2.png";
 import front_back from "../../../public/images/image.png";
 import Code from "../../../public/images/code.png";
 import Button from "../button/Button";
+import sharp from "../../../public/icons/sharp.svg";
+import figma from "../../../public/images/figmalogo.png";
+import java from "../../../public/images/java2.png";
 import { Link } from "react-router-dom";
 
 const Courses = () => {
@@ -12,70 +15,23 @@ const Courses = () => {
 
   const courses = {
     "Следующие потоки": [
-      {
-        title: "Frontend + Backend",
-        description: "Срок обучения: 5 месяцев",
-        extra: "+ английский язык",
-        schedule: "3 раза в неделю",
-        image: Js2,
-      },
-      {
-        title: "Python",
-        description: "Срок обучения: 2 месяца",
-        extra: "+ английский язык",
-        schedule: "4 раза в неделю",
-        image: Py2,
-      },
-      {
-        title: "React",
-        description: "Срок обучения: 3 месяца",
-        extra: "+ английский язык",
-        schedule: "3 раза в неделю",
-        image: Js2,
-      },
-      {
-        title: "Data Science",
-        description: "Срок обучения: 6 месяцев",
-        extra: "+ английский язык",
-        schedule: "2 раза в неделю",
-        image: Py2,
-      },
-      {
-        title: "Mobile Development",
-        description: "Срок обучения: 4 месяца",
-        extra: "+ английский язык",
-        schedule: "3 раза в неделю",
-        image: Js2,
-      },
-      {
-        title: "Machine Learning",
-        description: "Срок обучения: 5 месяцев",
-        extra: "+ английский язык",
-        schedule: "3 раза в неделю",
-        image: Py2,
-      },
+      { title: "Frontend + Backend", description: "Срок обучения: 5 месяцев", extra: "+ английский язык", schedule: "3 раза в неделю", image: front_back, link: "frontendBackend" },
+      { title: "Python", description: "Срок обучения: 2 месяца", extra: "+ английский язык", schedule: "4 раза в неделю", image: Py2, link: "python" },
+      { title: "Frontend", description: "Срок обучения: 3 месяца", extra: "+ английский язык", schedule: "3 раза в неделю", image: Js2, link: "FrontendPage" },
+      { title: "C#", description: "Срок обучения: 6 месяцев", extra: "+ английский язык", schedule: "2 раза в неделю", image: sharp, link: "csharp" },
+      { title: "Java", description: "Срок обучения: 4 месяца", extra: "+ английский язык", schedule: "3 раза в неделю", image: java, link: "backend" },
+      { title: "UX/UI design", description: "Срок обучения: 5 месяцев", extra: "+ английский язык", schedule: "3 раза в неделю", image: figma, link: "uxui" },
     ],
     "Для детей": [
-      {
-        title: "Frontend + Backend",
-        description: "Срок обучения: 5 месяцев",
-        extra: "+ английский язык",
-        schedule: "3 раза в неделю",
-        image: front_back,
-      },
+      { title: "Frontend + Backend", description: "Срок обучения: 5 месяцев", extra: "+ английский язык", schedule: "3 раза в неделю", image: front_back, link: "frontendBackend" },
     ],
     События: [
-      {
-        name: "Frontend разработке",
-        date: "05.05.25 в 15:00",
-        address: "Турусбекова 109/1",
-        image: Code,
-      },
+      { name: "Frontend разработке", date: "05.05.25 в 15:00", address: "Турусбекова 109/1", image: Code },
     ],
   };
 
   return (
-    <div className="container ml-[73px] px-4 sm:px-8 md:px-16">
+    <div className="container mx-auto px-4 sm:px-6 md:px-8">
       <div className="mb-6">
         <span className="text-lg font-semibold text-gray-800 border-l-4 border-orange-500 pl-2">
           Курсы
@@ -87,11 +43,7 @@ const Courses = () => {
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`py-2 px-4 rounded font-medium whitespace-nowrap text-sm ${
-              activeTab === tab
-                ? "bg-orange-500 text-white"
-                : "text-gray-700 hover:bg-gray-100"
-            }`}
+            className={`py-2 px-4 rounded font-medium whitespace-nowrap text-sm ${activeTab === tab ? "bg-orange-500 text-white" : "text-gray-700 hover:bg-gray-100"}`}
           >
             {tab}
           </button>
@@ -106,11 +58,7 @@ const Courses = () => {
               className="flex flex-col lg:flex-row bg-black text-white rounded-lg overflow-hidden shadow-xl w-full lg:w-[1200px] h-auto lg:h-[350px] mb-8"
             >
               <div className="w-full lg:w-1/2 h-[200px] lg:h-full">
-                <img
-                  src={event.image}
-                  alt="Event"
-                  className="w-full h-full object-cover"
-                />
+                <img src={event.image} alt="Event" className="w-full h-full object-cover" />
               </div>
               <div className="w-full lg:w-1/2 p-6 flex flex-col justify-between text-right">
                 <div className="mb-6 font-bold">
@@ -137,37 +85,39 @@ const Courses = () => {
           ))}
         </div>
       ) : (
-        <div className="flex space-x-8 overflow-x-auto scrollbar-hide mb-8">
+        <div className="flex space-x-4 overflow-x-auto scrollbar-hide mb-8">
           {courses[activeTab].map((course, index) => (
             <div
               key={index}
-              className="rounded-2xl p-6 flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-6 min-w-[350px] sm:min-w-[500px] lg:min-w-[750px] h-auto sm:h-[350px] shadow-[inset_0_0_40px_20px_rgba(0,0,0,0.15)]"
+              className="rounded-2xl p-6 flex flex-col items-center justify-between space-y-4 shadow-[inset_0_0_40px_10px_rgba(0,0,0,0.15)] bg-white min-w-[300px] sm:min-w-[400px] md:min-w-[500px] lg:min-w-[600px] h-[350px] sm:h-[380px] mb-6"
             >
               <img
                 src={course.image}
                 alt={course.title}
-                className="w-32 h-32 sm:w-40 sm:h-40 rounded-lg object-cover"
+                className={`${course.title === "UX/UI design" ? "h-[118px]" :
+                  course.title === "Java" ? "h-[118px]" :
+                    course.title === "C#" ? "h-[116px]" :
+                      "w-[100px] sm:w-[150px] lg:w-[120px]"
+                  } h-auto object-contain rounded-lg`}
               />
 
-              <div className="flex flex-col space-y-4 w-full">
-                <h3 className="text-lg sm:text-2xl font-bold text-center sm:text-left">
-                  {course.title}
-                </h3>
-                <div className="flex items-center justify-center sm:justify-start space-x-2">
-                  <FaClock />
-                  <p className="text-sm sm:text-lg">
-                    {course.description}{" "}
-                    <span className="text-orange-500">{course.extra}</span>
-                  </p>
-                </div>
-                <div className="flex items-center justify-center sm:justify-start space-x-2 text-gray-600 text-sm sm:text-lg">
-                  <FaRegCalendarAlt />
-                  <span>{course.schedule}</span>
-                </div>
-                <div className="flex justify-center sm:justify-start mt-2 sm:mt-auto">
-                  <Button ButtonText="Подробнее" color="orange" />
-                </div>
+              <h3 className="text-lg sm:text-2xl font-bold text-center">
+                {course.title}
+              </h3>
+              <div className="flex items-start space-x-2">
+                <FaClock className="relative sm:top-1.5 top-[3.5px]" />
+                <p className="text-sm sm:text-lg">
+                  {course.description} <span className="text-orange-500">{course.extra}</span>
+                </p>
               </div>
+
+              <div className="flex items-center text-gray-600 text-sm sm:text-lg">
+                <FaRegCalendarAlt />
+                <span className="ml-2">{course.schedule}</span>
+              </div>
+              <Link to={course.link} className="mt-auto">
+                <Button ButtonText="Подробнее" color="orange" />
+              </Link>
             </div>
           ))}
         </div>
