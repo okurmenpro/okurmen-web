@@ -96,7 +96,7 @@ const Courses = () => {
                 alt={course.title}
                 className={`${course.title === "UX/UI design" ? "h-[89px] " :
                   course.title === "Java" ? "h-[89px] sm:w-[150px] lg:w-[120px]"  :
-                    course.title === "C#" ? "h-[106px] sm:w-[150px] lg:w-[120px]" :
+                  course.title === "C#" ? "h-[89px] sm:w-[90px] md:w-[130px] lg:w-[79px]" :
                       "w-[100px] sm:w-[150px] lg:w-[120px]"
                   } h-auto object-contain rounded-lg`}
               />
