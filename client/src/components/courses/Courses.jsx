@@ -94,11 +94,11 @@ const Courses = () => {
               <img
                 src={course.image}
                 alt={course.title}
-                className={`${course.title === "UX/UI design" ? "h-[59px] " :
-                  course.title === "Java" ? "h-[60px] sm:w-[150px] lg:w-[120px]"  :
-                  course.title === "C#" ? "h-[89px] sm:w-[90px] md:w-[130px] lg:w-[79px]" :
+                className={`${course.title === "UX/UI design" ? "h-[125px] " :
+                  course.title === "Java" ? "h-[125px] "  :
+                  course.title === "C#" ? "h-[125px] " :
                       "w-[100px] sm:w-[150px] lg:w-[120px]"
-                  } h-auto object-contain rounded-lg`}
+                  }  rounded-lg`}
               />
 
               <h3 className="text-lg sm:text-2xl font-bold text-center">
