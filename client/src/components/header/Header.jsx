@@ -5,6 +5,7 @@ import Logo from "/images/logo.png";
 import { useState, useEffect, useRef } from "react";
 import { HashLink } from 'react-router-hash-link';
 import { courses } from '../../data/courses';
+import { useTranslation } from 'react-i18next';
 
 const navlinks = [
   { id: 1, title: "О компании", link: "#company-info" },
@@ -15,6 +16,7 @@ const navlinks = [
 ]
 
 const Header = () => {
+  const { t, i18n } = useTranslation();
   const [open, setOpen] = useState(false);
   const [isScroll, setIsScroll] = useState(false);
   const [isCoursesOpen, setIsCoursesOpen] = useState(false);
@@ -35,9 +37,13 @@ const Header = () => {
   const handleMenu = () => setOpen(prev => !prev);
   const toggleCourses = () => setIsCoursesOpen(prev => !prev);
 
+  const handleLanguageChange = (e) => {
+    i18n.changeLanguage(e.target.value);
+  };
+
   return (
-    <header className={`fixed left-0 w-full bg-white z-40 top-0 ${isScroll ? "py-2 shadow-lg" : "py-5"} transition-all duration-150`}>
-      <div className="container mx-auto flex items-center justify-between py-4">
+    <header className={`fixed  left-0 w-full bg-white z-40 top-0 ${isScroll ? "py-2 shadow-lg" : "py-5"} transition-all duration-150`}>
+      <div className="container mx-auto flex flex items-center justify-between py-4">
         <Link to="/" className="ml-3 md:ml-0">
           <img className="cursor-pointer" width={80} src={Logo} alt="Logo" />
         </Link>
@@ -53,6 +59,12 @@ const Header = () => {
         <button className="md:hidden menu-button" onClick={handleMenu}>
           {open ? <FaTimes /> : <FaBars />}
         </button>
+
+        <select onChange={handleLanguageChange} className="border border-orange-400 text-orange-400 p-1 rounded">
+          <option value="kg">KGZ</option>
+          <option value="ru">RUS</option>
+          <option value="en">ENG</option>
+        </select>
       </div>
       {open && (
         <div className="absolute top-0 w-full bg-[#00000038] z-10">
