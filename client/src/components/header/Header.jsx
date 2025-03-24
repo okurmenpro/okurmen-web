@@ -8,12 +8,12 @@ import { courses } from '../../data/courses';
 import { useTranslation } from 'react-i18next';
 
 const navlinks = [
-  { id: 1, title: "О компании", link: "#company-info" },
-  { id: 2, title: "Курсы", link: "#course" },
-  { id: 3, title: "Тренеры", link: "#trainers" },
-  { id: 4, title: "Стажировка", link: "#internship" },
-  { id: 5, title: "It-club", link: "#it-club" },
-]
+  { id: 1, titleKey: "company", link: "#company-info" },  
+  { id: 2, titleKey: "courses", link: "#course" },
+  { id: 3, titleKey: "trainers", link: "#trainers" },
+  { id: 4, titleKey: "internship", link: "#internship" },
+  { id: 5, titleKey: "itClub", link: "#it-club" },
+];
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -51,7 +51,7 @@ const Header = () => {
         <nav className="hidden md:flex gap-6 relative">
           {navlinks.map(link => (
             <HashLink key={link.id} smooth to={link.link} className="text-black py-2 px-3 text-base hover:text-gray-500">
-              {link.title}
+              {t(link.titleKey)}  
             </HashLink>
           ))}
         </nav>
@@ -75,17 +75,17 @@ const Header = () => {
             <div className="flex flex-col justify-start pt-7 space-y-2">
               {navlinks.map((link) => (
                 <div key={link.id} className="relative">
-                  {link.title === "Курсы" ? (
+                  {link.titleKey === "courses" ? (
                     <div className="flex justify-between items-center py-2 px-3 text-base font-medium hover:bg-gray-100" onClick={toggleCourses}>
-                      <span className="text-black">{link.title}</span>
+                      <span className="text-black">{t(link.titleKey)}</span>
                       <FaChevronDown className={`transition-transform ${isCoursesOpen ? "rotate-180" : "rotate-0"}`} />
                     </div>
                   ) : (
                     <HashLink smooth to={link.link} className="block text-black py-2 px-3 text-base font-medium hover:bg-gray-100" onClick={() => setOpen(false)}>
-                      {link.title}
+                      {t(link.titleKey)} 
                     </HashLink>
                   )}
-                  {isCoursesOpen && link.title === "Курсы" && (
+                  {isCoursesOpen && link.titleKey === "courses" && (
                     <div className="bg-white shadow-md rounded-md p-2 ml-5">
                       <ul className="space-y-1">
                         {courses.map((course, index) => (

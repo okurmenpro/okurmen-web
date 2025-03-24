@@ -20,21 +20,21 @@ const icons = [
 ];
 
 const HeroSection = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
+  
   return (
     <div className="hero-container">
       <div className="hero-content">
         <h1 className="font-bold text-5xl md:text-6xl text-blue-900">
-          {t('logo')}
+          {t('logo')} 
         </h1>
         <p className="pt-5 pb-8 text-orange-400 font-semibold text-center p-2.5 max-w-xs !sm:max-w-xs md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
-          Пошаговое обучение IT-навыкам с нуля до уверенного пользователя
+          {t('heroText')} 
         </p>
 
         <Button
-
           className="pb-2.5 border-2 text-base font-medium hero-button"
-          ButtonText="Консультация"
+          ButtonText={t('consultation')}  
           to="https://wa.me/+996705677798"
           target="_blank"
         />
