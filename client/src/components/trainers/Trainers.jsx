@@ -4,6 +4,7 @@ import bayastanIT from "../../../public/images/bayastanIT.jpg";
 import bayastanENGLISH from "../../../public/images/bayastanENGLISH.jpg";
 import kutman from "../../../public/images/kutman.jpg.png";
 import kumar from "../../../public/images/kumar.jpg";
+import { useTranslation } from "react-i18next";
 
 const Trainers = () => {
   const trainers = [
@@ -15,13 +16,14 @@ const Trainers = () => {
     { name: "Кумарбек Бабатаев", category: "English", portrait: kumar },
   ];
 
+  const { t } = useTranslation();
   return (
     <div
       id="mentors"
       className="container mx-auto flex flex-col items-start !mt-[100px] !mb-[100px] px-4 sm:px-6 lg:px-8"
     >
       <h2 className="text-lg font-medium mb-6">
-        <span className="border-l-4 border-orange-500 pl-2">Тренеры</span>
+        <span className="border-l-4 border-orange-500 pl-2">{t('trainers')}</span>
       </h2>
       <div className="flex gap-6 overflow-x-auto scrollbar-hide no-scrollbar w-full">
         {trainers.map((trainer, index) => (

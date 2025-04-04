@@ -2,10 +2,12 @@ import React from "react";
 import location from "../../../public/icons/location.svg";
 import whatsapp from "../../../public/icons/whatsapp.svg";
 import instagram from "../../../public/icons/instagram.svg";
+import { useTranslation } from "react-i18next";
 const Address = () => {
+  const { t } = useTranslation();
   return (
     <div className="container bg-white">
-      <h1 className="text-xl font-bold pt-4 poppins">Наш адрес</h1>
+      <h1 className="text-xl font-bold pt-4 poppins">{t('address')}</h1>
       <p className="flex items-center pt-4 gap-4 pb-2 text-xl font-semibold">
         <img src={location} alt="" />
         Турусбекова 109/1

@@ -1,6 +1,7 @@
 import { IoLogoInstagram, IoLogoWhatsapp } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import Logo from "/icons/logo.svg";
+import { useTranslation } from "react-i18next";
 
 const instagramLinks = [
   { href: "https://www.instagram.com/okurmen.jobs/", label: "okurmen.jobs" },
@@ -10,6 +11,7 @@ const instagramLinks = [
 ];
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className="bg-orange-500 text-white py-8">
       <div className="container mx-auto">
@@ -24,16 +26,16 @@ const Footer = () => {
             <h2 className="font-bold mb-6 text-xl md:text-2xl">Главная</h2>
             <ul>
               <li className="mb-2 cursor-pointer hover:underline text-[#0f1f5e]">
-                О компании
+                {t('company')}
               </li>
               <li className="mb-2 cursor-pointer hover:underline text-[#0f1f5e]">
-                Курсы
+                {t('courses')}
               </li>
               <li className="mb-2 cursor-pointer hover:underline text-[#0f1f5e]">
-                Стажировка
+                {t('internship')}
               </li>
               <li className="cursor-pointer hover:underline text-[#0f1f5e]">
-                IT club
+                {t('itClub')}
               </li>
             </ul>
           </div>
