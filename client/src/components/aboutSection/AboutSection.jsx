@@ -1,13 +1,16 @@
 import React from "react";
 import ulukbek from "../../../public/images/ulukbek.png";
 import sanjar from "../../../public/images/sanjar.png";
+import { useTranslation } from "react-i18next";
 
 const AboutSection = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="w-full bg-white py-12 mt-[-20px] mx-auto w-[1440px]">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center sm:p-6 md:p-8">
-          <AboutInfo />
+          <AboutInfo t={t} />
           <AboutImages />
         </div>
       </div>
@@ -15,30 +18,24 @@ const AboutSection = () => {
   );
 };
 
-const AboutInfo = () => (
-  <div  >
-
+const AboutInfo = ({ t }) => (
+  <div>
     <div className="flex justify-space-between items-center">
       <div className="h-[33.5px] w-[3px] bg-orange-400 mt-[-24px]"></div>
       <h2 className="text-black-400 text-xl font-bold mb-6 ml-[10px]">
-        О компании
+        {t('aboutTitle')}
       </h2>
     </div>
     <p className="text-gray-700 text-lg mb-4 leading-relaxed font-bold">
-      Учебный центр <span className="text-orange-400 font-bold">Окурмэн</span>{" "}
-      был открыт в 2022 году
+      {t('aboutText1')}
     </p>
     <p className="mt-[20px] mb-[20px] text-gray-700 text-lg mb-4 leading-relaxed font-bold">
-      Учебный центр <span className="text-orange-400 font-bold">Окурмэн</span>{" "}
-      был открыт с целью обучения IT-специалистов, которые отвечают требованиям
-      мировых компаний, ставят патриотов на землю служить родине в области IT.
+      {t('aboutText2')}
     </p>
     <p className="text-gray-700 text-lg leading-relaxed font-bold">
-      В будущем, от детского сада до университета, воспитывать по кыргызские
-      традиции и обычаи.
+      {t('aboutText3')}
     </p>
   </div>
- 
 );
 
 const AboutImages = () => (
@@ -54,7 +51,7 @@ const AboutImages = () => (
       <img
         src={ulukbek}
         alt="Улукбек Бактыбек"
-        className="absolute object-cover mx-auto w-1/2 mt-[33px] ml-[30px]" 
+        className="absolute object-cover mx-auto w-1/2 mt-[33px] ml-[30px]"
         style={{ width: "176px", height: "283px", top: "-5px", left: "-10px" }}
       />
     </div>

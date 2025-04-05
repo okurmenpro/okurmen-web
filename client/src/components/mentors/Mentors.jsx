@@ -4,6 +4,7 @@ import tansuluu from "../../../public/images/toha.jpg";
 import kulpunai from "../../../public/images/kuke.png";
 import aidana from "../../../public/images/aidana.png";
 import alisher from "../../../public/images/alisher.PNG";
+import { useTranslation } from "react-i18next";
 
 const Mentors = () => {
   const mentors = [
@@ -14,13 +15,14 @@ const Mentors = () => {
     { name: "Алишер Талипжанов", category: "Frontend", portrait: alisher },
   ];
 
+  const { t } = useTranslation();
   return (
     <div
       id="mentors"
       className="container mx-auto flex flex-col items-start mt-[100px] mb-[70px] px-4 sm:px-6 lg:px-8"
     >
       <h2 className="text-lg font-medium mb-6">
-        <span className="border-l-4 border-orange-500 pl-2">Менторы</span>
+        <span className="border-l-4 border-orange-500 pl-2">{t('mentors')}</span>
       </h2>
       <div className="flex gap-6 overflow-x-auto scrollbar-hide no-scrollbar w-full">
         {mentors.map((mentor, index) => (
