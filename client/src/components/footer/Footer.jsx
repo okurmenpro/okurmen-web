@@ -23,7 +23,7 @@ const Footer = () => {
         <hr className="border-white-300 my-6" />
         <div className="grid md:grid-cols-4 gap-8 text-center md:text-left border-b border-white pb-6">
           <div>
-            <h2 className="font-bold mb-6 text-xl md:text-2xl">Главная</h2>
+            <h2 className="font-bold mb-6 text-xl md:text-2xl">{t('main')}</h2>
             <ul>
               <li className="mb-2 cursor-pointer hover:underline text-[#0f1f5e]">
                 {t('company')}
@@ -40,7 +40,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h2 className="font-bold mb-6 text-xl md:text-2xl ">Контакты</h2>
+            <h2 className="font-bold mb-6 text-xl md:text-2xl "> {t('connection')}</h2>
             <a
               href="https://wa.me/996705677798"
               target="_blank"
@@ -57,20 +57,20 @@ const Footer = () => {
             </a>
           </div>
           <div>
-            <h2 className="font-bold mb-6 text-xl md:text-2xl ">Наш адрес</h2>
+            <h2 className="font-bold mb-6 text-xl md:text-2xl ">{t('address')}</h2>
             <a
               className=" hover:underline  text-[#0f1f5e]"
               target="_blank"
               href="https://2gis.kg/bishkek/inside/70030076155378888/firm/70000001075854813?m=74.585266%2C42.878822%2F17.27"
             >
-              Турусбекова 109/1
+              {t('street')} 109/1
             </a>
           </div>
           <div>
             <h2 className="font-bold mb-6 text-xl md:text-2xl">
-              Другие ресурсы
+              {t('resources')}
             </h2>
-            <div className="w-1/2 m-auto">
+            <div className="w-1/2 ml-0">
               {instagramLinks.map(({ href, label }) => (
                 <a
                   key={href}
@@ -84,6 +84,7 @@ const Footer = () => {
                 </a>
               ))}
             </div>
+
           </div>
         </div>
       </div>
