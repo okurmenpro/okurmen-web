@@ -1,7 +1,8 @@
 import React from "react";
 import Button from "../button/Button";
-
+import { useTranslation } from "react-i18next";
 const AboutCourse = ({ title, description, image, imageAlt }) => {
+   const { t } = useTranslation();
   return (
     <div className="flex flex-col-reverse md:flex-row items-center bg-white p-4 md:p-6 rounded-lg mt-10 md:mt-[70px] mx-auto max-w-[95%] md:w-[1200px] mb-[-60px] md:mb-[-180px]">
       <div className="w-full md:w-1/2 p-4">
@@ -11,11 +12,7 @@ const AboutCourse = ({ title, description, image, imageAlt }) => {
         <p className="text-gray-700 my-4 font-medium text-base sm:text-lg md:text-xl">
           {description}
         </p>
-        <Button
-          ButtonText="Консультация"
-          className="w-full sm:w-auto px-6 py-2"
-          to="/consultation"
-        />
+         <Button ButtonText={t('consultation')} />
       </div>
       <div className="w-full md:w-[50%] flex justify-center p-4">
         <img
