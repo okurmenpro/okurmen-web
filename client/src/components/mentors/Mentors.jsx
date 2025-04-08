@@ -7,15 +7,16 @@ import alisher from "../../../public/images/alisher.PNG";
 import { useTranslation } from "react-i18next";
 
 const Mentors = () => {
+  const { t } = useTranslation();
+
   const mentors = [
-    { name: "Саадат Жолчубаева", category: "Frontend", portrait: saadat },
-    { name: "Тансулуу Карыбекова", category: "Frontend", portrait: tansuluu },
-    { name: "Кулпунай Жекшенбекова", category: "Frontend", portrait: kulpunai },
-    { name: "Айдана Качкынбай кызы", category: "Frontend", portrait: aidana },
-    { name: "Алишер Талипжанов", category: "Frontend", portrait: alisher },
+    { key: "saadat", category: "Frontend", portrait: saadat },
+    { key: "tansuluu", category: "Frontend", portrait: tansuluu },
+    { key: "kulpunai", category: "Frontend", portrait: kulpunai },
+    { key: "aidana", category: "Frontend", portrait: aidana },
+    { key: "alisher", category: "Frontend", portrait: alisher },
   ];
 
-  const { t } = useTranslation();
   return (
     <div
       id="mentors"
@@ -35,14 +36,14 @@ const Mentors = () => {
             <div className="relative z-10 w-[150px] h-[150px] sm:w-[120px] sm:h-[120px] md:w-[100px] md:h-[100px] lg:w-[130px] lg:h-[130px] overflow-hidden rounded">
               <img
                 src={mentor.portrait}
-                alt={mentor.name}
+                alt={t(mentor.key)}
                 className="w-full h-full object-cover rounded-xl"
               />
             </div>
 
             <div className="relative z-10">
               <p className="text-lg font-medium text-black mb-2 sm:text-base md:text-sm lg:text-base">
-                {mentor.name}
+                {t(mentor.key)}
               </p>
               <p className="text-orange-500 font-medium sm:text-sm md:text-xs lg:text-sm">
                 {mentor.category}

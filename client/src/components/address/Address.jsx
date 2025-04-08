@@ -10,7 +10,7 @@ const Address = () => {
       <h1 className="text-xl font-bold pt-4 poppins">{t('address')}</h1>
       <p className="flex items-center pt-4 gap-4 pb-2 text-xl font-semibold">
         <img src={location} alt="" />
-        Турусбекова 109/1
+        {t('street')} 109/1
       </p>
       <iframe className=" rounded-[20px]"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2923.652199501!2d74.58372310880188!3d42.88018459037522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec81915eaf75d%3A0x9bfedde3851dcd21!2sMaximum%20Business%20Center!5e0!3m2!1sen!2skg!4v1733745110066!5m2!1sen!2skg"

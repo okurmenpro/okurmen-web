@@ -7,14 +7,16 @@ import kumar from "../../../public/images/kumar.jpg";
 import { useTranslation } from "react-i18next";
 
 const Trainers = () => {
+  
   const trainers = [
-    { name: "Белек Абдрашитов", category: "Backend", portrait: belek },
-    { name: "Исеналиева Жанаргул", category: "English", portrait: zhanara },
-    { name: "Баястан Акматалиев", category: "Frontend", portrait: bayastanIT },
-    { name: "Маматшарип уулу Баястан", category: "English", portrait: bayastanENGLISH },
-    { name: "Кутман Акунов", category: "Frontend", portrait: kutman },
-    { name: "Кумарбек Бабатаев", category: "English", portrait: kumar },
+    { key: "belek", category: "Backend", portrait: belek },
+    { key: "zhanargul", category: "English", portrait: zhanara },
+    { key: "bayastan_IT", category: "Frontend", portrait: bayastanIT },
+    { key: "bayastan_ENG", category: "English", portrait: bayastanENGLISH },
+    { key: "kutman", category: "Frontend", portrait: kutman },
+    { key: "kumarbek", category: "English", portrait: kumar },
   ];
+  
 
   const { t } = useTranslation();
   return (
@@ -41,8 +43,9 @@ const Trainers = () => {
             </div>
             <div className="relative z-10">
               <p className="text-lg font-medium text-black mb-2 sm:text-base md:text-sm lg:text-base">
-                {trainer.name}
+                {t(trainer.key)}
               </p>
+
               <p className="text-orange-500 font-medium sm:text-sm md:text-xs lg:text-sm">
                 {trainer.category}
               </p>

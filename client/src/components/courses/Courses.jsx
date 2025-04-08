@@ -35,9 +35,9 @@ const Courses = () => {
     ],
     events: [
       { 
-        name: t('trialLesson') + " Frontend разработке", 
+        name: t('trial'), 
         date: "05.05.25 в 15:00", 
-        address: "Турусбекова 109/1", 
+        address: t('address') + "109/1",
         image: Code 
       },
     ],
