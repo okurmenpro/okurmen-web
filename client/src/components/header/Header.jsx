@@ -8,7 +8,7 @@ import { courses } from '../../data/courses';
 import { useTranslation } from 'react-i18next';
 
 const navlinks = [
-  { id: 1, titleKey: "company", link: "#company-info" },  
+  { id: 1, titleKey: "company", link: "#company-info" },
   { id: 2, titleKey: "courses", link: "#course" },
   { id: 3, titleKey: "trainers", link: "#trainers" },
   { id: 4, titleKey: "internship", link: "#internship" },
@@ -41,48 +41,71 @@ const Header = () => {
     i18n.changeLanguage(e.target.value);
   };
 
+
   return (
-    <header className={`fixed  left-0 w-full bg-white z-40 top-0 ${isScroll ? "py-2 shadow-lg" : "py-5"} transition-all duration-150`}>
-      <div className="container mx-auto flex flex items-center justify-between py-4">
-        <Link to="/" className="ml-3 md:ml-0">
+    <header className={`fixed left-0 w-full bg-white z-40 top-0 ${isScroll ? "py-2 shadow-lg" : "py-5"} transition-all duration-150`}>
+      <div className="container mx-auto flex items-center justify-between px-4 md:px-6">
+        <Link to="/" className="ml-3 mr-3 md:ml-0">
           <img className="cursor-pointer" width={80} src={Logo} alt="Logo" />
         </Link>
+        <div className="flex items-center gap-7">
 
-        <nav className="hidden md:flex gap-6 relative">
-          {navlinks.map(link => (
-            <HashLink key={link.id} smooth to={link.link} className="text-black py-2 px-3 text-base hover:text-gray-500">
-              {t(link.titleKey)}  
-            </HashLink>
-          ))}
-        </nav>
+          <div className="absolute left-1/2 transform -translate-x-1/2 md:static md:translate-x-0">
+            <select
+              onChange={handleLanguageChange}
+              className="ml-6 border-none text-black bg-transparent focus:outline-none"
+            >
+              <option value="kg">KGZ</option>
+              <option value="ru">RUS</option>
+              <option value="en">ENG</option>
+            </select>
+          </div>
+          <nav className="hidden lg:flex gap-6 relative">
+            {navlinks.map(link => (
+              <HashLink
+                key={link.id}
+                smooth
+                to={link.link}
+                className="text-black py-2 px-3 text-base hover:text-gray-500"
+              >
+                {t(link.titleKey)}
+              </HashLink>
+            ))}
+          </nav>
+        </div>
 
-        <button className="md:hidden menu-button" onClick={handleMenu}>
+        <button className="lg:hidden menu-button" onClick={handleMenu}>
           {open ? <FaTimes /> : <FaBars />}
         </button>
-
-        <select onChange={handleLanguageChange} className="border border-orange-400 text-orange-400 p-1 rounded">
-          <option value="kg">KGZ</option>
-          <option value="ru">RUS</option>
-          <option value="en">ENG</option>
-        </select>
       </div>
       {open && (
         <div className="absolute top-0 w-full bg-[#00000038] z-10">
           <div className="bg-white shadow-lg rounded-b-3xl py-4 px-4 relative mobile-menu">
-            <button className="absolute right-4 top-4 text-black text-2xl" onClick={() => setOpen(false)}>
+            <button
+              className="absolute right-4 top-4 text-black text-2xl"
+              onClick={() => setOpen(false)}
+            >
               <FaTimes />
             </button>
             <div className="flex flex-col justify-start pt-7 space-y-2">
               {navlinks.map((link) => (
                 <div key={link.id} className="relative">
                   {link.titleKey === "courses" ? (
-                    <div className="flex justify-between items-center py-2 px-3 text-base font-medium hover:bg-gray-100" onClick={toggleCourses}>
+                    <div
+                      className="flex justify-between items-center py-2 px-3 text-base font-medium hover:bg-gray-100"
+                      onClick={toggleCourses}
+                    >
                       <span className="text-black">{t(link.titleKey)}</span>
                       <FaChevronDown className={`transition-transform ${isCoursesOpen ? "rotate-180" : "rotate-0"}`} />
                     </div>
                   ) : (
-                    <HashLink smooth to={link.link} className="block text-black py-2 px-3 text-base font-medium hover:bg-gray-100" onClick={() => setOpen(false)}>
-                      {t(link.titleKey)} 
+                    <HashLink
+                      smooth
+                      to={link.link}
+                      className="block text-black py-2 px-3 text-base font-medium hover:bg-gray-100"
+                      onClick={() => setOpen(false)}
+                    >
+                      {t(link.titleKey)}
                     </HashLink>
                   )}
                   {isCoursesOpen && link.titleKey === "courses" && (
@@ -90,7 +113,11 @@ const Header = () => {
                       <ul className="space-y-1">
                         {courses.map((course, index) => (
                           <li key={index}>
-                            <Link to={course.path} className="block text-black py-2 px-2 text-left text-base hover:text-gray-500" onClick={() => setOpen(false)}>
+                            <Link
+                              to={course.path}
+                              className="block text-black py-2 px-2 text-left text-base hover:text-gray-500"
+                              onClick={() => setOpen(false)}
+                            >
                               {course.name}
                             </Link>
                           </li>
@@ -106,6 +133,5 @@ const Header = () => {
       )}
     </header>
   );
-};
-
+}
 export default Header;
