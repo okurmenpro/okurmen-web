@@ -66,20 +66,14 @@ const Footer = () => {
               {t('street')} 109/1
             </a>
           </div>
-          <div>
+          <div className="flex flex-col items-center">
             <h2 className="font-bold mb-6 text-xl md:text-2xl">
               {t('resources')}
             </h2>
-            <div className="w-1/2 ml-0">
+            <div className="">
               {instagramLinks.map(({ href, label }) => (
-                <a
-                  key={href}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center hover:underline decoration-[#0f1f5e] cursor-pointer"
-                >
-                  <IoLogoInstagram className="mr-2" />
+                <a key={href} href="href" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline decoration-[#0f1f5e] cursor-pointer">
+                  <IoLogoInstagram/>
                   <span className="text-[#0f1f5e]">{label}</span>
                 </a>
               ))}
