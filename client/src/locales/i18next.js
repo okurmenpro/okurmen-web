@@ -93,6 +93,7 @@ i18n.use(initReactI18next).init({
         eng_desc: "During all 9 months of training and internship, students will learn English",
         itClubDescription: "In the IT club you can work on different projects and experience teamwork",
         benefits_course: "Course Advantages",
+        request: "Apply now",
       },
     },
     ru: {
@@ -185,6 +186,7 @@ i18n.use(initReactI18next).init({
         eng_desc: "Все 9 месяцев обучения и стажировки студенты будут изучать английский язык",
         itClubDescription: "В IT клубе вы можете работать с разными проектами и ощутить командные работы",
         benefits_course: "Преимущества курса",
+        request: "Подать заявку",
       },
     },
     kg: {
@@ -278,6 +280,7 @@ i18n.use(initReactI18next).init({
         eng_desc: "Окуу жана стажировканын 9 айында студенттер англис тилин үйрөнүшөт",
         itClubDescription: "IT клубунда сиз ар кандай долбоорлор менен иштеп, командада иштөө тажрыйбасын ала аласыз",
         benefits_course: "Курстун артыкчылыктары",
+        request: "Арыз берүү",
       },
     },
   },

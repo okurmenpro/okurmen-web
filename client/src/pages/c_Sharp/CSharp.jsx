@@ -15,7 +15,8 @@ const CSharp = () => {
 
     return (
         <div>
-            <AboutCourse
+           
+           <AboutCourse
                 title="C Sharp"
                 description={csharpDescription} 
                 image={sharp}
