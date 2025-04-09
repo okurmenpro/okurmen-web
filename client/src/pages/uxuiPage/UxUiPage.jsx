@@ -7,14 +7,10 @@ import AdvantagesCourse from '../../components/advantagesCourse/AdvantagesCourse
 import advantages from '../../data/advantages';
 import modules from "../../data/modules";
 import MainModules from "../../components/mainModules/MainModules";
-
+import { useTranslation } from "react-i18next";
 const UxUiPage = () => {
-  const UxUiDescription = `
-   UX/UI дизайн — это процесс создания удобных и привлекательных интерфейсов для пользователей. Проще говоря, UI — это
-            "картинка", а UX — это то, как всё работает для удобства
-            пользователя. Вместе они помогают создать интуитивные и
-            удобные приложения или сайты, которыми приятно и легко пользоваться.
-  `
+   const { t } = useTranslation();
+  const UxUiDescription = t ('description_figma_course')
   return (
     <>
       <AboutCourse
