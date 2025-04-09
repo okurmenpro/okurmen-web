@@ -3,7 +3,9 @@ import Py2 from "../../../public/images/py2.png";
 import Js2 from "../../../public/images/js2.png";
 import Hourglass from "../../../public/icons/hourglass.svg";
 import IoTime from "../../../public/icons/TTime.svg";
+import { useTranslation } from "react-i18next";
 const FrontendBackend2 = () => {
+    const { t } = useTranslation();
   return (
     <div>
       <div className="flex justify-center items-center min-h-screen">
@@ -32,8 +34,8 @@ const FrontendBackend2 = () => {
                   className="w-5 h-5 ml-[2px]"
                 />
               </div>
-              <span>Срок обучения: 5 месяца</span>
-              <span className="text-orange-500 ml-1">+ английский язык</span>
+              <span>{t ('courseDuration')}</span>
+              <span className="text-orange-500 ml-1">{t ('extraEnglish')}</span>
             </div>
 
             <div className="space-y-2 mb-4">
@@ -43,28 +45,28 @@ const FrontendBackend2 = () => {
                   alt="TTime Icon"
                   className=" ml-[2px] mr-[14px]"
                 />
-                5 раза в неделю
+               {t ('courseTime')}
               </div>
               <div className="flex items-center text-gray-600">
                 <img src={Hourglass} alt="" className="ml-[2px] mr-[10px]" />
-                1,5 часа
+                {t ('lessonDuration')}
               </div>
               <div className="flex items-center w-[270px] h-[30px] rounded-2xl pl-2 text-gray-600 border border-orange-500">
-                Начнётся:{" "}
+                {t ('courseStart')}
                 <span className="text-orange-500 ml-1">
-                  12 ноября, 2024 год
+                 {t ('courseStartDate')}
                 </span>
               </div>
             </div>
             <div className="text-gray-600 mb-4">
-              <p>Дополнительно:</p>
+              <p>{t ('additionally')}</p>
               <ul className="list-disc list-inside ml-4 ">
-                <li>IT клуб</li>
-                <li>Английский язык</li>
+                <li>{t('itClub')}</li>
+                <li>{t('englishLanguage')}</li>
               </ul>
             </div>
             <div className="text-right text-lg font-semibold text-gray-800 mt-[-20px]">
-              Сумма обучения: <span className="text-black  ">15 000 сом</span>
+              {t ('feeAmount')} 
             </div>
           </div>
         </div>

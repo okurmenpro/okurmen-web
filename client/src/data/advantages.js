@@ -4,9 +4,11 @@ import arrow from "../../public/images/arrow.png";
 import computer from "../../public/images/computer.png";
 import englishPython from "../../public/images/englishPython.png";
 import people from "../../public/images/people.png";
-
+import { useTranslation } from "react-i18next";
 const advantages = [
+  
   {
+    
     img: lightPython,
     title: "Простой синтаксис",
     description: "Легко обучиться, ведь Python похож на английский язык",

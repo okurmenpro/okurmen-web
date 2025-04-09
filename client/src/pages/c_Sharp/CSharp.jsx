@@ -4,19 +4,23 @@ import PriseCourse from "../../components/priceCourse/PriceCourse";
 import AdvantagesCourse from "../../components/advantagesCourse/AdvantagesCourse";
 import advantagesBackend from '../../data/advantagesBackend';
 import sharp from '../../../public/icons/sharp.svg';
-import c_sharp from '../../../public/icons/c_sharp.svg'
+import c_sharp from '../../../public/icons/c_sharp.svg';
 import advantages from "../../data/advantages";
+import { useTranslation } from "react-i18next";
 
 const CSharp = () => {
-    const backendDescription = `
-  C# (произносится "си шарп") — это язык программирования, который используется для создания самых разных приложений: от игр до веб-сайтов и программ для компьютеров и смартфонов. Он был разработан компанией Microsoft и часто используется в их платформах, например, для Windows и Azure. Он сочетает в себе мощь и простоту. Например, C# помогает избежать многих ошибок, которые часто возникают у новичков, и делает код понятным`
+    const { t } = useTranslation();
+    const additional = [t('itClub'), t('englishLanguage')];
+    const csharpDescription = t('csharp_description'); 
+
     return (
         <div>
-            <AboutCourse
+           
+           <AboutCourse
                 title="C Sharp"
-                description={backendDescription}
+                description={csharpDescription} 
                 image={sharp}
-                imageAlt="Backend logo"
+                imageAlt="C Sharp logo"
             />
             <PriseCourse
                 title="C Sharp"
@@ -38,7 +42,6 @@ const CSharp = () => {
                 highlightTitle="Анализ информации"
                 additionalText="Машинное обучение"
             /> */}
-
         </div>
     );
 };

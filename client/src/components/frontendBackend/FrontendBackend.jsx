@@ -1,8 +1,10 @@
 import React from "react";
 import pylogo from "../../../public/images/py.png";
 import jslogo from "../../../public/images/jsLogo.png";
-
+import Button from "../button/Button";
+import { useTranslation } from "react-i18next";
 const FrontendBackend = () => {
+  const { t } = useTranslation();
   return (
     <div className="flex justify-center items-center min-h-screen  ">
       <div className="bg-white  rounded-lg p-8 w-[1440px] flex items-start ">
@@ -11,17 +13,11 @@ const FrontendBackend = () => {
             Frontend+Backend
           </h2>
           <p className="text-gray-700 mb-6 font-medium text-l my-10">
-            Этот 5-месячный курс создан для детей, желающих научиться создавать
-            настоящие сайты и приложения, осваивая как фронтенд, так и бэкенд.
-            Цель курса — познакомить детей с основами программирования и дать им
-            навыки, с которыми они смогут создавать собственные проекты,
-            понимая, как работает веб с двух сторон: пользовательской и
-            серверной. Курс рассчитан на детей и подростков 9-14 лет, кто
-            интересуется IT и мечтает создать что-то свое в мире веб-технологий.
+           {t ('title_course_FrontBack')}
           </p>
-          <button className="border border-orange-600 text-orange-600 py-2 px-4 rounded mt-8 ">
-            Консультация
-          </button>
+          <Button ButtonText={t('consultation')} />
+
+
         </div>
 
         <div className="flex-shrink-0 relative">

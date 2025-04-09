@@ -28,7 +28,7 @@ function InternshipSection() {
             <Button
               className="mt-[70px] lg:mt-[70px] sm:mt-[30px] w-full lg:w-auto"
               color="orange"
-              ButtonText="Подать заявку"
+              ButtonText={t ('request')}
             />
           </a>
         </div>
