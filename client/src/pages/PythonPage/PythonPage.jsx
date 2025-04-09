@@ -7,13 +7,11 @@ import AdvantagesCourse from "../../components/advantagesCourse/AdvantagesCourse
 import Benefits from "../../components/benefits/Benefits";
 import benefitsData from "../../data/benefits";
 import pythonLogo from '../../../public/images/py2.png'
-
+import { useTranslation } from "react-i18next";
 
 function PythonPage() {
-  const pythonDescription = `
-  Python — это простой и мощный язык программирования, на котором можно создавать самые разные программы, 
-  от небольших скриптов до крупных приложений и даже игр.
-`;
+   const { t } = useTranslation();
+  const pythonDescription = t ('description_python_course');
   return (
     <div>
       <AboutCourse

@@ -7,13 +7,11 @@ import advantagesFront from '../../data/advantagesFrontend';
 import MainModules from '../../components/mainModules/MainModules';
 import frontmodules from '../../data/frontmodules';
 import javascript from '../../../public/icons/javascript.svg'
-
+import { useTranslation } from "react-i18next";
 
 function FrontendPage() {
-  const frontendDescription = `
-  Основные задачи фронтенд-разработчика — создать и настроить интерфейс, чтобы он был красивым, удобным и работал на всех устройствах. 
-  Для этого используют языки программирования HTML , CSS и JavaScript.
-`;
+  const { t } = useTranslation();
+  const frontendDescription = t ('description_frontend_course');
   return (
     <div>
       <AboutCourse
@@ -38,7 +36,7 @@ function FrontendPage() {
         title="Преимущества курса" />
       <MainModules
         data={frontmodules}
-        title="Главные модули" />
+        title= {t ('main_modules')} />
 
     </div>
   )

@@ -7,11 +7,10 @@ import advantagesBackend from '../../data/advantagesBackend'
 import backend from '../../../public/icons/backend.svg'
 import MainModules from "../../components/mainModules/MainModules";
 import javaModules from '../../data/javaModules'
+import { useTranslation } from "react-i18next";
 const BackendPage = () => {
-  const backendDescription = `
- Java — это язык программирования, который используется для создания программ и приложений. Он очень популярен и может работать на разных устройствах, таких как компьютеры, телефоны и серверы.
- 
- Java устроен так, чтобы код было легко поддерживать и обновлять. Это помогает, если нужно изменить программу или исправить ошибки.`
+    const { t } = useTranslation();
+  const backendDescription = t ('description_backend_course')
   return (
     <div>
       <AboutCourse
